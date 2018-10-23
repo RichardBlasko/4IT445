@@ -25,7 +25,7 @@ export const EventSlider2 = ({children}) => (
               <Column lg={9} md={9} sm={12} xs={12}>
                 <Row className={"row-eq-height"}>
                   {EVENTS.map(event =>
-                    <Column lg={4} md={4} sm={6} xs={6}>
+                    <Column lg={4} md={4} sm={6} xs={6} className={"mb-3"}>
                       <EventCard2
                         id={event.id}
                         name={event.name}
@@ -41,8 +41,8 @@ export const EventSlider2 = ({children}) => (
                   <Column lg={12} md={12} sm={12} xs={12} className={"text-center"}>
                     <Layout className={"mt-3"}>
                       <FontIcon icon={"chevron-left"} className={"slider-navigator mr-5 mt-2 white-text"}/>
-                      <NavLink exact to="/akce">
-                        <Button title="Zobrazit všechny akce v kalendáři" variant="all mt-m-2"/>
+                      <NavLink exact to="/">
+                        <Button title="Zobrazit všechny akce" variant="all mt-m-2"/>
                       </NavLink>
                       <FontIcon icon={"chevron-right"} className={"slider-navigator ml-5 mt-2 white-text"}/>
                     </Layout>
