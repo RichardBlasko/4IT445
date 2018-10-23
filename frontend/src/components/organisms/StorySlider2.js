@@ -22,7 +22,7 @@ export const StorySlider2 = ({children}) => (
               </Column>
               <Column lg={8} md={8} sm={12} xs={12}>
                 <Row>
-                  <Column lg={6} md={6} sm={6} xs={6} className={"mb-3"}>
+                  <Column lg={6} md={6} sm={12} xs={12} className={"mb-3"}>
                     <StoryCard2
                       id={1}
                       diagnose={"Rakovina tlustého střeva"}
@@ -31,7 +31,7 @@ export const StorySlider2 = ({children}) => (
                       img={"https://images.pexels.com/photos/1164531/pexels-photo-1164531.jpeg?cs=srgb&dl=arm-blood-close-up-1164531.jpg"}
                     />
                   </Column>
-                  <Column lg={6} md={6} sm={6} xs={6} className={"mb-3"}>
+                  <Column lg={6} md={6} sm={12} xs={12} className={"mb-3"}>
                     <StoryCard2
                       id={1}
                       diagnose={"Rakovina tlustého střeva"}

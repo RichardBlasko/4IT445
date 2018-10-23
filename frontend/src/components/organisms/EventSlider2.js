@@ -25,7 +25,7 @@ export const EventSlider2 = ({children}) => (
               <Column lg={9} md={9} sm={12} xs={12}>
                 <Row className={"row-eq-height"}>
                   {EVENTS.map(event =>
-                    <Column lg={4} md={4} sm={6} xs={6} className={"mb-3"}>
+                    <Column lg={4} md={4} sm={12} xs={12} className={"mb-3"}>
                       <EventCard2
                         id={event.id}
                         name={event.name}

@@ -26,7 +26,7 @@ export const SocialNetworkSlider2 = ({children}) => (
                 <Row>
                   {
                     SOCIALS.map(item =>
-                      <Column lg={4} md={4} sm={6} xs={6} className={"mb-2"}>
+                      <Column lg={4} md={4} sm={12} xs={12} className={"mb-2"}>
                         <SocialCard2
                           id={item.id}
                           img={item.img}
