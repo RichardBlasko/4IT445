@@ -13,6 +13,12 @@ p{
   color: #3D3B30;
 }
 
+.list {
+  list-style: none;
+  padding-left: 1em;
+  margin: 0;
+}
+
 .container-fluid{
   padding: 0;
 }
@@ -256,6 +262,11 @@ div.container70 .center-wrapper {
   background-color: #FFC15E;
 }
 
+.footer img {
+  padding: 1em;
+}
+
+
 .social-network-footer{
   font-size: 2em;
 }
@@ -318,6 +329,7 @@ div.container70 .center-wrapper {
     height: 90%;
     font-size: 90%;
   }
+
 
   div.container70 {
     height: 100%;
