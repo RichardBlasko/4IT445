@@ -8,10 +8,10 @@ import {Row} from "../atoms/Row";
 
 export const StoryCard2 = ({ id, person, diagnose, story, img}) => (
   <Layout className={"card"}>
-    <Layout className="section mt-4 mb-4">
+    <Layout className="section mt-2 mb-2">
       <Layout className="container">
         <Row>
-          <div className="col-md-12 col-lg-12 mt-4 mt-md-0">
+          <div className="col-md-12 col-lg-12 mt-1 mt-md-0">
               <Heading level={4} className="card-title">{person}</Heading>
               <Heading level={6} className="card-title">{diagnose}</Heading>
               <Paragraph className="text-justify">

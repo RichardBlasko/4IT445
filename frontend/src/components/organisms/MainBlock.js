@@ -13,8 +13,8 @@ export const MainBlock = ({children}) => (
       <Layout className="container100">
         <Layout className="center-wrapper">
           <Heading level={2} className="headline-slogan mb-3">
-            VÍŠ, ŽE <span className={"text-orange"}>3 KLIKY</span> TI MOHOU <span className={"text-orange"}>UŠETŘIT STOVKY ZBYTEČNÝCH </span> HODIN
-            U DOKTORA! <br/>TO UŽ ZA TO STOJÍ, <span className={"text-orange"}>NEMYSLÍŠ</span>?
+            VÍŠ, ŽE STAČÍ TŘEBA JEN <span className={"orange-text"}>1 PREVENTIVNÍ PROHLÍDKA</span> K TOMU, ABY JSI <span className={"orange-text"}>UŠETŘIL STOVKY ZBYTEČNÝCH </span> HODIN
+            U DOKTORA! <br/>TO UŽ ZA TO STOJÍ, <span className={"orange-text"}>NEMYSLÍŠ</span>?
           </Heading>
           <FilterBox
               genders={GENDERS}

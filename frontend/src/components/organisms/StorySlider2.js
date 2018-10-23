@@ -22,7 +22,7 @@ export const StorySlider2 = ({children}) => (
               </Column>
               <Column lg={8} md={8} sm={12} xs={12}>
                 <Row>
-                  <Column lg={6} md={6} sm={6} xs={6}>
+                  <Column lg={6} md={6} sm={6} xs={6} className={"mb-3"}>
                     <StoryCard2
                       id={1}
                       diagnose={"Rakovina tlustého střeva"}
@@ -31,7 +31,7 @@ export const StorySlider2 = ({children}) => (
                       img={"https://images.pexels.com/photos/1164531/pexels-photo-1164531.jpeg?cs=srgb&dl=arm-blood-close-up-1164531.jpg"}
                     />
                   </Column>
-                  <Column lg={6} md={6} sm={6} xs={6}>
+                  <Column lg={6} md={6} sm={6} xs={6} className={"mb-3"}>
                     <StoryCard2
                       id={1}
                       diagnose={"Rakovina tlustého střeva"}
@@ -45,7 +45,7 @@ export const StorySlider2 = ({children}) => (
                   <Column lg={12} md={12} sm={12} xs={12} className={"text-center"}>
                     <Layout className={"mt-3"}>
                       <FontIcon icon={"chevron-left"} className={"slider-navigator mr-5 mt-2 white-text"}/>
-                      <NavLink exact to="/pribehy">
+                      <NavLink exact to="/">
                         <Button title="Zobrazit všechny příběhy" variant="all mt-m-2"/>
                       </NavLink>
                       <FontIcon icon={"chevron-right"} className={"slider-navigator ml-5 mt-2 white-text"}/>
