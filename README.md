@@ -8,4 +8,3 @@
 * Developer:       **Honza Bárta**
 * Developer:       **Nicole Gross**
 
-
