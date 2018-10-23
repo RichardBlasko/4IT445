@@ -315,3 +315,32 @@ div.container70 .center-wrapper {
   }
 
 }
+
+/*Definition of basics*/
+.orange{
+  background-color: #FFC15E;
+}
+
+.grey{
+  background-color: #E7E3E8;
+}
+
+.blue{
+  background-color: #56A3A6;
+}
+
+.orange-text{
+  color: #FFC15E;
+}
+
+.blue-text{
+  color: #56A3A6;
+}
+
+.white-text{
+  color: #FFFFFF;
+}
+
+.mt-m-2{
+  margin-top: -15px;
+}
