@@ -112,6 +112,16 @@ p{
   padding-bottom: 19px;
 }
 
+.img-background{
+  background: url("/static/img/bg.jpg") no-repeat center center;
+  background-size: cover;
+}
+.img-background-overlay{
+  background: rgba(86,163,164,0.82);
+  overflow: hidden;
+  height: 100%;
+  z-index: 2;
+}
 
 /* MainPage*/
 
