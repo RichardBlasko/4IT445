@@ -44,6 +44,11 @@ p{
 .mr-m-2{
   margin-right: -15px;
 }
+
+.scroll-up-button{
+  background-color: #FFC15E !important;
+  color: #3D3B30;
+}
 /* Navigation */
 
 .navbar{
