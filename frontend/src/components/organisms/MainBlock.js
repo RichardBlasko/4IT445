@@ -5,10 +5,7 @@ import {Heading} from "../atoms/Heading";
 import {FilterBox} from "../molecules/FilterBox";
 import {BurgerMenu} from "../molecules/BurgerMenu";
 
-import {GENDERS} from "../../mocks/Genders";
-import {ANAMNESIS} from "../../mocks/Anamnes";
-
-export const MainBlock = ({children}) => (
+export const MainBlock = ({genders, anamnesis, styles, children}) => (
   <Layout className="page-background">
     <Layout className="page-background-overlay">
       <Layout className="container100">
@@ -20,8 +17,9 @@ export const MainBlock = ({children}) => (
             U DOKTORA! <br/>TO UŽ ZA TO STOJÍ, <span className={"orange-text"}>NEMYSLÍŠ</span>?
           </Heading>
           <FilterBox
-            genders={GENDERS}
-            anamnesis={ANAMNESIS}
+            genders={genders}
+            anamnesis={anamnesis}
+            styles={styles}
           />
         </Layout>
       </Layout>

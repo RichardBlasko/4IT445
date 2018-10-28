@@ -26,7 +26,7 @@ export class BurgerMenu extends Component {
   render() {
     const {collapse} = this.state;
     return (
-      <Layout className={"float-right"}>
+      <Layout>
         {collapse && <Layout className={"menu"} onClick={this.collapseMenu}><FontIcon icon={"bars"}/> MENU</Layout>}
         {!collapse &&
         <ReactCSSTransitionGroup

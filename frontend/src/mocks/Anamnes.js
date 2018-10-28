@@ -1,1 +1,1 @@
-export const ANAMNESIS = ["Anamneza 1", "Anamneza 2", "Anamneza 3", "Anamneza 4", "Anamneza 5"];
+export const ANAMNESIS = ["Diabetes", "Cévní mozková příhoda", "Infarkt", "Rakovina tlustého střeva"];

@@ -8,7 +8,7 @@ import {CardBody} from "../atoms/Card/CardBody";
 import {Column} from "../atoms/Column";
 
 export const ReasonCard2 = ({reason, icon, text}) => (
-  <Layout className={"card grey"}>
+  <Layout className={"card"}>
     <Layout className="section mt-4 mb-4">
       <Layout className="container">
         <Layout className="row">

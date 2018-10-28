@@ -52,10 +52,11 @@ p{
 /* Navigation */
 
 .navbar{
-  background-color: #FFC15E;
+  background-color: transparent;
   z-index: 99999;
   margin-top: 0.9em;
   padding: 0rem 1rem 0 0rem;
+  margin-bottom: 1em;
 }
 .nav-item{
   padding: 0.5rem 0rem;
@@ -67,16 +68,18 @@ p{
 }
 .close-menu .nav-link{
   color: #3D3B30;
+  background-color: #FFC15E;
   font-weight: bold;
   font-size: 1.2em;
 }
-.nav-pills .nav-link.active{
+.nav-pills .nav-link.active, .nav-pills a{
   background-color: #3D3B30;
   color: #FFFFFF;
   text-transform: uppercase;
   font-weight: lighter;
   font-size: 1.2em;
 }
+
 
 .header .mobile-close{
   display: none;
@@ -87,7 +90,9 @@ p{
    border: 0px;
    border-bottom: 1px solid #FFC15E;
    height: 20px;
-   font-size: 18px;
+   font-size: 16px;
+  color: #FFC15E;
+  font-weight: lighter;
  }
 
 .header .input-search-button{
@@ -138,9 +143,14 @@ p{
   border: 0px solid #FFFFFF;
   font-weight: 600;
   font-size: 2em;
-  margin: 1em;
   cursor: pointer;
   z-index: 9999;
+  text-align: right;
+  margin-bottom: 1em;
+}
+
+.page-background .menu {
+  margin: 1em;
 }
 
 /* Parts of page*/
@@ -210,6 +220,7 @@ div.container70 .center-wrapper {
   margin: 0 -50% 0 0;
   transform: translate(-50%, -50%) }
 
+
 .filter-panel{
   background-color: #FFFFFF;
   min-height: 20px;
@@ -222,7 +233,6 @@ div.container70 .center-wrapper {
   background-color: #FFFFFF;
   padding: 5px;
   border-radius: 0;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   height: 100%;
 }
 .card-img-top{
