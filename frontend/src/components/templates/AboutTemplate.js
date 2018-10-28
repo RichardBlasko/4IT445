@@ -1,17 +1,17 @@
 import React from 'react';
 
 import {Layout} from "../atoms/Layout";
-import {InfoBlock} from "../organisms/InfoBlock";
 import {TextBlock} from "../organisms/TextBlock";
 import {GoalsBlock} from "../organisms/GoalsBlock";
 import {WhyBlock} from "../organisms/WhyBlock";
 import {WhoBlock} from "../organisms/WhoBlock";
-import {TopNavBar} from "../molecules/TopNavBar";
+import {HeadBlock} from "../organisms/HeadBlock";
 
-export const AboutTemplate = ({ title, paragraph }) => (
+export const AboutTemplate = () => (
   <Layout>
-    <TopNavBar/>
-    <InfoBlock/>
+    <HeadBlock
+      category={"O projektu"} descr={"Seznamte se s týmem, jejich důvodem a celkovou vizí."}
+    />
     <TextBlock/>
     <GoalsBlock/>
     <WhyBlock/>

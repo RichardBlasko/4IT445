@@ -50,6 +50,13 @@ p{
   color: #3D3B30;
 }
 /* Navigation */
+.admin .navbar{
+  background-color: #3D3B30;
+  z-index: 99999;
+  padding: 0rem;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
 
 .navbar{
   background-color: transparent;

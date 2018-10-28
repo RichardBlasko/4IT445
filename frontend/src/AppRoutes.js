@@ -11,9 +11,9 @@ import {EventListPage} from "./components/pages/EventListPage";
 import {SocialNetworkListPage} from "./components/pages/SocialNetworkListPage";
 
 import {AdminHomePage} from "./components/pages/AdminHomePage";
+import {AboutPage} from "./components/pages/AboutPage";
 
 export const AppRoutes = () => (
-  <PageWrapper>
     <Switch>
       <Route path="/" exact component={HomePage} />
       <Route path="/pribehy" exact component={StoryListPage} />
@@ -21,7 +21,7 @@ export const AppRoutes = () => (
       <Route path="/kalendar" exact component={EventListPage} />
       <Route path="/socialnisite" exact component={SocialNetworkListPage} />
       <Route path="/diagnozy" exact component={DiagnoseListPage} />
+      <Route path="/projekt" exact component={AboutPage} />
       <Route path="/admin" exact component={AdminHomePage} />
     </Switch>
-  </PageWrapper>
 );

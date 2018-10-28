@@ -10,7 +10,7 @@ import { NavLink } from '../atoms/Nav/NavLink';
 import { getNumberOfItems } from '../../services/StoryList/reducer';
 import {FontIcon} from "../atoms/FontIcon";
 
-export const TopNavBarRaw = ({ numberOfCartItems }) => (
+export const TopNavBarRaw = () => (
   <NavBar>
     <Link className="navbar-brand text-muted" to="/">
       LOGO

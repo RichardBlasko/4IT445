@@ -1,7 +1,6 @@
 import React from 'react';
 
 import {Layout} from '../atoms/Layout';
-import {Heading} from "../atoms/Heading";
 import {Column} from "../atoms/Column";
 import {Row} from "../atoms/Row";
 import {AdminInfoCard} from "../molecules/AdminInfoCard";

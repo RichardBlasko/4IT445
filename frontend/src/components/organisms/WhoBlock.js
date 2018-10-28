@@ -6,7 +6,6 @@ import {Paragraph} from '../atoms/Paragraph';
 import {Column} from "../atoms/Column";
 import {Row} from "../atoms/Row";
 import {Image} from "../atoms/Image";
-import {ReasonCard2} from "../molecules/ReasonCard2";
 
 export const WhoBlock = ({children}) => (
   <Layout className="part-55 wrapper pb-5 ">
@@ -21,7 +20,7 @@ export const WhoBlock = ({children}) => (
             </Row>
             <Row>
               <Column lg={6} md={6} sm={6} xs={12} className={"mb-3"}>
-                <img src = "/static/img/kto.jpg" />
+                <Image src = "/static/img/kto.jpg" />
                 </Column>
                 <Column lg={6} md={6} sm={6} xs={12} className={"mb-3"}>
                   <Heading level={5} className="orange-text">Bylo na čase už něco změnit, muže to totiž potkat kohokoli z nás</Heading>

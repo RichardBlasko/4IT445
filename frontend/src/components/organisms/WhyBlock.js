@@ -6,7 +6,6 @@ import {Paragraph} from '../atoms/Paragraph';
 import {Column} from "../atoms/Column";
 import {Row} from "../atoms/Row";
 import {Image} from "../atoms/Image";
-import {ReasonCard2} from "../molecules/ReasonCard2";
 
 export const WhyBlock = ({children}) => (
   <Layout className="part-55 wrapper pb-5 ">
@@ -28,7 +27,7 @@ export const WhyBlock = ({children}) => (
                     </Paragraph>
                   </Column>
                   <Column lg={6} md={6} sm={6} xs={12} className={"mb-3"}>
-                    <img src = "/static/img/family2.jpg" />
+                    <Image src="/static/img/family2.jpg"/>
                   </Column>
             </Row>
           </Layout>

@@ -1,11 +1,14 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
-import { PreventionListTemplate } from '../templates/PreventionListTemplate';
+import {PreventionListTemplate} from '../templates/PreventionListTemplate';
+import {PageWrapper} from "../organisms/PageWrapper";
 
 export class PreventionListPage extends Component {
   render() {
     return (
-      <PreventionListTemplate/>
+      <PageWrapper>
+        <PreventionListTemplate/>
+      </PageWrapper>
     );
   }
 }
