@@ -15,7 +15,7 @@ export const TextBlock = ({children}) => (
         <Heading level={3} className={"pt-2 part-sub orange-text"}>PROČ #PREVENCEMASMYSL?</Heading>
         <Row>
           <Column sm={6}>
-            <Image src={'/static/img/Logo2.png'} class={"img-fluid"}/>
+            <Image src={'/static/img/logo2.png'} class={"img-fluid"}/>
           </Column>
           <Column sm={6}>
             <Heading level={5} className={"pb-3 blue-text"}>PROTOŽE PŘECI PREVENCE DÁVÁ SMYSL!</Heading>
