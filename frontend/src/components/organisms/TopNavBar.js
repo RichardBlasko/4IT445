@@ -9,10 +9,15 @@ import {NavLink} from '../atoms/Nav/NavLink';
 import {getNumberOfItems} from '../../services/StoryList/reducer';
 import {FontIcon} from "../atoms/FontIcon";
 import {SearchInput} from "../molecules/SearchInput";
+import {Link} from "../atoms/Link";
+import {Image} from "../atoms/Image";
 
 export const TopNavBarRaw = ({close}) => (
   <NavBar>
     <FontIcon icon="times" className={"mobile-close"}  onClick={close}/>
+    <Link className="navbar-brand " to="/">
+      <Image src={"/static/img/logo2B.png"} className={"img-fluid"}/> PREVENCE MA SMYSL
+    </Link>
     <Layout className="navbar-collapse  justify-content-end">
       <Nav className="nav-pills">
         <NavItem>

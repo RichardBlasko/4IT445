@@ -6,6 +6,10 @@ import {Layout} from "../atoms/Layout";
 import {TopNavBar} from "../organisms/TopNavBar";
 
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import {Link} from "../atoms/Link";
+import {Image} from "../atoms/Image";
+import {Row} from "../atoms/Row";
+import {Column} from "../atoms/Column";
 
 export class BurgerMenu extends Component {
 
@@ -27,7 +31,21 @@ export class BurgerMenu extends Component {
     const {collapse} = this.state;
     return (
       <Layout>
-        {collapse && <Layout className={"menu"} onClick={this.collapseMenu}><FontIcon icon={"bars"}/> MENU</Layout>}
+        {collapse &&
+        <Row>
+          <Column xs={"undefined"}>
+            <Link className="navbar-brand " to="/">
+              <Image src={"/static/img/logo2B.png"} className={"img-fluid"}/> PREVENCE MA SMYSL
+            </Link>
+          </Column>
+          <Layout className="col-md-auto"/>
+          <Column xs={"undefined"}>
+            <Layout className={"menu"} onClick={this.collapseMenu}>
+              <FontIcon icon={"bars"}/> MENU
+            </Layout>
+          </Column>
+        </Row>
+        }
         {!collapse &&
         <ReactCSSTransitionGroup
           transitionName="fade"

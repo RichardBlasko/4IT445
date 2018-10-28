@@ -86,7 +86,14 @@ p{
   font-weight: lighter;
   font-size: 1.2em;
 }
-
+.navbar-brand{
+  color: #FFC15E;
+  text-decoration: none;
+}
+.navbar-brand:hover{
+  color: #FFC15E;
+  text-decoration: none;
+}
 
 .header .mobile-close{
   display: none;
@@ -404,6 +411,9 @@ div.container70 .center-wrapper {
 
   .menu{
     font-size: 2em;
+  }
+  .navbar-brand{
+    display: none;
   }
 
   div.container70 {

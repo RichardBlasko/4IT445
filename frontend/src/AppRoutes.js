@@ -1,9 +1,7 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 
-import { PageWrapper } from './components/organisms/PageWrapper';
-
-import { HomePage } from './components/pages/HomePage';
+import {HomePage} from './components/pages/HomePage';
 import {PreventionListPage} from "./components/pages/PreventionListPage";
 import {DiagnoseListPage} from "./components/pages/DiagnoseListPage";
 import {StoryListPage} from "./components/pages/StoryListPage";

@@ -7,12 +7,10 @@ import {Row} from "../atoms/Row";
 import {ReasonCard2} from "../molecules/ReasonCard2";
 
 export const GoalsBlock = ({children}) => (
-  <Layout className="part-55 wrapper pb-5 ">
+  <Layout className="wrapper pb-5 ">
     <Row className={"justify-content-center"}>
-      <Column lg={10} md={10} sm={12} xs={12}>
-        <Layout className="container70">
-          <Layout className="center-wrapper">
-            <Row>
+      <Column lg={9} md={9} sm={12} xs={12}>
+            <Row >
               <Column lg={12} md={12} sm={12} xs={12} className={"text-left order-md-2"}>
                 <Heading level={3} className="part-sub blue-text">Čeho chceme dosáhnout?</Heading>
               </Column>
@@ -44,8 +42,6 @@ export const GoalsBlock = ({children}) => (
                 </Row>
               </Column>
             </Row>
-          </Layout>
-        </Layout>
       </Column>
     </Row>
   </Layout>

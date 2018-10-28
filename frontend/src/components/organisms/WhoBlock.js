@@ -7,22 +7,13 @@ import {Column} from "../atoms/Column";
 import {Row} from "../atoms/Row";
 import {Image} from "../atoms/Image";
 
-export const WhoBlock = ({children}) => (
-  <Layout className="part-55 wrapper pb-5 ">
+export const WhoBlock = () => (
+  <Layout className="wrapper pb-5 ">
     <Row className={"justify-content-center"}>
-      <Column lg={10} md={10} sm={12} xs={12}>
-        <Layout className="container70">
-          <Layout className="center-wrapper">
+      <Column lg={9} md={9} sm={12} xs={12}>
             <Row>
-              <Column lg={12} md={12} sm={12} xs={12} className={"text-left order-md-2"}>
-                <Heading level={3} className="part-sub blue-text">Kdo se o to stará?</Heading>
-              </Column>
-            </Row>
-            <Row>
-              <Column lg={6} md={6} sm={6} xs={12} className={"mb-3"}>
-                <Image src = "/static/img/kto.jpg" />
-                </Column>
-                <Column lg={6} md={6} sm={6} xs={12} className={"mb-3"}>
+                <Column lg={7} md={7} sm={7} xs={12} className={"mb-3 order-md-2"}>
+                  <Heading level={3} className="part-sub blue-text">Kdo se o #prevencemasmysl stará?</Heading>
                   <Heading level={5} className="orange-text">Bylo na čase už něco změnit, muže to totiž potkat kohokoli z nás</Heading>
                   <Paragraph className={"pb-4 text-justify"}>
                     Slovo PREVENCE, které znamená něčemu přecházet… Měla by zahrnovat především naši osobní snahu žít zdravě
@@ -34,9 +25,10 @@ export const WhoBlock = ({children}) => (
                     však jen na našich bedrech, zda budeme vůči sobě a svému zdraví zodpovědní…
                   </Paragraph>
                 </Column>
+              <Column lg={5} md={5} sm={5} xs={12} className={"mb-3  order-md-1"}>
+                <Image src = "/static/img/kto.jpg" className={"img-fluid"}/>
+              </Column>
             </Row>
-          </Layout>
-        </Layout>
       </Column>
     </Row>
   </Layout>

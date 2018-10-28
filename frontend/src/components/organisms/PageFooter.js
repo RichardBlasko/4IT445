@@ -106,7 +106,7 @@ export class PageFooter extends Component {
                 </List>
               </Column>
               <Column md={12} xs={6}>
-                <Image src={"https://via.placeholder.com/150x100"} alt={"Logo"} className={"img-fluid"}/>
+                <Image src={"/static/img/Logo2B.png"} alt={"Logo"} className={"img-fluid"}/>
               </Column>
             </Row>
           </Column>
