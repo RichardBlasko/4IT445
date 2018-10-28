@@ -41,17 +41,58 @@ p{
 .mt-m-2{
   margin-top: -15px;
 }
-
+.mr-m-2{
+  margin-right: -15px;
+}
 /* Navigation */
 
 .navbar{
+  background-color: #FFC15E;
+  z-index: 99999;
+  margin-top: 0.9em;
+  padding: 0rem 1rem 0 0rem;
+}
+.nav-item{
+  padding: 0.5rem 0rem;
   background-color: #3D3B30;
+}
+.nav-item.close-menu{
+  padding: 0.5rem 0rem;
+  background-color: #FFC15E;
+}
+.close-menu .nav-link{
+  color: #3D3B30;
+  font-weight: bold;
+  font-size: 1.2em;
 }
 .nav-pills .nav-link.active{
   background-color: #3D3B30;
   color: #FFFFFF;
   text-transform: uppercase;
   font-weight: lighter;
+  font-size: 1.2em;
+}
+
+.header .mobile-close{
+  display: none;
+}
+
+.header .search-input{
+   background-color: #3D3B30;
+   border: 0px;
+   border-bottom: 1px solid #FFC15E;
+   height: 20px;
+   font-size: 18px;
+ }
+
+.header .input-search-button{
+  background-color: #3D3B30;
+  color: #FFC15E;
+  border: 0px;
+  height: 20px;
+  padding: 0;
+  padding-left: 1em;
+  margin: 0;
 }
 
 .header h3 {
@@ -85,6 +126,16 @@ p{
   width: 80%;
   margin-left: 10%;
   text-transform: uppercase;
+}
+
+.menu{
+  color: #FFFFFF;
+  border: 0px solid #FFFFFF;
+  font-weight: 600;
+  font-size: 2em;
+  margin: 1em;
+  cursor: pointer;
+  z-index: 9999;
 }
 
 /* Parts of page*/
@@ -284,21 +335,10 @@ div.container70 .center-wrapper {
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
+
 }
 
 @media screen and (max-width: 768px) {
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
 
   .headline-slogan{
     font-size: 2em;
@@ -330,6 +370,9 @@ div.container70 .center-wrapper {
     font-size: 90%;
   }
 
+  .menu{
+    font-size: 2em;
+  }
 
   div.container70 {
     height: 100%;
@@ -342,6 +385,30 @@ div.container70 .center-wrapper {
     left: unset;
     margin: unset;
     transform: unset }
+
+  .nav-pills.nav{
+    display: unset;
+  }
+  .navbar{
+    margin-top: 0px;
+    width: 100vw;
+    height: 100vh;
+    text-align: right;
+    color: #FFC15E;
+    background-color: #3D3B30;
+  }
+
+  .header .mobile-close{
+    display: unset;
+    position: absolute;
+    top:20px;
+    right: 20px;
+    font-size: 3em;
+  }
+
+  .header .close-menu{
+    display: none;
+  }
 
 }
 
@@ -368,4 +435,46 @@ div.container70 .center-wrapper {
 
 .white-text{
   color: #FFFFFF;
+}
+
+
+
+.fade-enter {
+  opacity: 0.01;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.fade-leave {
+  opacity: 1;
+}
+
+.fade-leave.fade-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+.spicy-enter {
+  opacity: .01;
+  transform: scaleX(0) translateY(100px);
+}
+
+.spicy-enter.spicy-enter-active {
+  opacity: 1;
+  transform: scaleX(1) translateY(0);
+  transition: all 500ms ease-in-out;
+}
+
+.spicy-leave {
+  opacity: 1;
+  transform: scaleX(1) translateY(0);
+}
+
+.spicy-leave-active {
+  opacity: 01;
+  transform: scaleX(0) translateY(100px);
+  transition: all 300ms ease-in-out
 }

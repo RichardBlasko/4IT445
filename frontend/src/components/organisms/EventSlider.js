@@ -1,8 +1,8 @@
 import React from 'react';
 
 import {Layout} from '../atoms/Layout';
-import {PageFooter} from '../molecules/PageFooter';
-import {TopNavBar} from '../molecules/TopNavBar';
+import {PageFooter} from './PageFooter';
+import {TopNavBar} from './TopNavBar';
 import {Heading} from "../atoms/Heading";
 import {EventCard} from "../molecules/EventCard";
 import {Row} from "../atoms/Row";
