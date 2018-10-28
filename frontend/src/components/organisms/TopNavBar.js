@@ -1,50 +1,53 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
-import { Layout } from '../atoms/Layout';
-import { Link } from '../atoms/Link';
-import { Nav } from '../atoms/Nav/Nav';
-import { NavBar } from '../atoms/Nav/NavBar';
-import { NavItem } from '../atoms/Nav/NavItem';
-import { NavLink } from '../atoms/Nav/NavLink';
-import { getNumberOfItems } from '../../services/StoryList/reducer';
+import {Layout} from '../atoms/Layout';
+import {Nav} from '../atoms/Nav/Nav';
+import {NavBar} from '../atoms/Nav/NavBar';
+import {NavItem} from '../atoms/Nav/NavItem';
+import {NavLink} from '../atoms/Nav/NavLink';
+import {getNumberOfItems} from '../../services/StoryList/reducer';
 import {FontIcon} from "../atoms/FontIcon";
+import {SearchInput} from "../molecules/SearchInput";
 
-export const TopNavBarRaw = ({ numberOfCartItems }) => (
+export const TopNavBarRaw = ({close}) => (
   <NavBar>
-    <Link className="navbar-brand text-muted" to="/">
-      LOGO
-    </Link>
+    <FontIcon icon="times" className={"mobile-close"}  onClick={close}/>
     <Layout className="navbar-collapse  justify-content-end">
       <Nav className="nav-pills">
-        <NavItem className="nav-item">
+        <NavItem>
           <NavLink exact className="nav-link" to="/">
             Příběhy
           </NavLink>
         </NavItem>
-        <NavItem className="nav-item">
+        <NavItem>
           <NavLink className="nav-link" to="/">
             Prevence
           </NavLink>
         </NavItem>
-        <NavItem className="nav-item">
+        <NavItem>
           <NavLink className="nav-link" to="/">
             Kalendář
           </NavLink>
         </NavItem>
-        <NavItem className="nav-item">
+        <NavItem>
           <NavLink className="nav-link" to="/">
             #PrevenceMáSmysl
           </NavLink>
         </NavItem>
-        <NavItem className="nav-item">
+        <NavItem>
           <NavLink className="nav-link" to="/">
             O projektu
           </NavLink>
         </NavItem>
-        <NavItem className="nav-item">
+        <NavItem>
           <NavLink className="nav-link" to="/">
-            <FontIcon icon="search"/>
+            <SearchInput/>
+          </NavLink>
+        </NavItem>
+        <NavItem onClick={close} className={"close-menu"}>
+          <NavLink className="nav-link" to="#">
+            <FontIcon icon="times"/>
           </NavLink>
         </NavItem>
       </Nav>
