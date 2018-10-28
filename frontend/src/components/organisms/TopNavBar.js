@@ -16,32 +16,32 @@ export const TopNavBarRaw = ({close}) => (
     <Layout className="navbar-collapse  justify-content-end">
       <Nav className="nav-pills">
         <NavItem>
-          <NavLink exact className="nav-link" to="/">
+          <NavLink exact className="nav-link" to="/pribehy">
             Příběhy
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink className="nav-link" to="/">
+          <NavLink className="nav-link" to="/prevence">
             Prevence
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink className="nav-link" to="/">
+          <NavLink className="nav-link" to="/kalendar">
             Kalendář
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink className="nav-link" to="/">
+          <NavLink className="nav-link" to="/socialnisite">
             #PrevenceMáSmysl
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink className="nav-link" to="/">
+          <NavLink className="nav-link" to="/projekt">
             O projektu
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink className="nav-link" to="/">
+          <NavLink className="nav-link" to="#">
             <SearchInput/>
           </NavLink>
         </NavItem>

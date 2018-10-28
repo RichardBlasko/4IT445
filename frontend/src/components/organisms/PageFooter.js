@@ -74,27 +74,32 @@ export class PageFooter extends Component {
               <Column md={12} xs={6}>
                 <List className={""}>
                   <ListItem>
-                    <NavLink exact to="/">
+                    <NavLink exact to="/pribehy">
                       PŘÍBĚHY
                     </NavLink>
                   </ListItem>
                   <ListItem>
-                    <NavLink exact to="/">
+                    <NavLink exact to="/socialnisite">
                       #PREVENCEMASMYSL
                     </NavLink>
                   </ListItem>
                   <ListItem>
-                    <NavLink exact to="/">
+                    <NavLink exact to="/prevence">
                       PREVENCE
                     </NavLink>
                   </ListItem>
                   <ListItem>
-                    <NavLink exact to="/">
+                    <NavLink exact to="/kalendar">
+                      KALENDÁŘ
+                    </NavLink>
+                  </ListItem>
+                  <ListItem>
+                    <NavLink exact to="/diagnozy">
                       DIAGNÓZY
                     </NavLink>
                   </ListItem>
                   <ListItem>
-                    <NavLink exact to="/">
+                    <NavLink exact to="/projekt">
                       O PROJEKTU
                     </NavLink>
                   </ListItem>

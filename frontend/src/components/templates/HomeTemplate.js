@@ -7,9 +7,13 @@ import {EventSlider2} from "../organisms/EventSlider2";
 import {SocialNetworkSlider2} from "../organisms/SocialNetworkSlider2";
 import {ReasonSlider2} from "../organisms/ReasonSlider2";
 
-export const HomeTemplate = ({ title, paragraph }) => (
+import {GENDERS} from "../../mocks/Genders";
+import {ANAMNESIS} from "../../mocks/Anamnes";
+import {STYLES} from "../../mocks/LifeStyle";
+
+export const HomeTemplate = () => (
   <Layout>
-    <MainBlock/>
+    <MainBlock  genders={GENDERS} anamnesis={ANAMNESIS} styles={STYLES}/>
     <StorySlider2/>
     <ReasonSlider2/>
     <EventSlider2/>
