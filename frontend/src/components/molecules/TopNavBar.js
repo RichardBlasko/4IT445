@@ -18,7 +18,7 @@ export const TopNavBarRaw = ({ numberOfCartItems }) => (
     <Layout className="navbar-collapse  justify-content-end">
       <Nav className="nav-pills">
         <NavItem className="nav-item">
-          <NavLink exact className="nav-link" to="/">
+          <NavLink className="nav-link" to="/">
             Příběhy
           </NavLink>
         </NavItem>
@@ -38,7 +38,7 @@ export const TopNavBarRaw = ({ numberOfCartItems }) => (
           </NavLink>
         </NavItem>
         <NavItem className="nav-item">
-          <NavLink className="nav-link" to="/">
+          <NavLink className="nav-link" to="/about">
             O projektu
           </NavLink>
         </NavItem>
