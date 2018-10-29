@@ -5,8 +5,9 @@ import {SelectWithLabel} from "./SelectWithLabel";
 import {InputWithLabel} from "./InputWithLabel";
 import {Button} from "../atoms/Button/Button";
 
+
 export const FilterBox = ({genders, min = 18, max = 120, anamnesis, styles}) => (
-  <form>
+  <form action={"/prevence"}>
     <Row className={"justify-content-center pt-2 mb-3"}>
       <Layout className={"col-md-8"}>
         <Row className={"filter-panel"}>
@@ -19,7 +20,7 @@ export const FilterBox = ({genders, min = 18, max = 120, anamnesis, styles}) => 
             <InputWithLabel
               id="age"
               label="Věk *"
-              placeholder="14"
+              placeholder="24"
               type="number"
               min={min}
               max={max}

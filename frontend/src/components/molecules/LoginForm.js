@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import TextInput from '../molecules/TextInput'
-import { Formik, Form, Field } from 'formik'
+import {Field, Formik} from 'formik'
 import * as Yup from 'yup'
 import isEmpty from 'lodash/isEmpty'
 import {Button} from "../atoms/Button/Button";
 import {Layout} from "../atoms/Layout";
-import  { Redirect } from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
 
 export class LoginForm extends Component {
   render() {
@@ -30,7 +30,7 @@ export class LoginForm extends Component {
 
 
           }}
-          render={({ values, touched, errors, dirty, isSubmitting }) => (
+          render={({values, touched, errors, dirty, isSubmitting}) => (
             <form action={"/admin"}>
               <Field
                 type="text"

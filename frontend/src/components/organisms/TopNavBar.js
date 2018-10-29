@@ -16,7 +16,7 @@ export const TopNavBarRaw = ({close}) => (
   <NavBar>
     <FontIcon icon="times" className={"mobile-close"}  onClick={close}/>
     <Link className="navbar-brand " to="/">
-      <Image src={"/static/img/logo2B.png"} className={"img-fluid"}/> PREVENCE MA SMYSL
+      <Image src={"/static/img/logo2B.png"} className={"img-fluid"}/>
     </Link>
     <Layout className="navbar-collapse  justify-content-end">
       <Nav className="nav-pills">

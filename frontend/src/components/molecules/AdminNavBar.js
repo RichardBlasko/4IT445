@@ -8,6 +8,7 @@ import {NavBar} from '../atoms/Nav/NavBar';
 import {NavItem} from '../atoms/Nav/NavItem';
 import {NavLink} from '../atoms/Nav/NavLink';
 import {getNumberOfItems} from '../../services/StoryList/reducer';
+import {FontIcon} from "../atoms/FontIcon";
 
 export const AdminNavBarRaw = () => (
   <Layout className={"admin"}>
@@ -35,6 +36,11 @@ export const AdminNavBarRaw = () => (
           <NavItem className="nav-item">
             <NavLink className="nav-link" to="/">
               #PrevenceMáSmysl
+            </NavLink>
+          </NavItem>
+          <NavItem className="nav-item">
+            <NavLink className="nav-link" to="/login">
+              <FontIcon icon={"sign-out-alt"}/>
             </NavLink>
           </NavItem>
         </Nav>

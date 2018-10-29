@@ -44,6 +44,13 @@ p{
 .mr-m-2{
   margin-right: -15px;
 }
+.upper{
+  text-transform: uppercase;
+}
+
+.radio-button{
+  margin-right: 10px;
+}
 
 .scroll-up-button{
   background-color: #FFC15E !important;
@@ -259,6 +266,13 @@ div.container70 .center-wrapper {
   border-radius: 0;
   height: 100%;
 }
+.card-radius{
+  border-radius: 0.5em;
+}
+
+.card.shadow{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 .card-img-top{
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -293,6 +307,14 @@ div.container70 .center-wrapper {
   text-align: justify;
 }
 
+
+.tag{
+  background: #56A3A6;
+  padding: 0.2em 0.8em;
+  font-size: 80%;
+  color: #FFFFFF;
+  border-radius: 1em;
+}
 /*Buttons*/
 
 .btn-read{
@@ -324,6 +346,35 @@ div.container70 .center-wrapper {
   text-transform: uppercase;
   margin-top: -23px;
   padding: 11px 22px;
+}
+
+.btn-filter:disabled , .btn-filter.disabled{
+  opacity: 1;
+}
+
+.filter-item{
+  margin-top: 10px;
+}
+/* Slider */
+
+.input-range{
+  width: 85%  !important;
+  margin-top: 10px;
+}
+.input-range__label--min, .input-range__label--max {
+  position: unset !important;
+  bottom: unset !important;
+}
+.input-range__label-container{
+  left: unset !important;
+}
+
+.input-range__label--max .input-range__label-container {
+  left: 92% !important;
+}
+
+.input-range__label--min .input-range__label-container {
+  left: -15% !important;
 }
 
 /* Custom page footer */
@@ -476,6 +527,10 @@ div.container70 .center-wrapper {
 
 .grey{
   background-color: #E7E3E8;
+}
+
+.grey-light{
+  background-color: #f0f0f0;
 }
 
 .blue{

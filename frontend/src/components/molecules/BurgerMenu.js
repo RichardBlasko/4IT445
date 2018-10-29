@@ -35,7 +35,7 @@ export class BurgerMenu extends Component {
         <Row>
           <Column xs={"undefined"}>
             <Link className="navbar-brand " to="/">
-              <Image src={"/static/img/logo2B.png"} className={"img-fluid"}/> PREVENCE MA SMYSL
+              <Image src={"/static/img/logo2B.png"} className={"img-fluid"}/>
             </Link>
           </Column>
           <Layout className="col-md-auto"/>
