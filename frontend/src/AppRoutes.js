@@ -10,6 +10,7 @@ import {SocialNetworkListPage} from "./components/pages/SocialNetworkListPage";
 
 import {AdminHomePage} from "./components/pages/AdminHomePage";
 import {AboutPage} from "./components/pages/AboutPage";
+import {AdminLoginPage} from "./components/pages/AdminLoginPage";
 
 export const AppRoutes = () => (
     <Switch>
@@ -21,5 +22,6 @@ export const AppRoutes = () => (
       <Route path="/diagnozy" exact component={DiagnoseListPage} />
       <Route path="/projekt" exact component={AboutPage} />
       <Route path="/admin" exact component={AdminHomePage} />
+      <Route path="/login" exact component={AdminLoginPage} />
     </Switch>
 );

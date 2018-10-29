@@ -364,6 +364,19 @@ div.container70 .center-wrapper {
 .social-network-footer i {
   padding: 0.5em;
 }
+/* Admin */
+
+.form-wrapper{
+  padding: 2em;
+  background-color: #FFC15E;
+  background: rgba(255,194,93,0.82);
+  color: #56A3A6;
+  font-weight: bold;
+}
+
+.admin-input input{
+  border: 2px solid #56A3A6;
+}
 
 /* Customize container */
 @media (min-width: 768px) {
@@ -411,6 +424,8 @@ div.container70 .center-wrapper {
 
   .menu{
     font-size: 2em;
+    padding-top: 1em;
+    height: 80px
   }
   .navbar-brand{
     display: none;
@@ -473,6 +488,10 @@ div.container70 .center-wrapper {
 
 .blue-text{
   color: #56A3A6;
+}
+
+.red-text{
+  color: #FF0000;
 }
 
 .white-text{
