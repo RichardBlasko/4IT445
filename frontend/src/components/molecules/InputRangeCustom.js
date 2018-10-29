@@ -4,7 +4,6 @@ import 'react-input-range/lib/css/index.css'
 
 import {Layout} from "../atoms/Layout";
 import {Label} from "../atoms/Form/Label";
-import {Input} from "../atoms/Form/Input";
 import {Row} from "../atoms/Row";
 import {Column} from "../atoms/Column";
 

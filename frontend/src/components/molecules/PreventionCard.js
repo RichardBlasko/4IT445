@@ -10,9 +10,6 @@ import {Button} from "../atoms/Button/Button";
 
 export class PreventionCard extends React.Component {
 
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     let {prevention} = this.props;

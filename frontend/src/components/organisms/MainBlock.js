@@ -9,14 +9,11 @@ import {BurgerMenu} from "../molecules/BurgerMenu";
 
 export class MainBlock extends React.Component {
 
-  constructor() {
-    super();
-  }
 
   render() {
-    let {genders, anamnesis, styles, children} = this.props;
+    let {genders, anamnesis, styles} = this.props;
 
-    let name = "panel".replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    let name = "panel".replace(/[[]/, '\\[').replace(/[\]]/, '\\]');
     let regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
     let results = regex.exec(window.location.search);
     let final = results === null ? '1' : decodeURIComponent(results[1].replace(/\+/g, ' '));

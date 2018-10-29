@@ -3,7 +3,6 @@ import {Row} from "../atoms/Row";
 import {Layout} from "../atoms/Layout";
 import {Field, Formik} from 'formik'
 import * as Yup from 'yup'
-import isEmpty from 'lodash/isEmpty'
 import {Button} from "../atoms/Button/Button";
 import {RadioButtonGroup} from "./RadioButtonGroup";
 import {RadioButton} from "./RadioButton";
@@ -11,9 +10,7 @@ import {Column} from "../atoms/Column";
 import {ListInlineItem} from "../atoms/List/ListInlineItem";
 import {ListInline} from "../atoms/List/ListInline";
 import InputRangeCustom from "../molecules/InputRangeCustom";
-import {Select} from "../atoms/Form/Select";
 import {SelectWithLabel} from "./SelectWithLabel";
-import {Input} from "../atoms/Form/Input";
 
 
 export class FilterBoxFormik extends React.Component {
@@ -27,7 +24,7 @@ export class FilterBoxFormik extends React.Component {
   }
 
   render() {
-    let {genders, anamnesis, styles} = this.props;
+    let {anamnesis, styles} = this.props;
 
     return (
       <form>
