@@ -45,7 +45,7 @@ export const StorySlider2 = ({children}) => (
                   <Column lg={12} md={12} sm={12} xs={12} className={"text-center"}>
                     <Layout className={"mt-3"}>
                       <FontIcon icon={"chevron-left"} className={"slider-navigator mr-5 mt-2 white-text"}/>
-                      <NavLink exact to="/">
+                      <NavLink exact to="/pribehy">
                         <Button title="Zobrazit všechny příběhy" variant="all mt-m-2"/>
                       </NavLink>
                       <FontIcon icon={"chevron-right"} className={"slider-navigator ml-5 mt-2 white-text"}/>
