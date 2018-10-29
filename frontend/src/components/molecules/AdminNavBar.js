@@ -37,6 +37,11 @@ export const AdminNavBarRaw = () => (
               #PrevenceMáSmysl
             </NavLink>
           </NavItem>
+          <NavItem className="nav-item">
+            <NavLink className="nav-link" to="/login">
+              Odhlásit se
+            </NavLink>
+          </NavItem>
         </Nav>
       </Layout>
     </NavBar>
