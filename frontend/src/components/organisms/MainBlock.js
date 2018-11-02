@@ -30,20 +30,11 @@ export class MainBlock extends React.Component {
                 className={"orange-text"}>UŠETŘIL STOVKY ZBYTEČNÝCH </span> HODIN
                 U DOKTORA! <br/>TO UŽ ZA TO STOJÍ, <span className={"orange-text"}>NEMYSLÍŠ</span>?
               </Heading>
-              {final === '2' && (
-                <FilterBoxFormik
-                  genders={genders}
-                  anamnesis={anamnesis}
-                  styles={styles}
-                />
-              )}
-              {final === '1' && (
-                <FilterBox
-                  genders={genders}
-                  anamnesis={anamnesis}
-                  styles={styles}
-                />
-              )}
+              <FilterBox
+                genders={genders}
+                anamnesis={anamnesis}
+                styles={styles}
+              />
             </Layout>
           </Layout>
         </Layout>

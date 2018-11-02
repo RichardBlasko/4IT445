@@ -11,6 +11,7 @@ import {ListInlineItem} from "../atoms/List/ListInlineItem";
 import {ListInline} from "../atoms/List/ListInline";
 import InputRangeCustom from "../molecules/InputRangeCustom";
 import {SelectWithLabel} from "./SelectWithLabel";
+import {MultiSelect} from "./MultiSelect";
 
 
 export class FilterBoxFormik extends React.Component {
@@ -99,7 +100,7 @@ export class FilterBoxFormik extends React.Component {
                         name="anamnesis"
                         className={"admin-input form-control"}
                         value={anamnesis}
-                        component={SelectWithLabel}
+                        component={MultiSelect}
                       />
                     </Column>
                     <Column md={3}>
