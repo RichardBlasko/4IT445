@@ -3,8 +3,9 @@ import React from 'react';
 import {Layout} from '../atoms/Layout';
 import {Heading} from "../atoms/Heading";
 import {FilterBox} from "../molecules/FilterBox";
-import {FilterBoxFormik} from "../molecules/FilterBoxFormik";
 import {BurgerMenu} from "../molecules/BurgerMenu";
+import {Paragraph} from "../atoms/Paragraph";
+import {NavLink} from "../atoms/Nav/NavLink";
 
 
 export class MainBlock extends React.Component {
@@ -12,11 +13,6 @@ export class MainBlock extends React.Component {
 
   render() {
     let {genders, anamnesis, styles} = this.props;
-
-    let name = "panel".replace(/[[]/, '\\[').replace(/[\]]/, '\\]');
-    let regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-    let results = regex.exec(window.location.search);
-    let final = results === null ? '1' : decodeURIComponent(results[1].replace(/\+/g, ' '));
 
     return (
       <Layout className="page-background">
@@ -36,6 +32,7 @@ export class MainBlock extends React.Component {
                 styles={styles}
               />
             </Layout>
+
           </Layout>
         </Layout>
       </Layout>)

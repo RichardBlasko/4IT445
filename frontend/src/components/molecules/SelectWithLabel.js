@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {Label} from '../atoms/Form/Label';
 import {FormGroup} from '../atoms/Form/FormGroup';
-import {Select} from "../atoms/Form/Select";
+import Select from "react-select";
 
 export class SelectWithLabel extends Component {
   static propTypes = {
@@ -12,14 +12,16 @@ export class SelectWithLabel extends Component {
     label: PropTypes.string,
   };
 
+
   render() {
-    const { id, type, placeholder, label, value, ...rest } = this.props;
+    const { id, placeholder, label, ...rest } = this.props;
 
     return (
       <FormGroup>
         <Label id={id} label={label} />
         <Select
           id={id}
+          placeholder={placeholder}
           {...rest}
         />
       </FormGroup>

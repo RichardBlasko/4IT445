@@ -38,6 +38,12 @@ p{
   margin: auto auto;
 }
 
+.mt-half{
+  margin-top: 0.4rem !important;
+}
+.mt-m-2{
+  margin-top: -0.3rem;
+}
 .mt-m-2{
   margin-top: -15px;
 }
@@ -184,6 +190,68 @@ p{
   margin: 1em;
 }
 
+
+/* Forms */
+.selectbox {
+  background-color: #f9f9f9;
+  border: 1px solid #e6e6e6;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  padding: 10px 12px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  position: absolute;
+  left: 5%;
+  top: 30px;
+  width: 90%;
+  z-index: 4;
+}
+
+.small-form-controll{
+  height: 30px;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+.input-group-text{
+  background-color: transparent !important;
+  border: none !important;
+  font-size: 2rem;
+  height: 2.5rem;
+  color: #56A3A6;
+  font-weight: bold;
+  padding: 0;
+}
+
+.form-control[readonly] {
+  background-color: transparent !important;
+}
+
+.bmi-input{
+  border: none;
+  font-size: 2rem;
+  height: 2.5rem;
+  color: #56A3A6;
+  font-weight: bold;
+}
+
+.input-range__slider {
+  background: #56A3A6 !important;
+  border: 1px solid #56A3A6 !important;
+}
+.input-range__track--active {
+  background: #56A3A6 !important;
+}
+.life-style-check{
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+
 /* Parts of page*/
 
 .part-50{
@@ -256,6 +324,12 @@ div.container70 .center-wrapper {
   background-color: #FFFFFF;
   min-height: 20px;
   padding: 2em;
+}
+
+.detail-link{
+  color: #56A3A6;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 /* Cards */
@@ -357,25 +431,6 @@ div.container70 .center-wrapper {
 }
 /* Slider */
 
-.input-range{
-  width: 85%  !important;
-  margin-top: 10px;
-}
-.input-range__label--min, .input-range__label--max {
-  position: unset !important;
-  bottom: unset !important;
-}
-.input-range__label-container{
-  left: unset !important;
-}
-
-.input-range__label--max .input-range__label-container {
-  left: 92% !important;
-}
-
-.input-range__label--min .input-range__label-container {
-  left: -15% !important;
-}
 
 /* Custom page footer */
 .footer {
