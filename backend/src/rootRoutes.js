@@ -1,13 +1,9 @@
 import { Router } from 'express';
 
-import productRoutes from './modules/products/routes';
-import
-  contactFormRoutes
-from './modules/contact-form/routes';
+import loginRoutes from './modules/login/routes';
 
 const router = Router();
 
-router.use('/api/products', productRoutes);
-router.use('/api/contactForm', contactFormRoutes);
+router.use('/api/login', loginRoutes);
 
 export default router;
