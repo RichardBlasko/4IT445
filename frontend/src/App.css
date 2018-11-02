@@ -252,6 +252,37 @@ p{
 }
 
 
+.linkmain{
+text-transform: uppercase;
+text-decoration: none;
+color: white;
+font-size: 1.25em;
+font-weight: 600;
+margin-bottom:
+}
+
+.linkprevence{
+text-transform: uppercase;
+text-decoration: none;
+color: black;
+font-size: 1.25em;
+font-weight: 600;
+}
+
+.linkmain:hover {
+text-decoration: none;
+color: white;
+}
+
+.linkprevence:hover {
+text-decoration: none;
+color: black;
+}
+
+
+
+
+
 /* Parts of page*/
 
 .part-50{
