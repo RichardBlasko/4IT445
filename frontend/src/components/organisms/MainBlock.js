@@ -6,6 +6,8 @@ import {FilterBox} from "../molecules/FilterBox";
 import {BurgerMenu} from "../molecules/BurgerMenu";
 import {Paragraph} from "../atoms/Paragraph";
 import {NavLink} from "../atoms/Nav/NavLink";
+import { Link } from "../atoms/Link.js";
+
 
 
 export class MainBlock extends React.Component {
@@ -31,8 +33,11 @@ export class MainBlock extends React.Component {
                 anamnesis={anamnesis}
                 styles={styles}
               />
+              <Layout className="text-center">
+              <NavLink exact to="/prevence" className="linkmain">
+               Zobrazit vše
+              </NavLink>
             </Layout>
-
           </Layout>
         </Layout>
       </Layout>)
