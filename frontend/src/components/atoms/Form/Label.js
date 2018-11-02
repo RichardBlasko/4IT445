@@ -8,8 +8,8 @@ export class Label extends Component {
   };
 
   render() {
-    const { id, label } = this.props;
+    const { id, label, ...rest } = this.props;
 
-    return <label htmlFor={id}>{label}</label>;
+    return <label htmlFor={id} {...rest}>{label}</label>;
   }
 }

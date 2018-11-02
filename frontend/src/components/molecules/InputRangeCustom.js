@@ -6,38 +6,46 @@ import {Layout} from "../atoms/Layout";
 import {Label} from "../atoms/Form/Label";
 import {Row} from "../atoms/Row";
 import {Column} from "../atoms/Column";
+import {Input} from "../atoms/Form/Input";
 
 export default class InputRangeCustom extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      value: 24,
+      value: props.default,
     };
   }
 
+  onChangeValue = (name,value) => {
+    this.setState({value});
+    this.props.onChangeValue(name, value)
+  };
+
+
   render() {
+    const {min, max, label, name} = this.props;
     return (
-      <Layout>
-        <Label label="Věk"/>
+      <Layout className={"form-group"}>
+        <Label label={label} className={"pb-2"}/>
         <Row>
-          <Column md={9}>
+          <Column md={8}>
             <InputRange
-              maxValue={120}
-              minValue={18}
+              maxValue={max}
+              minValue={min}
               value={this.state.value}
-              onChange={value => this.setState({value})}
-              onChangeComplete={value => console.log(value)}/>
+              onChange={(value) => this.onChangeValue(name,value)}
+            />
           </Column>
-          <Column md={3}>
+          <Column md={4}>
             <input
               id="age"
               value={this.state.value}
               type="number"
-              min={18}
-              max={120}
-              onChange={(evt) => this.setState({value: evt.target.value})}
-              className={"float-right mt-2"}
+              min={min}
+              max={max}
+              onChange={(evt) => this.onChangeValue(name,evt.target.value)}
+              className={"float-right mt-m-2 form-control"}
             />
           </Column>
         </Row>
