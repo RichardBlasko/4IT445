@@ -7,23 +7,41 @@ import {ListInlineItem} from "../atoms/List/ListInlineItem";
 import {Paragraph} from "../atoms/Paragraph";
 import {Button} from "../atoms/Button/Button";
 
+import {AdminNewPrevention} from '../molecules/AdminNewPrevention'
 import {PREVENTIONS} from "../../mocks/Preventions";
 import {FontIcon} from "../atoms/FontIcon";
+import ReactModal from "react-modal";
+import Modal from 'react-responsive-modal';
 
 export class AdminPreventionCard extends React.Component {
 
+  constructor() {
+    super();
+    this.state = {
+      isOpen: false,
+    }
+  }
+
+  openHandler = () => {
+    const {isOpen} = this.state;
+    this.setState({
+      isOpen: !isOpen
+    })
+  }
+
   render() {
     // const {preventions} = this.props;
+    const {isOpen} = this.state;
 
     return (
       <Row className={"justify-content-center pt-2 mb-3"}>
         <Layout className={"col-md-10 col-xs-11 card-radius grey-light p-4"}>
-          <table class="table">
-            <thead class="thead-light">
+          <table className="table table-bordered">
+            <thead className="thead-light">
               <tr>
                 <th scope="col">ID</th>
                 <th scope="col">name</th>
-                <th scope="col" colspan="3">Akce</th>
+                <th scope="col" colSpan="3">Akce</th>
               </tr>
             </thead>
             <tbody>
@@ -34,7 +52,7 @@ export class AdminPreventionCard extends React.Component {
                     <tr>
                       <th scope="row">{id}</th>
                       <td>{name}</td>
-                      <td><FontIcon icon={"plus"}/></td>
+                      <td><FontIcon icon={"plus"} onClick={()=>this.openHandler()}/></td>
                       <td><FontIcon icon={"edit"}/></td>
                       <td><FontIcon icon={"minus"}/></td>
                     </tr>
@@ -44,38 +62,15 @@ export class AdminPreventionCard extends React.Component {
             </tbody>
           </table>
         </Layout>
+          <ReactModal className="my-modal justify-content-center"
+            isOpen= {isOpen}
+          >
+          <Button  variant="read" type="submit" onClick={()=>this.openHandler()}>
+            <FontIcon  icon={"times"}/></Button>
+              <AdminNewPrevention/>
+          </ReactModal>
       </Row>
 
     )
   }
 }
-        // <Row className={"justify-content-center pt-2 mb-3"}>
-        //   <Layout className={"col-md-10 col-xs-11 card-radius grey-light p-4"}>
-        //     <table class="table">
-        //       <thead class="thead-light">
-        //         <tr>
-        //           <th scope="col">ID</th>
-        //           <th scope="col">name</th>
-        //           <th scope="col">Akce</th>
-        //         </tr>
-        //       </thead>
-        //       <tbody>
-        //         <tr>
-        //           <th scope="row">1</th>
-        //           <td></td>
-        //           <td>2</td>
-        //         </tr>
-        //         <tr>
-        //           <th scope="row">2</th>
-        //           <td>Jacob</td>
-        //           <td>Thornton</td>
-        //         </tr>
-        //         <tr>
-        //           <th scope="row">3</th>
-        //           <td>Larry</td>
-        //           <td>the Bird</td>
-        //         </tr>
-        //       </tbody>
-        //     </table>
-        //   </Layout>
-        // </Row>)
