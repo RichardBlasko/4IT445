@@ -47,6 +47,7 @@ const modelModules = [
   require('./product'),
   require('./contactform'),
   require('./prevence'),
+  require('./diagnozy'),
 ];
 
 modelModules.forEach(modelModule => {
