@@ -1,3 +1,5 @@
+import { Router } from 'express';
+
 const env = process.env.NODE_ENV || 'development';
 
 const fs = require('fs');
@@ -22,18 +24,25 @@ if (config.use_env_variable) {
   );
 }
 
+let response = "";
 //Test connection
 sequelize
   .authenticate()
   .then(() => {
     console.log('Connection has been established successfully.');
-    throw('GOOD JOB');
+    response = "Complete";
+    //throw('GOOD JOB');
   })
   .catch(err => {
-    //console.error('Unable to connect to the database:', err);
-    throw(err);
+    console.error('Unable to connect to the database:', err);
+    response = "Errorino";
+    //throw(err);
   });
 
+  const router = Router();
+  router.get('/', function(req, res){
+    res.send(response);
+  });
 
 // Add all modules to this array
 const modelModules = [
@@ -55,4 +64,4 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-export default db;
+export default router;
