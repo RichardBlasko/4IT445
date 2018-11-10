@@ -22,6 +22,18 @@ if (config.use_env_variable) {
   );
 }
 
+//Test connection
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log('Connection has been established successfully.');
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
+  });
+
+
+
 // Add all modules to this array
 const modelModules = [
   require('./product'),
