@@ -35,7 +35,7 @@ sequelize
   })
   .catch(err => {
     console.error('Unable to connect to the database:', err);
-    response = "Errorino";
+    response = err;
     //throw(err);
   });
 
