@@ -31,23 +31,22 @@ sequelize
   .then(() => {
     console.log('Connection has been established successfully.');
     response = "Complete";
-    //throw('GOOD JOB');
   })
   .catch(err => {
     console.error('Unable to connect to the database:', err);
     response = err;
-    //throw(err);
   });
-
+/*
   const router = Router();
   router.get('/', function(req, res){
     res.send(response);
-  });
+  });*/
 
 // Add all modules to this array
 const modelModules = [
   require('./product'),
   require('./contactform'),
+  require('./prevence'),
 ];
 
 modelModules.forEach(modelModule => {
@@ -64,4 +63,4 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-export default router;
+export default db;
