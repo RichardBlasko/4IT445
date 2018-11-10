@@ -5,6 +5,8 @@ import {
 } from './loginController';
 
 const router = Router();
-router.get('/login', loginController);
+router.get('/login', function(req, res){
+  res.send("hello world");
+}
 
 export default router;
