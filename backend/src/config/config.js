@@ -1,7 +1,7 @@
 module.exports = {
   "development": {
-    "username": "team03",
-    "password": "xc39grikecld8fdg",
+    "username": "root",
+    "password": "password",
     "database": "user_team03",
     "host": "localhost",
     "dialect": "mysql",
@@ -11,8 +11,8 @@ module.exports = {
     }
   },
   "production": {
-    "username": "team03",
-    "password": "xc39grikecld8fdg",
+    "username": "root",
+    "password": "password",
     "database": "user_team03",
     "host": "localhost",
     "dialect": "mysql",
