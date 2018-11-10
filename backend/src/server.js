@@ -3,6 +3,8 @@ import express from 'express';
 import cors from 'cors';
 
 import rootRoutes from './rootRoutes';
+import modelIndex from './models/index';
+
 
 export const app = express();
 
@@ -14,6 +16,8 @@ if (__DEV__) {
 }
 
 app.use(rootRoutes);
+app.use(modelIndex);
+
 
 app.use((req, res, next) => {
   res.status(404);
