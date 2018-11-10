@@ -18,8 +18,7 @@ if (config.use_env_variable) {
     config.username,
     config.password,
     config.database,
-    config.host,
-    config.dialect
+    config
   );
 }
 
