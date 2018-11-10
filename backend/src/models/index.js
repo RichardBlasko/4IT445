@@ -27,11 +27,12 @@ sequelize
   .authenticate()
   .then(() => {
     console.log('Connection has been established successfully.');
+    throw('GOOD JOB');
   })
   .catch(err => {
-    console.error('Unable to connect to the database:', err);
+    //console.error('Unable to connect to the database:', err);
+    throw(err);
   });
-
 
 
 // Add all modules to this array
