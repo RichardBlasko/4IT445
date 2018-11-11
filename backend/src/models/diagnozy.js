@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
     'Diagnozy',
     {
       nazevDiagnoza: DataTypes.STRING,
-      popisDiagnoza: DataTypes.STRING,
+      popisDiagnoza: DataTypes.TEXT,
     },
     {}
   );

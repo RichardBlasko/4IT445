@@ -3,8 +3,8 @@ module.exports = (sequelize, DataTypes) => {
     'Prevence',
     {
       nazevPrevence: DataTypes.STRING,
-      duvodPrevence: DataTypes.STRING,
-      popisPrevence: DataTypes.STRING,
+      duvodPrevence: DataTypes.TEXT,
+      popisPrevence: DataTypes.TEXT,
       obrazek: DataTypes.STRING,
     },
     {}

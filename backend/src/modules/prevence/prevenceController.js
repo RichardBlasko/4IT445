@@ -5,8 +5,7 @@ export const prevenceController = async (req, res) => {
   res.json({ prevence });
 };
 
-export const createPrevenceController =
-  async (req, res) => {
+export const createPrevenceController =  async (req, res) => {
 
   const newPrevence = await db.Prevence.create(req.body);
 
