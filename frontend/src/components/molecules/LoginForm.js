@@ -38,6 +38,7 @@ export class LoginForm extends Component {
                 label="Email"
                 className={"admin-input"}
                 component={TextInput}
+                 onChange = {(event,newValue) => this.setState({username:newValue})}
               />
               <Field
                 type="password"
@@ -45,6 +46,7 @@ export class LoginForm extends Component {
                 label="Heslo"
                 className={"admin-input"}
                 component={TextInput}
+                onChange = {(event,newValue) => this.setState({password:newValue})}
               />
               <Button
                 type="submit"
@@ -52,6 +54,7 @@ export class LoginForm extends Component {
                 className={"container"}
                 title={"Přihlásit se"}
                 disabled={isSubmitting || !isEmpty(errors) || !dirty}
+                onClick={(event) => this.handleClick(event)}
               />
 
             </form>
