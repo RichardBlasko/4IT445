@@ -5,8 +5,10 @@ import {AdminInfoBlock} from "../organisms/AdminInfoBlock";
 import {AdminNavBar} from "../molecules/AdminNavBar";
 
 export const AdminHomeTemplate = ({ title, paragraph }) => (
-  <Layout>
-    <AdminNavBar/>
-    <AdminInfoBlock/>
+  <Layout className="page-background">
+    <Layout className="page-background-overlay">
+      <AdminNavBar/>
+      <AdminInfoBlock/>
+    </Layout>
   </Layout>
 );
