@@ -1,9 +1,9 @@
 import React from 'react';
 import {Layout} from "../atoms/Layout";
-import {AdminLogin} from "../molecules/AdminLogin";
+import {AdminLoginPage} from "../molecules/AdminLogin";
 
 export const AdminLoginTemplate = () => (
   <Layout>
-    <AdminLogin/>
+    <AdminLoginPage/>
   </Layout>
 );
