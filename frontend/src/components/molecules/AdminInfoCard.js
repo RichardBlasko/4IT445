@@ -24,7 +24,7 @@ export const AdminInfoCard = ({about, number}) => (
             </CardBody>
           </Column>
                 <Row className={"justify-content-center"}>
-                  <Button title={"Pridaj " + about} variant="filter" type="submit"/>
+                  <Button title={"Přidej " + about} variant="admin" type="submit"/>
                 </Row>
       </Layout>
     </Layout>

@@ -25,7 +25,7 @@ export const AdminInfoBlock2 = ({children}) => (
             </Column>
             <Column lg={4} md={4} sm={6} xs={12} className={"mb-2"}>
               <AdminInfoCard
-                about={"Príspevky"}
+                about={"Příspěvky"}
                 number={"13/151"}
               />
             </Column>

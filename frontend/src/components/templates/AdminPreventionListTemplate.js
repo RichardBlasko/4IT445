@@ -24,8 +24,8 @@ export const AdminPreventionListTemplate = ({
   }
 
   return (
-    <Layout className=" page-background">
-      <Layout className="page-background-overlay">
+    <Layout className="adminpage-background">
+      <Layout className="adminpage-background-overlay">
         <AdminNavBar/>
         <AdminPreventionListBlock prevence={prevence} />
       </Layout>

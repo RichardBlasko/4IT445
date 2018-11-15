@@ -31,7 +31,7 @@ export const AppRoutes = () => (
       <Route path="/admin/Diagnózy" exact component={AdminDiagnosisPage} />
       <Route path="/admin/Příběhy" exact component={AdminStoryPage} />
       <Route path="/admin/Události" exact component={AdminEventPage} />
-      <Route path="/admin/Príspevky" exact component={AdminSocialPage} />
+      <Route path="/admin/Příspěvky" exact component={AdminSocialPage} />
       <Route path="/login" exact component={AdminLoginPage} />
     </Switch>
 );

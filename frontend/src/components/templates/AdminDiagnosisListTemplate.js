@@ -24,11 +24,11 @@ export const AdminDiagnosisListTemplate = ({
   }
 
   return (
-    <Layout className="page-background">
-      <Layout className="page-background-overlay">
-        <AdminNavBar/>
-        <AdminDiagnosisListBlock diagnozy={diagnozy} />
-      </Layout>
+  <Layout className="adminpage-background">
+    <Layout className="adminpage-background-overlay">
+      <AdminNavBar/>
+      <AdminDiagnosisListBlock diagnozy={diagnozy} />
     </Layout>
+  </Layout>
   );
 };

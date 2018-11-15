@@ -17,14 +17,14 @@ export class AdminPreventionTable extends React.Component {
 
     return (
           <table className="table table-bordered">
-            <thead className="thead-light">
+            <thead className="blue">
               <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Název</th>
                 <th scope="col" colSpan="2">Akce</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="orange">
               {
                 prevence.map(prevence => {
                     const { id, nazevPrevence, popisPrevence, duvodPrevence } = prevence;
