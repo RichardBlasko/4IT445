@@ -6,8 +6,8 @@ module.exports = (sequelize, DataTypes) => {
       idDiagnoza: DataTypes.INTEGER,
       vekOd: DataTypes.INTEGER,
       vekDo: DataTypes.INTEGER,
-      pohlavi: DataTypes.CHAR,
       periodicita: DataTypes.INTEGER,
+      lecimSeS: DataTypes.BOOLEAN,
     },
     {}
   );
