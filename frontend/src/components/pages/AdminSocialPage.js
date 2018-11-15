@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 
-import {PreventionListTemplate} from '../templates/PreventionListTemplate';
+import {AdminPreventionListTemplate} from '../templates/AdminPreventionListTemplate';
 import {PageWrapper} from "../organisms/PageWrapper";
 import { startFetchPreventions } from '../../services/PreventionList/actions';
 
@@ -13,7 +13,7 @@ import {
   getIsError,
 } from '../../services/PreventionList/reducer';
 
-class PreventionListPageRaw extends Component {
+class AdminSocialPageRaw extends Component {
   componentDidMount() {
     const { startFetchPreventions } = this.props;
     startFetchPreventions();
@@ -24,7 +24,7 @@ class PreventionListPageRaw extends Component {
 
     return (
       <PageWrapper>
-        <PreventionListTemplate
+        <AdminPreventionListTemplate
           isLoading={isLoading}
           isLoaded={isLoaded}
           isError={isError}
@@ -51,7 +51,7 @@ const mapDispatchToProps = {
   startFetchPreventions,
 };
 
-export const PreventionListPage = connect(
+export const AdminSocialPage = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(PreventionListPageRaw);
+)(AdminSocialPageRaw);

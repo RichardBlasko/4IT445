@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 
-import {PreventionListTemplate} from '../templates/PreventionListTemplate';
-import {PageWrapper} from "../organisms/PageWrapper";
+import {AdminPreventionListTemplate} from '../templates/AdminPreventionListTemplate';
+import {AdminPageWrapper} from "../organisms/AdminPageWrapper";
+import {TinyButton as ScrollUpButton} from "react-scroll-up-button";
+import {Layout} from '../atoms/Layout';
 import { startFetchPreventions } from '../../services/PreventionList/actions';
 
 import {
@@ -13,7 +15,7 @@ import {
   getIsError,
 } from '../../services/PreventionList/reducer';
 
-class PreventionListPageRaw extends Component {
+class AdminPreventionPageRaw extends Component {
   componentDidMount() {
     const { startFetchPreventions } = this.props;
     startFetchPreventions();
@@ -23,15 +25,15 @@ class PreventionListPageRaw extends Component {
     const { isLoading, prevence, isLoaded, isError, error } = this.props;
 
     return (
-      <PageWrapper>
-        <PreventionListTemplate
+      <AdminPageWrapper>
+        <AdminPreventionListTemplate
           isLoading={isLoading}
           isLoaded={isLoaded}
           isError={isError}
           prevence={prevence}
           error={error}
         />
-      </PageWrapper>
+      </AdminPageWrapper>
     );
   }
 }
@@ -51,7 +53,7 @@ const mapDispatchToProps = {
   startFetchPreventions,
 };
 
-export const PreventionListPage = connect(
+export const AdminPreventionPage = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(PreventionListPageRaw);
+)(AdminPreventionPageRaw);
