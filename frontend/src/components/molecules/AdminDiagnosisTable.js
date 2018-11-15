@@ -34,7 +34,7 @@ export class AdminDiagnosisTable extends React.Component {
                       <th scope="row">{id}</th>
                       <td>{nazevDiagnoza}</td>
                       <td>
-                        <Link to="/admin/Prevenceformular">
+                        <Link to="/admin/Diagnózy/formular">
                           <FontIcon icon={"edit"}/>
                         </Link>
                       </td>
