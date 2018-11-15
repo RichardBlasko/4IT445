@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 
 import {AdminDiagnosisListTemplate} from '../templates/AdminDiagnosisListTemplate';
-import {PageWrapper} from "../organisms/PageWrapper";
+import {AdminPageWrapper} from "../organisms/AdminPageWrapper";
 import { startFetchDiagnosis } from '../../services/DiagnosisList/actions';
 
 import {
@@ -23,6 +23,7 @@ class AdminDiagnosisPageRaw extends Component {
     const { isLoading, diagnozy, isLoaded, isError, error } = this.props;
 
     return (
+      <AdminPageWrapper>
         <AdminDiagnosisListTemplate
           isLoading={isLoading}
           isLoaded={isLoaded}
@@ -30,6 +31,7 @@ class AdminDiagnosisPageRaw extends Component {
           diagnozy={diagnozy}
           error={error}
         />
+      </AdminPageWrapper>
     );
   }
 }

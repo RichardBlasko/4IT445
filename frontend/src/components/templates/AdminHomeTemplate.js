@@ -6,8 +6,8 @@ import {AdminInfoBlock2} from "../organisms/AdminInfoBlock2";
 import {AdminNavBar} from "../molecules/AdminNavBar";
 
 export const AdminHomeTemplate = ({ title, paragraph }) => (
-  <Layout className="page-background">
-    <Layout className="page-background-overlay">
+    <Layout className="page-background">
+      <Layout className="page-background-overlay ">
       <AdminNavBar/>
       <AdminInfoBlock/>
       <AdminInfoBlock2/>

@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 
 import {AdminPreventionListTemplate} from '../templates/AdminPreventionListTemplate';
-import {PageWrapper} from "../organisms/PageWrapper";
+import {AdminPageWrapper} from "../organisms/AdminPageWrapper";
+import {TinyButton as ScrollUpButton} from "react-scroll-up-button";
+import {Layout} from '../atoms/Layout';
 import { startFetchPreventions } from '../../services/PreventionList/actions';
 
 import {
@@ -23,6 +25,7 @@ class AdminPreventionPageRaw extends Component {
     const { isLoading, prevence, isLoaded, isError, error } = this.props;
 
     return (
+      <AdminPageWrapper>
         <AdminPreventionListTemplate
           isLoading={isLoading}
           isLoaded={isLoaded}
@@ -30,6 +33,7 @@ class AdminPreventionPageRaw extends Component {
           prevence={prevence}
           error={error}
         />
+      </AdminPageWrapper>
     );
   }
 }

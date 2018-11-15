@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 
-import {PreventionListTemplate} from '../templates/PreventionListTemplate';
+import {AdminPreventionListTemplate} from '../templates/AdminPreventionListTemplate';
 import {PageWrapper} from "../organisms/PageWrapper";
 import { startFetchPreventions } from '../../services/PreventionList/actions';
 
@@ -24,7 +24,7 @@ class AdminSocialPageRaw extends Component {
 
     return (
       <PageWrapper>
-        <PreventionListTemplate
+        <AdminPreventionListTemplate
           isLoading={isLoading}
           isLoaded={isLoaded}
           isError={isError}
