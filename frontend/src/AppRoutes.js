@@ -12,6 +12,7 @@ import {AdminHomePage} from "./components/pages/AdminHomePage";
 import {AboutPage} from "./components/pages/AboutPage";
 import {AdminLoginPage} from "./components/pages/AdminLoginPage";
 import {AdminPreventionPage} from "./components/pages/AdminPreventionPage";
+import {AdminDiagnosisPage} from "./components/pages/AdminDiagnosisPage";
 import {AdminStoryPage} from "./components/pages/AdminStoryPage";
 import {AdminEventPage} from "./components/pages/AdminEventPage";
 import {AdminSocialPage} from "./components/pages/AdminSocialPage";
@@ -27,9 +28,10 @@ export const AppRoutes = () => (
       <Route path="/projekt" exact component={AboutPage} />
       <Route path="/admin" exact component={AdminHomePage} />
       <Route path="/admin/Prevence" exact component={AdminPreventionPage} />
+      <Route path="/admin/Diagnózy" exact component={AdminDiagnosisPage} />
       <Route path="/admin/Příběhy" exact component={AdminStoryPage} />
       <Route path="/admin/Události" exact component={AdminEventPage} />
-      <Route path="/admin/Soc.%20sítě" exact component={AdminSocialPage} />
+      <Route path="/admin/Príspevky" exact component={AdminSocialPage} />
       <Route path="/login" exact component={AdminLoginPage} />
     </Switch>
 );
