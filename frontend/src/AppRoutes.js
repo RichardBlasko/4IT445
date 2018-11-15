@@ -17,6 +17,7 @@ import {AdminStoryPage} from "./components/pages/AdminStoryPage";
 import {AdminEventPage} from "./components/pages/AdminEventPage";
 import {AdminSocialPage} from "./components/pages/AdminSocialPage";
 import {AdminPreventionFormPage} from "./components/pages/AdminPreventionFormPage";
+import {AdminDiagnosisFormPage} from "./components/pages/AdminDiagnosisFormPage";
 
 export const AppRoutes = () => (
     <Switch>
@@ -34,6 +35,7 @@ export const AppRoutes = () => (
       <Route path="/admin/Události" exact component={AdminEventPage} />
       <Route path="/admin/Příspěvky" exact component={AdminSocialPage} />
       <Route path="/admin/Prevenceformular" exact component={AdminPreventionFormPage} />
+      <Route path="/admin/Diagnozaformular" exact component={AdminDiagnosisFormPage} />
       <Route path="/login" exact component={AdminLoginPage} />
     </Switch>
 );

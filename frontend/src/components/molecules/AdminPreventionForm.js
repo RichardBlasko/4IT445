@@ -10,6 +10,7 @@ import {Column} from "../atoms/Column";
 import {TextareaWithLabel} from "../molecules/TextareaWithLabel";
 import {MultiSelectWithLabel} from "./MultiSelectWithLabel";
 import {SelectWithLabel} from "./SelectWithLabel";
+import { Link } from '../atoms/Link';
 
 
 export class AdminPreventionForm extends Component {
@@ -265,11 +266,13 @@ export class AdminPreventionForm extends Component {
             </Row>
             <Row>
               <Column xs={12}>
-                <Button
-                title="Uložit"
-                variant="danger"
-                className="float-right"
-                />
+                <Link to="/admin">
+                  <Button
+                  title="Uložit"
+                  variant="danger"
+                  className="float-right"
+                  />
+                </Link>
               </Column>
             </Row>
           </form>

@@ -6,6 +6,7 @@ import {ListInline} from "../atoms/List/ListInline";
 import {ListInlineItem} from "../atoms/List/ListInlineItem";
 import {Paragraph} from "../atoms/Paragraph";
 import {Button} from "../atoms/Button/Button";
+import { Link } from '../atoms/Link';
 
 import {FontIcon} from "../atoms/FontIcon";
 
@@ -32,7 +33,11 @@ export class AdminDiagnosisTable extends React.Component {
                     <tr>
                       <th scope="row">{id}</th>
                       <td>{nazevDiagnoza}</td>
-                      <td><FontIcon icon={"edit"}/></td>
+                      <td>
+                        <Link to="/admin/Prevenceformular">
+                          <FontIcon icon={"edit"}/>
+                        </Link>
+                      </td>
                       <td><FontIcon icon={"times"}/></td>
                     </tr>
                   )
