@@ -20,19 +20,24 @@ export const AdminNavBarRaw = ({close}) => (
     </Link>
       <Layout className="navbar-collapse  justify-content-end">
         <Nav className="nav-pills">
+        <NavItem className="nav-item">
+          <NavLink className="nav-link" to="/admin/Prevence">
+            Prevence
+          </NavLink>
+        </NavItem>
+        <NavItem className="nav-item">
+          <NavLink className="nav-link" to="/admin/Diagnózy">
+            Diagnózy
+          </NavLink>
+        </NavItem>
           <NavItem className="nav-item">
             <NavLink className="nav-link" to="/admin/Příběhy">
               Příběhy
             </NavLink>
           </NavItem>
           <NavItem className="nav-item">
-            <NavLink className="nav-link" to="/admin/Prevence">
-              Prevence
-            </NavLink>
-          </NavItem>
-          <NavItem className="nav-item">
-            <NavLink className="nav-link" to="/admin/Soc.%20sítě">
-              #PrevenceMáSmysl
+            <NavLink className="nav-link" to="/admin/Príspevky">
+              Příspěvky
             </NavLink>
           </NavItem>
           <NavItem className="nav-item">

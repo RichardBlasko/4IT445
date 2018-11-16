@@ -6,6 +6,7 @@ import {ListInline} from "../atoms/List/ListInline";
 import {ListInlineItem} from "../atoms/List/ListInlineItem";
 import {Paragraph} from "../atoms/Paragraph";
 import {Button} from "../atoms/Button/Button";
+import { Link } from '../atoms/Link';
 
 import {FontIcon} from "../atoms/FontIcon";
 
@@ -17,14 +18,14 @@ export class AdminPreventionTable extends React.Component {
 
     return (
           <table className="table table-bordered">
-            <thead className="thead-light">
+            <thead className="blue">
               <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Název</th>
                 <th scope="col" colSpan="2">Akce</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="orange">
               {
                 prevence.map(prevence => {
                     const { id, nazevPrevence, popisPrevence, duvodPrevence } = prevence;
@@ -32,7 +33,11 @@ export class AdminPreventionTable extends React.Component {
                     <tr>
                       <th scope="row">{id}</th>
                       <td>{nazevPrevence}</td>
-                      <td><FontIcon icon={"edit"}/></td>
+                      <td>
+                        <Link to="/admin/Prevence/formular">
+                          <FontIcon icon={"edit"}/>
+                        </Link>
+                      </td>
                       <td><FontIcon icon={"times"}/></td>
                     </tr>
                   )
