@@ -3,6 +3,7 @@ import React from 'react';
 import {Layout} from '../atoms/Layout';
 import {Row} from "../atoms/Row";
 import {Button} from "../atoms/Button/Button";
+import { Link } from '../atoms/Link';
 import {AdminPreventionTable} from "../molecules/AdminPreventionTable";
 
 export const AdminPreventionListBlock = ({
@@ -17,8 +18,10 @@ export const AdminPreventionListBlock = ({
       </Layout>
     </Row>
     <Row className={"justify-content-center  pt-2 mb-3"}>
-      <Layout className={"col-md-3 col-xs-3 card-radius p-4"}>
+      <Layout className={"col-md-2 col-xs-2 card-radius p-4"}>
+      <Link to={"/admin/Prevence/formular"}>
         <Button title={"Přidej Prevence"} variant="form" type="submit"/>
+      </Link>
       </Layout>
     </Row>
   </Layout>

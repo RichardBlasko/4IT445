@@ -19,8 +19,8 @@ import {Image} from "../atoms/Image";
 export class AdminPageFooter extends Component {
   render() {
     return (
-      <Layout className="footer ">
-        <Column md={4} xs={11} >
+      <Layout className="footer">
+        <Column md={4} xs={11}>
           <Image src={"/static/img/logo09.png"} alt={"Logo"} className={"img-fluid"}/>
           <Heading level={5} >Admin module</Heading>
         </Column>
