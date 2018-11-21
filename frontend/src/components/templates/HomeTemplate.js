@@ -6,6 +6,7 @@ import {StorySlider} from "../organisms/StorySlider";
 import {EventSlider} from "../organisms/EventSlider";
 import {SocialNetworkSlider} from "../organisms/SocialNetworkSlider";
 import {ReasonSlider} from "../organisms/ReasonSlider";
+import {PartnerProjectSlider} from "../organisms/PartnerProjectSlider";
 
 import {GENDERS} from "../../mocks/Genders";
 import {ANAMNESIS} from "../../mocks/Anamnes";
@@ -18,5 +19,6 @@ export const HomeTemplate = () => (
     <ReasonSlider/>
     <EventSlider/>
     <SocialNetworkSlider/>
+    <PartnerProjectSlider/>
   </Layout>
 );

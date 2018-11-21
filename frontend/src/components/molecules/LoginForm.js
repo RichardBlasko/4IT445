@@ -53,7 +53,6 @@ export class LoginForm extends Component {
                 title={"Přihlásit se"}
                 disabled={isSubmitting || !isEmpty(errors) || !dirty}
               />
-
             </form>
           )}
         />
