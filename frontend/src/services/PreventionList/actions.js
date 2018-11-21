@@ -22,7 +22,7 @@ export const startFetchPreventions = () => (dispatch, getState, { api }) => {
   dispatch(fetchPreventions());
 
   api
-    .get('prevence')
+    .get('http://dev.backend.team03.vse.handson.pro/api/prevence')
     .then(({ data }) => {
       const { prevence } = data;
       dispatch(fetchPreventionsSuccess(prevence));

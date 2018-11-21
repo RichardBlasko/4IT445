@@ -1,5 +1,6 @@
 import db from '../../models/';
 
+
 export const diagnozyController = async (req, res) => {
   const diagnozy = await db.Diagnozy.findAll({});
   res.json({ diagnozy });
@@ -44,4 +45,23 @@ export const deleteDiagnozyController = async (req, res) => {
         .catch(function (error){
             res.status(500).json(error);
         });
+};
+
+export const updateDiagnozyController = async (req, res) => {
+  const responses = await db.sequelize.transaction(transaction =>
+    Promise.all(
+      req.body.items.map(item =>
+        db.Diagnozy.update(
+          {
+            nazevDiagnoza: item.nazevDiagnoza,
+            popisDiagnoza: item.popisDiagnoza
+          },
+          { where: { id: item.id }, transaction }
+        )
+      )
+    )
+  );
+
+  console.log("Done");
+  res.status(200).json({ message: responses });
 };

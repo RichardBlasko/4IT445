@@ -8,6 +8,7 @@ import {Column} from "../atoms/Column";
 import {Button} from "../atoms/Button/Button";
 import {Row} from "../atoms/Row";
 import {NavLink} from "../atoms/Nav/NavLink";
+import { Link } from '../atoms/Link';
 
 export const AdminInfoCard = ({about, number}) => (
   <Layout className={"card grey"}>
@@ -24,7 +25,9 @@ export const AdminInfoCard = ({about, number}) => (
             </CardBody>
           </Column>
                 <Row className={"justify-content-center"}>
+                <Link to={"/admin/" + about + "/formular"}>
                   <Button title={"Přidej " + about} variant="admin" type="submit"/>
+                </Link>
                 </Row>
       </Layout>
     </Layout>
