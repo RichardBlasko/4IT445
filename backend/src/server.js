@@ -60,7 +60,7 @@ var sessionChecker = (req, res, next) => {
 
 // route for Home-Page
 app.get('/', sessionChecker, (req, res) => {
-    res.redirect('/login');
+    res.redirect('/login_prototype');
 });
 
 
@@ -92,12 +92,12 @@ app.route('/signup')
 
 
 // route for user Login
-app.route('/login')
+app.route('/login_prototype')
     .get(sessionChecker, (req, res) => {
         //res.sendFile(__dirname + '/../public/login.html');
         //res.sendFile(path.join(__dirname, '../public', 'login.html'));
         //res.sendFile('../public/login.html', {root: __dirname});
-        res.sendFile('public/login.html', {root: path.dirname(__dirname)});
+        res.sendFile('public/login_prototype.html', {root: path.dirname(__dirname)});
     })
     .post((req, res) => {
         var login = req.body.login,
@@ -105,9 +105,9 @@ app.route('/login')
 
         modelIndex.Users.findOne({ where: { login: login } }).then(function (Users) {
             if (!Users) {
-                res.redirect('/login');
+                res.redirect('/login_prototype');
             } else if (!Users.validPassword(password)) {
-                res.redirect('/login');
+                res.redirect('/login_prototype');
             } else {
                 req.session.Users = Users.dataValues;
                 res.redirect('/dashboard');
@@ -124,7 +124,7 @@ app.get('/dashboard', (req, res) => {
         //res.sendFile('../public/dashboard.html', {root: __dirname});
         res.sendFile('public/dashboard.html', {root: path.dirname(__dirname)});
     } else {
-        res.redirect('/login');
+        res.redirect('/login_prototype');
     }
 });
 
@@ -135,7 +135,7 @@ app.get('/logout', (req, res) => {
         res.clearCookie('Users_sid');
         res.redirect('/');
     } else {
-        res.redirect('/login');
+        res.redirect('/login_prototype');
     }
 });
 
