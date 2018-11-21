@@ -484,7 +484,6 @@ div.container70 .center-wrapper {
   color: #ffffff;
   font-size: 1.8em;
   text-transform: uppercase;
-  margin-top: -23px;
   padding: 11px 22px;
 }
 
@@ -546,6 +545,26 @@ div.container70 .center-wrapper {
   padding: 0.5em;
 }
 /* Admin */
+.adminForm {
+  padding: 20px;
+  color: "black";
+  border-top: 1px solid #e5e5e5;
+  background-color: #3D3B30;
+}
+
+.adminForm a {
+  color: #FFC15E;
+  font-weight: lighter;
+  font-size: 1.1em;
+}
+
+.adminForm .form-control{
+  border-color: #FFC15E;
+}
+
+.adminForm .form-control:focus{
+  background-color: #FFC15E;
+}
 
 .form-wrapper{
   padding: 2em;
