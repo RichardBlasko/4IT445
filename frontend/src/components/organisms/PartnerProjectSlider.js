@@ -22,6 +22,7 @@ export const PartnerProjectSlider = ({children}) => (
         autoplay={true}
         autoplayInterval={7000}
         width={"85%"}
+        wrapAround = {true}
     >
       <img src="https://a57ed064b59d6d24a0db-e6a144f900fc09b8b2fc3bba00c88f87.ssl.cf3.rackcdn.com/mediamarket-cz-sk/1014/avon_web_fandime_zenam_cz_04_03.jpg" />
       <img src="https://a57ed064b59d6d24a0db-e6a144f900fc09b8b2fc3bba00c88f87.ssl.cf3.rackcdn.com/mediamarket-cz-sk/1014/avon_web_fandime_zenam_cz_04_03.jpg" />
