@@ -1,0 +1,633 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2018-11-22T20:58:05.163Z",
+	"__export_source": "insomnia.desktop.app:v6.2.0",
+	"resources": [
+		{
+			"_id": "wrk_706bdbc874a042468a49b4f0a894b225",
+			"created": 1542215883006,
+			"description": "",
+			"modified": 1542215883006,
+			"name": "Insomnia",
+			"parentId": null,
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_d535d8dbfe1349678807eae2ef6aa134",
+			"color": null,
+			"created": 1542215883039,
+			"data": {},
+			"isPrivate": false,
+			"metaSortKey": 1542215883039,
+			"modified": 1542311611730,
+			"name": "New Environment",
+			"parentId": "wrk_706bdbc874a042468a49b4f0a894b225",
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_4e5123bdcb35408ab55308e15c2e8349",
+			"cookies": [
+				{
+					"creation": "2018-11-15T19:29:00.220Z",
+					"domain": "dev.backend.team03.vse.handson.pro",
+					"hostOnly": true,
+					"id": "368801109002719",
+					"key": "_passenger_route",
+					"lastAccessed": "2018-11-15T19:56:31.613Z",
+					"path": "/",
+					"value": "1484784697"
+				}
+			],
+			"created": 1542215883041,
+			"modified": 1542311791613,
+			"name": "Default Jar",
+			"parentId": "wrk_706bdbc874a042468a49b4f0a894b225",
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "fld_04823166b07f40968d1eaf89eab05fbe",
+			"created": 1542311470188,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1542311470188,
+			"modified": 1542311470188,
+			"name": "Diagnozy",
+			"parentId": "wrk_706bdbc874a042468a49b4f0a894b225",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_90157cbc6f814a7a8de2e1dcb4cefcf4",
+			"created": 1542725380898,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1542725380898,
+			"modified": 1542725380898,
+			"name": "Prevence",
+			"parentId": "wrk_706bdbc874a042468a49b4f0a894b225",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_ddc5f4d82da242fe816304dac8171418",
+			"created": 1542727647718,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1542727647718,
+			"modified": 1542727647718,
+			"name": "Vysledky",
+			"parentId": "wrk_706bdbc874a042468a49b4f0a894b225",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_1bd0e2d41dc544db9f99a44d39038d8f",
+			"created": 1542901913799,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1542901913799,
+			"modified": 1542901913799,
+			"name": "Partneri",
+			"parentId": "wrk_706bdbc874a042468a49b4f0a894b225",
+			"_type": "request_group"
+		},
+		{
+			"_id": "env_ddff7560a6294e53beaeae809c5caed6",
+			"color": null,
+			"created": 1542311565325,
+			"data": {
+				"url": "localhost:3030/api"
+			},
+			"isPrivate": false,
+			"metaSortKey": 1542311565325,
+			"modified": 1542311757652,
+			"name": "local",
+			"parentId": "env_d535d8dbfe1349678807eae2ef6aa134",
+			"_type": "environment"
+		},
+		{
+			"_id": "env_51e04c1d913a42ca9379f141a0233960",
+			"color": null,
+			"created": 1542311729619,
+			"data": {
+				"url": "http://dev.backend.team03.vse.handson.pro/api"
+			},
+			"isPrivate": false,
+			"metaSortKey": 1542311729619,
+			"modified": 1542311789314,
+			"name": "handson.pro",
+			"parentId": "env_d535d8dbfe1349678807eae2ef6aa134",
+			"_type": "environment"
+		},
+		{
+			"_id": "req_d357ca76d62242d88987abef1d2cc8bf",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"items\":\n\t[\n\t\t{\n\t\t\t\"id\":\"2\",\n\t\t\t\"nazevDiagnoza\":\"Check89999\",\n\t\t\t\"popisDiagnoza\":\"Zvsdmla2\"\n\t\t},\n\t\t{\n\t\t\t\"id\":\"3\",\n\t\t\t\"nazevDiagnoza\":\"check76\",\n\t\t\t\"popisDiagnoza\":\"Zmenaaaaa\"\n\t\t}\n\t]\n}"
+			},
+			"created": 1542311060679,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_d992547ddffc4cda98887a50538c94b0",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1542310134761,
+			"method": "PUT",
+			"modified": 1542725483122,
+			"name": "editDiagnoza",
+			"parameters": [],
+			"parentId": "fld_04823166b07f40968d1eaf89eab05fbe",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ url  }}/diagnozy",
+			"_type": "request"
+		},
+		{
+			"_id": "req_aaf8ddb02d634ff79a52e5de104d656d",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1542311172062,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_d63bf197bac5418f8c112d4c30aac6db",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1542310134811,
+			"method": "GET",
+			"modified": 1542916729605,
+			"name": "getDiagnozy",
+			"parameters": [],
+			"parentId": "fld_04823166b07f40968d1eaf89eab05fbe",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ url  }}/diagnozy",
+			"_type": "request"
+		},
+		{
+			"_id": "req_93c3e7a910c94bbd80c47f8b2dc57939",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"nazevDiagnoza\":\"Moje1\",\n\t\"popisDiagnoza\":\"lul\"\n}"
+			},
+			"created": 1542311209381,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_d63bf197bac5418f8c112d4c30aac6db",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1542310134786,
+			"method": "POST",
+			"modified": 1542733683908,
+			"name": "postDiagnozy",
+			"parameters": [],
+			"parentId": "fld_04823166b07f40968d1eaf89eab05fbe",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ url  }}/diagnozy",
+			"_type": "request"
+		},
+		{
+			"_id": "req_b1e66a38d2fe40f480a585e560bb8cbf",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n      \"id\": 2\n}"
+			},
+			"created": 1542916678122,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_d63bf197bac5418f8c112d4c30aac6db",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1542310134711,
+			"method": "DELETE",
+			"modified": 1542917209794,
+			"name": "deleteDiagnozy",
+			"parameters": [],
+			"parentId": "fld_04823166b07f40968d1eaf89eab05fbe",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ url  }}/diagnozy",
+			"_type": "request"
+		},
+		{
+			"_id": "req_96b1bb3d807b4931bd3db4f07d934ab6",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1542310134761,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_d63bf197bac5418f8c112d4c30aac6db",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1542310134711,
+			"method": "GET",
+			"modified": 1542916746623,
+			"name": "getPrevence",
+			"parameters": [],
+			"parentId": "fld_90157cbc6f814a7a8de2e1dcb4cefcf4",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ url  }}/prevence",
+			"_type": "request"
+		},
+		{
+			"_id": "req_0b8bccc14670471da2f35ddff7419982",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"nazevPrevence\":\"Mdfgdfg\",\n\t\"duvodPrevence\":\"lul\",\n\t\"popisPrevence\":\"lul2\",\n\t\"obrazek\":\"xxx.jpg\",\n\t\"pohlavi\":\"m\"\n}"
+			},
+			"created": 1542310394763,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_d63bf197bac5418f8c112d4c30aac6db",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1542310134661,
+			"method": "POST",
+			"modified": 1542916963114,
+			"name": "postPrevence",
+			"parameters": [],
+			"parentId": "fld_90157cbc6f814a7a8de2e1dcb4cefcf4",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ url  }}/prevence",
+			"_type": "request"
+		},
+		{
+			"_id": "req_dad43b03e4a24849bb27ac3e0cccc519",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"items\":\n\t[\n\t\t{\n      \"id\": 3,\n      \"nazevPrevence\": \"Zmena1\",\n      \"duvodPrevence\": \"Zmena56\",\n      \"popisPrevence\": \"Zmena89\",\n      \"pohlavi\": \"f\",\n      \"obrazek\": \"Zmena89fs\"\n    },\n    {\n      \"id\": 4,\n      \"nazevPrevence\": \"Zmenafff\",\n      \"duvodPrevence\": \"Zmenablabla\",\n      \"popisPrevence\": \"lollollol\",\n      \"pohlavi\": \"m\",\n      \"obrazek\": null\n    }\n\t]\n}"
+			},
+			"created": 1542725400803,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_d992547ddffc4cda98887a50538c94b0",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1542310134611,
+			"method": "PUT",
+			"modified": 1542728355582,
+			"name": "editPrevence",
+			"parameters": [],
+			"parentId": "fld_90157cbc6f814a7a8de2e1dcb4cefcf4",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ url  }}/prevence",
+			"_type": "request"
+		},
+		{
+			"_id": "req_f62f93a647b24d4393792473428fdd3f",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n      \"id\": 3\n}"
+			},
+			"created": 1542916633600,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_d63bf197bac5418f8c112d4c30aac6db",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1542310134561,
+			"method": "DELETE",
+			"modified": 1542917207692,
+			"name": "deletePrevence",
+			"parameters": [],
+			"parentId": "fld_90157cbc6f814a7a8de2e1dcb4cefcf4",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ url  }}/prevence",
+			"_type": "request"
+		},
+		{
+			"_id": "req_c7baad43c72e4ddebef1a73259c5aaf1",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1542727704460,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_d63bf197bac5418f8c112d4c30aac6db",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1542310134686,
+			"method": "GET",
+			"modified": 1542916961750,
+			"name": "getVysledky",
+			"parameters": [],
+			"parentId": "fld_ddc5f4d82da242fe816304dac8171418",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ url  }}/vysledky",
+			"_type": "request"
+		},
+		{
+			"_id": "req_06982b0d6639408da6509559fd63aa24",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n      \"idPrevence\": 2,\n      \"idDiagnoza\": null,\n      \"vekOd\": 10,\n      \"vekDo\": 55,\n      \"periodicita\": 18,\n      \"lecimSeS\": null\n}"
+			},
+			"created": 1542727753958,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_d63bf197bac5418f8c112d4c30aac6db",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1542310134636,
+			"method": "POST",
+			"modified": 1542916829575,
+			"name": "postVysledky",
+			"parameters": [],
+			"parentId": "fld_ddc5f4d82da242fe816304dac8171418",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ url  }}/vysledky",
+			"_type": "request"
+		},
+		{
+			"_id": "req_f6159cc2f7f544fcb5d77523a14bf304",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"items\":\n\t[\n\t\t{\n      \"id\": 2,\n      \"idPrevence\": 1,\n      \"idDiagnoza\": 5,\n      \"vekOd\": 666,\n      \"vekDo\": null,\n      \"periodicita\": null,\n      \"lecimSeS\": 98\n    },\n    {\n      \"id\": 4,\n      \"idPrevence\": 1,\n      \"idDiagnoza\": 1,\n      \"vekOd\": 12,\n      \"vekDo\": 100,\n      \"periodicita\": 5,\n      \"lecimSeS\": 99\n    },\n    {\n      \"id\": 5,\n      \"idPrevence\": 5,\n      \"idDiagnoza\": null,\n      \"vekOd\": 12,\n      \"vekDo\": 66,\n      \"periodicita\": 12,\n      \"lecimSeS\": 100\n    }\n\t]\n}"
+			},
+			"created": 1542728101154,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_d992547ddffc4cda98887a50538c94b0",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1542310134586,
+			"method": "PUT",
+			"modified": 1542917703796,
+			"name": "editVysledky",
+			"parameters": [],
+			"parentId": "fld_ddc5f4d82da242fe816304dac8171418",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ url  }}/vysledky",
+			"_type": "request"
+		},
+		{
+			"_id": "req_908222c30a0d43f6b947e0399100da96",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n      \"id\": 2\n}"
+			},
+			"created": 1542915533848,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_d63bf197bac5418f8c112d4c30aac6db",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1542310134536,
+			"method": "DELETE",
+			"modified": 1542917704736,
+			"name": "deleteVysledky",
+			"parameters": [],
+			"parentId": "fld_ddc5f4d82da242fe816304dac8171418",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ url  }}/vysledky",
+			"_type": "request"
+		},
+		{
+			"_id": "req_848de35a187c4e7dab36a37d7ffd0224",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1542916756667,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_d63bf197bac5418f8c112d4c30aac6db",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1542310134673.5,
+			"method": "GET",
+			"modified": 1542918385758,
+			"name": "getPartneri",
+			"parameters": [],
+			"parentId": "fld_1bd0e2d41dc544db9f99a44d39038d8f",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ url  }}/partneri",
+			"_type": "request"
+		},
+		{
+			"_id": "req_6e2e1c31380441d5905c38947dfd7844",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n      \"nazevPartner\": \"Mdfgdfg\",\n      \"popisPartner\": \"Mdsgs\",\n      \"kontaktPartner\": \"www.partner.cz\",\n      \"logoPartner\": \"logologo\",\n      \"idDiagnoza\": 1\n}"
+			},
+			"created": 1542916831535,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_d63bf197bac5418f8c112d4c30aac6db",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1542310134623.5,
+			"method": "POST",
+			"modified": 1542918272789,
+			"name": "postPartneri",
+			"parameters": [],
+			"parentId": "fld_1bd0e2d41dc544db9f99a44d39038d8f",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ url  }}/partneri",
+			"_type": "request"
+		},
+		{
+			"_id": "req_817efaba86214a42b3b8c4de52be87b2",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n      \"id\": 1\n}"
+			},
+			"created": 1542917104315,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_d63bf197bac5418f8c112d4c30aac6db",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1542310134573.5,
+			"method": "DELETE",
+			"modified": 1542918391736,
+			"name": "deletePartneri",
+			"parameters": [],
+			"parentId": "fld_1bd0e2d41dc544db9f99a44d39038d8f",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ url  }}/partneri",
+			"_type": "request"
+		},
+		{
+			"_id": "req_dd7f5f17ed474035892481c0a17dbdef",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"items\":\n\t[\n\t\t{\n      \"id\": 2,\n      \"nazevPartner\": \"Zmena\",\n      \"popisPartner\": \"Zmenaaaaa\",\n      \"kontaktPartner\": \"dngklsng3\",\n      \"logoPartner\": \"loglogo\",\n      \"idDiagnoza\": 2\n    }\n\t]\n}"
+			},
+			"created": 1542918235939,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_d992547ddffc4cda98887a50538c94b0",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1542310134598.5,
+			"method": "PUT",
+			"modified": 1542918389463,
+			"name": "editPartneri",
+			"parameters": [],
+			"parentId": "fld_1bd0e2d41dc544db9f99a44d39038d8f",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ url  }}/partneri",
+			"_type": "request"
+		}
+	]
+}
