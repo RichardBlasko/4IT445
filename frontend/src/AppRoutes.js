@@ -18,6 +18,7 @@ import {AdminEventPage} from "./components/pages/AdminEventPage";
 import {AdminSocialPage} from "./components/pages/AdminSocialPage";
 import {AdminPreventionFormPage} from "./components/pages/AdminPreventionFormPage";
 import {AdminDiagnosisFormPage} from "./components/pages/AdminDiagnosisFormPage";
+import {PartnersPage} from "./components/pages/PartnersPage";
 
 export const AppRoutes = () => (
     <Switch>
@@ -37,5 +38,6 @@ export const AppRoutes = () => (
       <Route path="/admin/Prevence/formular" exact component={AdminPreventionFormPage} />
       <Route path="/admin/Diagnózy/formular" exact component={AdminDiagnosisFormPage} />
       <Route path="/login" exact component={AdminLoginPage} />
+      <Route path="/partneri" exact component={PartnersPage} />
     </Switch>
 );

@@ -99,6 +99,11 @@ export class PageFooter extends Component {
                     </NavLink>
                   </ListItem>
                   <ListItem>
+                    <NavLink exact to="/partneri">
+                      PARTNEŘI
+                    </NavLink>
+                  </ListItem>
+                  <ListItem>
                     <NavLink exact to="/projekt">
                       O PROJEKTU
                     </NavLink>
