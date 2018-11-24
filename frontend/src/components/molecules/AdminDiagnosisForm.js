@@ -27,7 +27,7 @@ export class AdminDiagnosisForm extends Component {
             <Heading level={3} className={"pb-3"}>Diagnóza</Heading>
             <form>
               <Row>
-                <Layout className="col-md-6">
+                <Layout className="col-md-10">
                   <InputWithLabel
                     id="Název"
                     label="Název diagnózy"
@@ -36,19 +36,7 @@ export class AdminDiagnosisForm extends Component {
                   <TextareaWithLabel
                     id="Popis"
                     label="Popis diagnózy"
-                    type='text'
-                  />
-                </Layout>
-                <Layout className="col-md-6">
-                  <MultiSelectWithLabel
-                    id="preventions"
-                    label="Výskyt prevencí"
-                    multi
-                    options={preventions.map(preventions => {
-                      return {label: preventions.name, value: preventions.name}
-                    })}
-                    name="preventions"
-                    placeholder="Seznam prevencí"
+                    placeholder="Zde uveďte popis diagnózy"
                   />
                 </Layout>
                 <Column xs={12}>
@@ -66,9 +54,6 @@ export class AdminDiagnosisForm extends Component {
         </Column>
       </Row>
     </Layout>
-
-
-
   );
  }
 }
