@@ -58,7 +58,7 @@ export class FilterBox extends React.Component {
       <Layout>
         <Row className={"justify-content-center mb-3"}>
           <Column xs={12}>
-            <Heading level={6} className={"orange-text text-center mt-3"}>Životní styl</Heading>
+            <Heading level={4} className={"orange-text text-center mt-3"}>Životní styl</Heading>
           </Column>
         </Row>
         <Row className={"justify-content-center mb-3"}>

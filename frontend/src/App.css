@@ -267,7 +267,7 @@ p{
   padding-left: 35px;
   margin-bottom: 12px;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 1.2rem;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -290,12 +290,12 @@ p{
   left: 0;
   height: 25px;
   width: 25px;
-  background-color: #eee;
+  background-color: #ccc;
 }
 
 /* On mouse-over, add a grey background color */
 .life-style-check:hover input ~ .checkmark {
-  background-color: #ccc;
+  background-color: #56A3A6;
 }
 
 /* When the checkbox is checked, add a blue background */
@@ -443,6 +443,7 @@ div.container70 .center-wrapper {
   background-color: #FFFFFF;
   min-height: 20px;
   padding: 2em;
+  font-size: 1.2rem;
 }
 
 .detail-link{
