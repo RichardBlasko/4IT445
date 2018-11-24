@@ -58,7 +58,7 @@ export class FilterBox extends React.Component {
       <Layout>
         <Row className={"justify-content-center mb-3"}>
           <Column xs={12}>
-            <Heading level={6} className={"orange-text text-center mt-3"}>Životní styl</Heading>
+            <Heading level={4} className={"orange-text text-center mt-3"}>Životní styl</Heading>
           </Column>
         </Row>
         <Row className={"justify-content-center mb-3"}>
@@ -82,7 +82,7 @@ export class FilterBox extends React.Component {
               onChangeValue={this.setterHandler}
             />
           </Column>
-          <Column md={2} className={"blue-text text-center pt-3"}>
+          <Column md={3} className={"blue-text text-center pt-4"}>
             <div className="input-group mb-3">
               <div className="input-group-prepend">
                 <span className="input-group-text blue-text" id="basic-addon1">BMI</span>
@@ -92,10 +92,11 @@ export class FilterBox extends React.Component {
           </Column>
         </Row>
         <Row className={"justify-content-center m-2 mb-3"}>
-          <div className="form-check life-style-check">
-            <input className="form-check-input" type="checkbox" value="" id="defaultCheck1"/>
-            <label className="form-check-label" htmlFor="defaultCheck1">
-              Kuřák
+          <div className="custom-control custom-checkbox">
+            <input className="custom-control-input" type="checkbox" value="" id="customCheck1"/>
+            <label class="life-style-check">Kuřák
+              <input type="checkbox" />
+              <span class="checkmark"></span>
             </label>
           </div>
         </Row>
@@ -179,4 +180,3 @@ export class FilterBox extends React.Component {
     )
   }
 };
-

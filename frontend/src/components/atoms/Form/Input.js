@@ -30,7 +30,7 @@ export class Input extends Component {
         placeholder={placeholder}
         defaultValue={value || ''}
         {...rest}
-        onChange={this.onChange}
+        //onChange={this.onChange}
       />
     );
   }
