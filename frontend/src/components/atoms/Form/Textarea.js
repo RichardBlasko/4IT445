@@ -20,17 +20,18 @@ export class Textarea extends Component {
   };
 
   render() {
-    const { id, placeholder, rows, value, ...rest } = this.props;
+    const { id, type, placeholder, rows, value, ...rest } = this.props;
 
     return (
       <textarea
+        type={type || 'text'}
         className="form-control"
         id={id}
         placeholder={placeholder}
         rows={rows || 5}
         value={value || ''}
         {...rest}
-        onChange={this.onChange}
+        //onChange={this.onChange}
       />
     );
   }
