@@ -56,7 +56,7 @@ export class FilterBox extends React.Component {
     const bmi =  this.countBMI(height, weight);
     return (
       <Layout>
-        <Row className={"justify-content-center mb-3"}>
+        <Row className={"justify-content-center  mb-3"}>
           <Column xs={12}>
             <Heading level={6} className={"orange-text text-center mt-3"}>Životní styl</Heading>
           </Column>
@@ -82,7 +82,7 @@ export class FilterBox extends React.Component {
               onChangeValue={this.setterHandler}
             />
           </Column>
-          <Column md={2} className={"blue-text text-center pt-3"}>
+          <Column md={3} className={"blue-text text-center pt-3"}>
             <div className="input-group mb-3">
               <div className="input-group-prepend">
                 <span className="input-group-text blue-text" id="basic-addon1">BMI</span>
@@ -179,4 +179,3 @@ export class FilterBox extends React.Component {
     )
   }
 };
-
