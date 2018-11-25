@@ -69,9 +69,10 @@ export class AdminPreventionForm extends Component {
   handleSubmit = (e) => { e.preventDeault() }
 
   render() {
-
+    const { diagnozy } = this.props;
     let {anamnezy, personalAnamnezy} = this.state
-    let {lecimse, anamnesis, diagnosis} = this.props;
+    let {lecimse, anamnesis} = this.props;
+
     return (
     <Layout className=" page-background-overlay">
       <Row className={"justify-content-center"}>
@@ -113,7 +114,7 @@ export class AdminPreventionForm extends Component {
                       <label className="life-style-check" >
                         Muž
                         <input type="checkbox" />
-                        <span class="checkmark"></span>
+                        <span className="checkmark"></span>
                       </label>
                     </div>
                     <div className="custom-control custom-checkbox-inline">
@@ -121,7 +122,7 @@ export class AdminPreventionForm extends Component {
                       <label className="life-style-check">
                         Žena
                         <input type="checkbox" />
-                        <span class="checkmark"></span>
+                        <span className="checkmark"></span>
                       </label>
                     </div>
                   </Layout>
@@ -134,8 +135,9 @@ export class AdminPreventionForm extends Component {
                       id="diagnosis"
                       label="Seznam diagnóz"
                       multi
-                      options={diagnosis.map(diagnosis => {
-                        return {label: diagnosis.nazevDiagnoza, value: diagnosis.nazevDiagnoza}
+                      options={diagnozy.map(diagnozy => {
+                          const { id, nazevDiagnoza, popisDiagnoza } = diagnozy;
+                        return {label: diagnozy.nazevDiagnoza, value: diagnozy.nazevDiagnoza}
                       })}
                       name="preventions"
                       placeholder="Vyber..."
@@ -192,7 +194,7 @@ export class AdminPreventionForm extends Component {
                         <label className="life-style-check" >
                           Kuřák
                           <input type="checkbox" />
-                          <span class="checkmark"></span>
+                          <span className="checkmark"></span>
                         </label>
                       </div>
                     </Column>
@@ -214,7 +216,7 @@ export class AdminPreventionForm extends Component {
                       <label className="life-style-check">
                         Obézní
                         <input type="checkbox" />
-                        <span class="checkmark"></span>
+                        <span className="checkmark"></span>
                       </label>
                     </div>
                     </Column>

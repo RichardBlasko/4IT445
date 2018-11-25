@@ -6,6 +6,7 @@ import {Column} from "../atoms/Column";
 import {Layout} from '../atoms/Layout';
 import {InputWithLabel} from "../molecules/InputWithLabel";
 import {TextareaWithLabel} from "../molecules/TextareaWithLabel";
+import {MultiSelectWithLabel} from "./MultiSelectWithLabel";
 import {Heading} from "../atoms/Heading";
 import { Link } from '../atoms/Link';
 import {FontIcon} from "../atoms/FontIcon";
@@ -15,12 +16,12 @@ import { Formik } from 'formik';
 
 export class AdminPartnersForm extends Component {
   render() {
+    const { diagnozy } = this.props;
     const initialValues = {
       nazevPartner: '',
       popisPartner: '',
-      odkazPartner: '',
+      kontaktPartner: '',
       logoPartner: '',
-      obrazokPartner: '',
       idDiagnoza: null,
     };
 
@@ -72,6 +73,25 @@ export class AdminPartnersForm extends Component {
                     value={values.popisPartner}
                     onChange={handleChange}
                     onBlur={handleBlur}
+                  />
+                  <InputWithLabel
+                    id="nazevPartner"
+                    label="Webová stránka patnera"
+                    placeholder="Zde uveďte webovú stránku partnera"
+                    value={values.kontaktPartner}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+                  <MultiSelectWithLabel
+                    id="diagnosis"
+                    label="Seznam diagnóz"
+                    multi
+                    options={diagnozy.map(diagnozy => {
+                        const { id, nazevDiagnoza, popisDiagnoza } = diagnozy;
+                      return {label: diagnozy.nazevDiagnoza, value: diagnozy.nazevDiagnoza}
+                    })}
+                    name="preventions"
+                    placeholder="Vyber..."
                   />
                 </Layout>
                 <Column xs={12}>
