@@ -140,7 +140,7 @@ export class FilterBox extends React.Component {
                     label="Výskyt nemocí v rodině"
                     multi
                     options={anamnesis.map(anamnes => {
-                      return {label: anamnes, value: anamnes}
+                      return {label: anamnes.name, value: anamnes.name}
                     })}
                     name="family_anamnes"
                     placeholder="Seznam anamnéz"
@@ -152,7 +152,7 @@ export class FilterBox extends React.Component {
                     label="Léčím se s"
                     multi
                     options={anamnesis.map(anamnes => {
-                      return {label: anamnes, value: anamnes}
+                      return {label: anamnes.name, value: anamnes.name}
                     })}
                     name="my_anamnes"
                     placeholder="Seznam anamnéz"

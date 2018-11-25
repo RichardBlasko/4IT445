@@ -24,7 +24,7 @@ export class AdminDiagnosisForm extends Component {
     <Layout className="container100 page-background-overlay">
       <Row className={"justify-content-center"}>
         <Column lg={10} md={10} sm={12} xs={12} className="pt-5">
-          <Layout className="footer">
+          <Layout className="adminForm">
             <Link to={"/admin/Diagnózy"}>
               <Button  variant="admin" type="submit">
                 <FontIcon  icon={"times"}/>
