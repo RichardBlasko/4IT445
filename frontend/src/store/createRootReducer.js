@@ -4,6 +4,7 @@ import storage from 'redux-persist/lib/storage';
 
 import { preventionListReducer } from '../services/PreventionList/reducer';
 import { diagnosisListReducer } from '../services/DiagnosisList/reducer';
+import { partnersListReducer } from '../services/PartnersList/reducer';
 import { shoppingCartReducer } from '../services/StoryList/reducer';
 
 const persistConfig = {
@@ -18,6 +19,7 @@ export const createRootReducer = () => {
     preventionCard: preventionListReducer,
     shoppingCart: shoppingCartReducer,
     diagnosisList: diagnosisListReducer,
+    partnersList: partnersListReducer,
   });
 
   return persistReducer(persistConfig, rootReducer);
