@@ -26,7 +26,7 @@ export class MultiSelectWithLabel extends Component {
   render() {
     const { id, name, placeholder, label, options, ...rest } = this.props;
     return (
-      <div>
+      <FormGroup>
         <label>{label}</label>
         <Select
           id={id}
@@ -38,7 +38,7 @@ export class MultiSelectWithLabel extends Component {
           isMulti={true}
           {...rest}
         />
-      </div>
+      </FormGroup>
     );
   }
 }
