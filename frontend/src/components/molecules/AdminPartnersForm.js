@@ -22,11 +22,11 @@ export class AdminPartnersForm extends Component {
       popisPartner: '',
       kontaktPartner: '',
       logoPartner: '',
-      idDiagnoza: null,
+      idDiagnoza: null
     };
 
     return (
-    <Layout className="container100 page-background-overlay">
+    <Layout className=" page-background-overlay">
       <Row className={"justify-content-center"}>
         <Column lg={10} md={10} sm={12} xs={12} className="pt-5">
           <Layout className="adminForm">
@@ -57,7 +57,7 @@ export class AdminPartnersForm extends Component {
 
             <form onSubmit={handleSubmit}>
               <Row>
-                <Layout className="col-md-10">
+                <Layout className="col-md-9">
                   <InputWithLabel
                     id="nazevPartner"
                     label="Název patnera"
@@ -70,20 +70,16 @@ export class AdminPartnersForm extends Component {
                     id="popisPartner"
                     label="Popis partnera"
                     placeholder="Zde uveďte popis partnera"
+                    rows={10}
                     value={values.popisPartner}
                     onChange={handleChange}
                     onBlur={handleBlur}
                   />
-                  <InputWithLabel
-                    id="nazevPartner"
-                    label="Webová stránka patnera"
-                    placeholder="Zde uveďte webovú stránku partnera"
-                    value={values.kontaktPartner}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
+                </Layout>
+
+                <Layout  className="col-md-3">
                   <MultiSelectWithLabel
-                    id="diagnosis"
+                    id="idDiagnoza"
                     label="Seznam diagnóz"
                     multi
                     options={diagnozy.map(diagnozy => {
@@ -92,6 +88,27 @@ export class AdminPartnersForm extends Component {
                     })}
                     name="preventions"
                     placeholder="Vyber..."
+                  />
+                </Layout>
+              </Row>
+
+              <Row>
+                <Layout className="col-md-9">
+                  <InputWithLabel
+                    id="nazevPartner"
+                    label="Webová stránka patnera"
+                    placeholder="Zde uveďte webovú stránku partnera"
+                    value={values.kontaktPartner}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+                  <InputWithLabel
+                    id="logoPartner"
+                    label="URL adresa loga patnera"
+                    placeholder="Zde uveďte URL adresu obrazka loga partnera"
+                    value={values.logoPartner}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
                   />
                 </Layout>
                 <Column xs={12}>
