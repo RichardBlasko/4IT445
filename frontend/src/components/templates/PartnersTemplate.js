@@ -5,6 +5,8 @@ import {HeadBlock} from "../organisms/HeadBlock";
 
 import {LoonoPartnerBlock} from "../organisms/LoonoPartnerBlock";
 import {AvonPartnerBlock} from "../organisms/AvonPartnerBlock";
+import {LprPartnerBlock} from "../organisms/LprPartnerBlock";
+import {StkPartnerBlock} from "../organisms/StkPartnerBlock";
 
 export const PartnersTemplate = () => (
   <Layout>
@@ -13,5 +15,7 @@ export const PartnersTemplate = () => (
     />
     <LoonoPartnerBlock/>
     <AvonPartnerBlock/>
+    <LprPartnerBlock/>
+    <StkPartnerBlock/>    
   </Layout>
 );
