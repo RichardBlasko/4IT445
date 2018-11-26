@@ -15,6 +15,9 @@ import {FontIcon} from "../atoms/FontIcon";
 import {PeriodicitaInput} from "../molecules/PeriodicitaInput";
 import {AnamnesisAddInputForm} from "../molecules/AnamnesisAddInputForm";
 
+import api from '../../api';
+import { Formik } from 'formik';
+
 export class AdminPreventionForm extends Component {
   state = {
     anamnezy: [{
@@ -29,17 +32,6 @@ export class AdminPreventionForm extends Component {
       vekDo:null,
       periodicita: null
     }],
-  }
-
-  handleChange = (e) => {
-    if (["nazev", "vekOd","vekDo", "periodicita"].includes(e.target.className) ) {
-        let anamnezy = [...this.state.anamnezy]
-        anamnezy[e.target.dataset.id][e.target.className] = e.target.value
-        this.setState({ anamnezy }, () => console.log(this.state.anamnezy))
-    }
-    else {
-        this.setState({ [e.target.name]: e.target.value })
-    }
   }
 
   addAnamnesis = (e) => {
@@ -66,12 +58,18 @@ export class AdminPreventionForm extends Component {
     }));
   }
 
-  handleSubmit = (e) => { e.preventDeault() }
-
   render() {
     const { diagnozy } = this.props;
     let {anamnezy, personalAnamnezy} = this.state
     let {lecimse, anamnesis} = this.props;
+
+    const initialValues = {
+      nazevPrevence: '',
+      duvodPrevence: '',
+      popisPrevence: '',
+      pohlavi: '',
+      obrazek: null
+    };
 
     return (
     <Layout className=" page-background-overlay">
@@ -84,31 +82,57 @@ export class AdminPreventionForm extends Component {
               </Button>
             </Link>
             <Heading level={3} className={"pb-3"}>Preventívni vyšetření</Heading>
-              <form>
+
+            <Formik
+              initialValues={initialValues}
+              onSubmit={(values, actions) => {
+                console.log(values);
+                api.post('http://dev.backend.team03.vse.handson.pro/api/prevence', values)
+                  .then(({ data }) => {
+                    actions.setSubmitting(false);
+                    console.log('-> data', data);
+                  })
+              }}
+              render={({
+                values,
+                handleBlur,
+                handleChange,
+                handleSubmit,
+                isSubmitting,
+              }) => (
+
+              <form onSubmit={handleSubmit}>
                 <Row>
-                  <Layout className="col-md-6">
+                  <Layout className="col-md-12">
                     <InputWithLabel
                       id="Název"
-                      label="Název vyšetření"
+                      label="Název preventívniho vyšetření"
                       placeholder="Zde uveďte název preventívniho vyšetření"
-                    />
-                    <TextareaWithLabel
-                      id="popisPrevence"
-                      label="Popis prevence"
-                      placeholder="Zde uveďte popis prevence"
+                      value={values.nazevPrevence}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
                     />
                   </Layout>
-
-                  <Layout  className="col-md-4">
-                    <PeriodicitaInput/>
-                    <PeriodicitaInput/>
-                    <PeriodicitaInput/>
+                </Row>
+                <Row>
+                  <Layout className="col-md-7">
+                    <TextareaWithLabel
+                      id="duvodPrevence"
+                      label="Důvod prevence"
+                      placeholder="Zde uveďte popis prevence"
+                      value={values.duvodPrevence}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                    />
                   </Layout>
 
                   <Layout className="col-md-1">
-                  <label className="Nadpis">
-                    Pro:
-                  </label>
+                  </Layout>
+
+                  <Layout className="col-md-1">
+                    <label className="Nadpis">
+                      Pro:
+                    </label>
                     <div className="custom-control custom-checkbox-inline ">
                       <input className="custom-control-input" type="checkbox" value="" id="defaultCheck1"/>
                       <label className="life-style-check" >
@@ -127,6 +151,26 @@ export class AdminPreventionForm extends Component {
                     </div>
                   </Layout>
                 </Row>
+                <Row>
+                  <Layout className="col-md-7">
+                    <TextareaWithLabel
+                      id="popisPrevence"
+                      label="Popis prevence"
+                      rows={10}
+                      placeholder="Zde uveďte popis prevence"
+                      value={values.popisPrevence}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                    />
+                  </Layout>
+
+                  <Layout  className="col-md-4">
+                    <PeriodicitaInput vekOdId = "vekOd" vekDoId = "vekDo" periodicitaId = "periodicita"/>
+                    <PeriodicitaInput vekOdId = "vekOd" vekDoId = "vekDo" periodicitaId = "periodicita"/>
+                    <PeriodicitaInput vekOdId = "vekOd" vekDoId = "vekDo" periodicitaId = "periodicita"/>
+                  </Layout>
+                </Row>
+
 
                 <Heading level={4} className={"pb-3"}>Diagnózy spojené s prevencí</Heading>
                 <Row>
@@ -236,14 +280,18 @@ export class AdminPreventionForm extends Component {
                   <Column xs={12}>
                     <Link to="/admin">
                       <Button
-                      title="Uložiť"
-                      variant="admin"
-                      className="float-right"
-                      />
+                        variant="admin"
+                        className="float-right"
+                        type="submit"
+                        disabled={isSubmitting}>
+                        Uložiť
+                      </Button>
                     </Link>
                   </Column>
                 </Row>
               </form>
+              )}
+            />
           </Layout>
         </Column>
       </Row>
