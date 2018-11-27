@@ -24,7 +24,7 @@ export class AdminDiagnosisForm extends Component {
     <Layout className="container100 page-background-overlay">
       <Row className={"justify-content-center"}>
         <Column lg={10} md={10} sm={12} xs={12} className="pt-5">
-          <Layout className="footer">
+          <Layout className="adminForm">
             <Link to={"/admin/Diagnózy"}>
               <Button  variant="admin" type="submit">
                 <FontIcon  icon={"times"}/>
@@ -50,39 +50,39 @@ export class AdminDiagnosisForm extends Component {
                 isSubmitting,
               }) => (
 
-            <form onSubmit={handleSubmit}>
-              <Row>
-                <Layout className="col-md-10">
-                  <InputWithLabel
-                    id="nazevDiagnoza"
-                    label="Název diagnózy"
-                    placeholder="Zde uveďte název diagnózy"
-                    value={values.nazevDiagnoza}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                  <TextareaWithLabel
-                    id="popisDiagnoza"
-                    label="Popis diagnózy"
-                    placeholder="Zde uveďte popis diagnózy"
-                    value={values.popisDiagnoza}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                </Layout>
-                <Column xs={12}>
-                    <Button
-                      variant="admin"
-                      className="float-right"
-                      type="submit"
-                      disabled={isSubmitting}>
-                      Uložiť
-                    </Button>
-                </Column>
-              </Row>
-            </form>
-        )}
-      />
+              <form onSubmit={handleSubmit}>
+                <Row>
+                  <Layout className="col-md-10">
+                    <InputWithLabel
+                      id="nazevDiagnoza"
+                      label="Název diagnózy"
+                      placeholder="Zde uveďte název diagnózy"
+                      value={values.nazevDiagnoza}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                    />
+                    <TextareaWithLabel
+                      id="popisDiagnoza"
+                      label="Popis diagnózy"
+                      placeholder="Zde uveďte popis diagnózy"
+                      value={values.popisDiagnoza}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                    />
+                  </Layout>
+                  <Column xs={12}>
+                      <Button
+                        variant="admin"
+                        className="float-right"
+                        type="submit"
+                        disabled={isSubmitting}>
+                        Uložiť
+                      </Button>
+                  </Column>
+                </Row>
+              </form>
+              )}
+            />
           </Layout>
         </Column>
       </Row>

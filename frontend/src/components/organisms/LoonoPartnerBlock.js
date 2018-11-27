@@ -15,15 +15,7 @@ export const LoonoPartnerBlock = () => (
           <Column lg={8} md={8} sm={8} xs={12} className={"mb-3"}>
             <Heading level={3} className="part-sub blue-text">Loono</Heading>
             <Paragraph className={"pb-4 text-justify"}>
-              Jedním z našich největších partnerů je Loono. Tým mladých lékařů, studentů lékařských fakult a jiných
-              nadšenců, kteří lidem ukazují, že na zdraví a prevenci záleží. Pořádají pravidelně workshopy a na jejich
-              webových stránkách se každý pohodlně dozví například to, jak si provést samovyšetření prsou nebo varlat.
-              Nunc tincidunt ante vitae massa. Nam quis nulla. Phasellus et lorem id felis nonummy placerat. Excepteur
-              sint occaecat cupidatat non proident, sunt in culpa qui ofñcia deserunt mollit anim id est laborum. Nullam sit
-              amet magna in magna gravida vehicula. Cum sociis natoque penatibus et magnis dis parturient montes,
-              nascetur ridiculus mus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
-              mus. Donec quis nibh at felis congue commodo. Cum sociis natoque penatibus et magnis dis parturient
-              montes, nascetur ridiculus mus.
+              Jedním z našich největších partnerů je Loono. Tým mladých lékařů, studentů lékařských fakult a jiných nadšenců, kteří lidem ukazují, že na zdraví a prevenci záleží. V Loono ukazujou, jak je prevence důležitá. Pořádají vzdělávací workshopy a přednášky, píšeme články a natáčíme videa. O zdraví a těle mluví srozumitelně, nestraší děsivými statistikami a inspirují ostatní, aby se o sebe starali rádi a zavčas. Skrze projekty #Prsakoule, ŽIJEŠ SRDCEM, Pravda o... ukazují, že na zdraví a prevenci záleží. Chtejí, aby těch vyškolených, kteří myslí na své zdraví a pečují o své tělo bylo mnohem více. Jejích cílem je proto v následujícím roce naučit více než 50 000 lidí, jak se správně starat o svoje #prsakoule a srdce. Rozrostli  se už do pěti měst Česka – Praha, Brno, Hradec Králové, Olomouc a Plzeň.
             </Paragraph>
           </Column>
           <Column lg={4} md={4} sm={4} xs={12} className={"mb-3"}>

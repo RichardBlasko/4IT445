@@ -49,8 +49,8 @@ const modelModules = [
   require('./prevence'),
   require('./diagnozy'),
   require('./vysledky'),
-  require('./partneri')
   require('./users'),
+  require('./partneri'),
 ];
 
 modelModules.forEach(modelModule => {

@@ -51,6 +51,7 @@ export const updatePartneriController = async (req, res) => {
             popisPartner: item.popisPartner,
             kontaktPartner: item.kontaktPartner,
             logoPartner: item.logoPartner,
+            obrazokPartner: item.logoPartner,
             idDiagnoza: item.idDiagnoza
           },
           { where: { id: item.id }, transaction }

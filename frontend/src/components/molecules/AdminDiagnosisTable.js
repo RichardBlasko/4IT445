@@ -10,6 +10,7 @@ import { Link } from '../atoms/Link';
 
 import {FontIcon} from "../atoms/FontIcon";
 
+import api from '../../api';
 import {AdminNavBar} from "../molecules/AdminNavBar";
 
 export class AdminDiagnosisTable extends React.Component {
@@ -29,6 +30,7 @@ export class AdminDiagnosisTable extends React.Component {
               {
                 diagnozy.map(diagnozy => {
                     const { id, nazevDiagnoza, popisDiagnoza } = diagnozy;
+
                   return (
                     <tr>
                       <th scope="row">{id}</th>
@@ -38,7 +40,20 @@ export class AdminDiagnosisTable extends React.Component {
                           <FontIcon icon={"edit"}/>
                         </Link>
                       </td>
-                      <td><FontIcon icon={"times"}/></td>
+                      <td>
+                        <FontIcon
+                          icon={"times"}
+                          onClick={(values, actions) => {
+                            values.nazevDiagnoza = nazevDiagnoza;
+                            values.popisDiagnoza = popisDiagnoza;
+                            console.log(values);
+                            api.post('http://dev.backend.team03.vse.handson.pro/api/diagnozy', values)
+                              .then(({ data }) => {
+                                console.log('-> data', data);
+                              })
+                            }}
+                        />
+                      </td>
                     </tr>
                   )
                 })

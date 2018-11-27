@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { AdminPreventionFormTemplate } from '../templates/AdminPreventionFormTemplate';
+import { AdminPartnersFormTemplate } from '../templates/AdminPartnersFormTemplate';
 import { startFetchDiagnosis } from '../../services/DiagnosisList/actions';
 
 import {
@@ -12,7 +12,7 @@ import {
   getIsError,
 } from '../../services/DiagnosisList/reducer';
 
-class AdminPreventionFormPageRaw extends Component {
+class AdminPartnersFormPageRaw extends Component {
   componentDidMount() {
     const { startFetchDiagnosis } = this.props;
     startFetchDiagnosis();
@@ -22,7 +22,7 @@ class AdminPreventionFormPageRaw extends Component {
     const { isLoading, diagnozy, isLoaded, isError, error } = this.props;
 
     return (
-        <AdminPreventionFormTemplate
+        <AdminPartnersFormTemplate
           isLoading={isLoading}
           isLoaded={isLoaded}
           isError={isError}
@@ -48,7 +48,7 @@ const mapDispatchToProps = {
   startFetchDiagnosis,
 };
 
-export const AdminPreventionFormPage = connect(
+export const AdminPartnersFormPage = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(AdminPreventionFormPageRaw);
+)(AdminPartnersFormPageRaw);

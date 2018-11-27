@@ -6,6 +6,7 @@ module.exports = (sequelize, DataTypes) => {
       popisPartner: DataTypes.TEXT,
       kontaktPartner: DataTypes.STRING,
       logoPartner: DataTypes.STRING,
+      obrazokPartner: DataTypes.STRING,
       idDiagnoza: DataTypes.INTEGER
     },
     {}

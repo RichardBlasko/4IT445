@@ -15,7 +15,15 @@ var path = require('path');
 
 export const app = express();
 
+app.use(bodyParser.json());
 app.use(cors());
+
+/*
+// !!!!TOHLE CELE SI OPRAV!!!
+// ROUTES se resi ve file rootRoutes a pak pripadne v danych controlerech.
+//Touhle prasarnou jsi rozbil vsechno ostatni, takze ti to zatim davam do komentare.
+//Otestuj si poradne, ze funguji api/ endpointy, nez neco pushnes na GIT, tedy GET api/diagnozy apod...
+
 
 // set morgan to log info about our requests for development use.
 app.use(morgan('dev'));
@@ -144,7 +152,7 @@ app.get('/logout', (req, res) => {
 app.use(function (req, res, next) {
   res.status(404).send("Sorry can't find that!")
 });
-
+*/
 if (__DEV__) {
   app.use(express.static('public'));
 }

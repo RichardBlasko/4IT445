@@ -41,6 +41,11 @@ export const AdminNavBarRaw = ({close}) => (
             </NavLink>
           </NavItem>
           <NavItem className="nav-item">
+            <NavLink className="nav-link" to="/admin/Partneři">
+              Partneři
+            </NavLink>
+          </NavItem>
+          <NavItem className="nav-item">
             <NavLink className="nav-link" to="/login">
               <FontIcon icon={"sign-out-alt"}/>
               Odhlásit se
