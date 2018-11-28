@@ -51,6 +51,7 @@ const modelModules = [
   require('./vysledky'),
   require('./users'),
   require('./partneri'),
+  require('./pribehy')
 ];
 
 modelModules.forEach(modelModule => {
