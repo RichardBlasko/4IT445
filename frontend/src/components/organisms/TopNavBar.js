@@ -41,6 +41,11 @@ export const TopNavBarRaw = ({close}) => (
           </NavLink>
         </NavItem>
         <NavItem>
+          <NavLink className="nav-link" to="/partneri">
+            Partneři
+          </NavLink>
+        </NavItem>
+        <NavItem>
           <NavLink className="nav-link" to="/projekt">
             O projektu
           </NavLink>

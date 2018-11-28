@@ -23,8 +23,7 @@ export class Select extends Component {
     const { id, ...rest } = this.props;
 
     return (
-      <select
-        className="form-control"
+      <select  
         id={id}
         {...rest}
         onChange={this.onChange}

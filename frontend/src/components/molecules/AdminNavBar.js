@@ -9,33 +9,40 @@ import {NavItem} from '../atoms/Nav/NavItem';
 import {NavLink} from '../atoms/Nav/NavLink';
 import {getNumberOfItems} from '../../services/StoryList/reducer';
 import {FontIcon} from "../atoms/FontIcon";
+import {Image} from "../atoms/Image";
 
-export const AdminNavBarRaw = () => (
+export const AdminNavBarRaw = ({close}) => (
   <Layout className={"admin"}>
     <NavBar>
-      <Link className="navbar-brand text-muted" to="/">
-        LOGO
-      </Link>
+    <FontIcon icon="times" className={"mobile-close"}  onClick={close}/>
+    <Link className="navbar-brand " to="/admin">
+      <Image src={"/static/img/logo09.png"} className={"img-fluid"}/>
+    </Link>
       <Layout className="navbar-collapse  justify-content-end">
         <Nav className="nav-pills">
+        <NavItem className="nav-item">
+          <NavLink className="nav-link" to="/admin/Prevence">
+            Prevence
+          </NavLink>
+        </NavItem>
+        <NavItem className="nav-item">
+          <NavLink className="nav-link" to="/admin/Diagnózy">
+            Diagnózy
+          </NavLink>
+        </NavItem>
           <NavItem className="nav-item">
-            <NavLink className="nav-link" to="/">
+            <NavLink className="nav-link" to="/admin/Příběhy">
               Příběhy
             </NavLink>
           </NavItem>
           <NavItem className="nav-item">
-            <NavLink className="nav-link" to="/">
-              Prevence
+            <NavLink className="nav-link" to="/admin/Príspevky">
+              Příspěvky
             </NavLink>
           </NavItem>
           <NavItem className="nav-item">
-            <NavLink className="nav-link" to="/">
-              Kalendář
-            </NavLink>
-          </NavItem>
-          <NavItem className="nav-item">
-            <NavLink className="nav-link" to="/">
-              #PrevenceMáSmysl
+            <NavLink className="nav-link" to="/admin/Partneři">
+              Partneři
             </NavLink>
           </NavItem>
           <NavItem className="nav-item">

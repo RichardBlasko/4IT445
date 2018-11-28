@@ -1,3 +1,5 @@
+import { Router } from 'express';
+
 const env = process.env.NODE_ENV || 'development';
 
 const fs = require('fs');
@@ -22,10 +24,34 @@ if (config.use_env_variable) {
   );
 }
 
+let response = "";
+//Test connection
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log('Connection has been established successfully.');
+    response = "Complete";
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
+    response = err;
+  });
+/*
+  const router = Router();
+  router.get('/', function(req, res){
+    res.send(response);
+  });*/
+
 // Add all modules to this array
 const modelModules = [
   require('./product'),
   require('./contactform'),
+  require('./prevence'),
+  require('./diagnozy'),
+  require('./vysledky'),
+  require('./users'),
+  require('./partneri'),
+  require('./pribehy')
 ];
 
 modelModules.forEach(modelModule => {
