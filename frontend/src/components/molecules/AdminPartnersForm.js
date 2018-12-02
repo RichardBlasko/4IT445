@@ -22,6 +22,7 @@ export class AdminPartnersForm extends Component {
       popisPartner: '',
       kontaktPartner: '',
       logoPartner: '',
+      obrazokPartner: null,
       idDiagnoza: null
     };
 
@@ -95,7 +96,7 @@ export class AdminPartnersForm extends Component {
               <Row>
                 <Layout className="col-md-9">
                   <InputWithLabel
-                    id="nazevPartner"
+                    id="kontaktPartner"
                     label="Webová stránka patnera"
                     placeholder="Zde uveďte webovú stránku partnera"
                     value={values.kontaktPartner}
@@ -107,6 +108,14 @@ export class AdminPartnersForm extends Component {
                     label="URL adresa loga patnera"
                     placeholder="Zde uveďte URL adresu obrazka loga partnera"
                     value={values.logoPartner}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+                  <InputWithLabel
+                    id="obrazokPartner"
+                    label="Adresa obrazka patnera"
+                    placeholder="Zde uveďte adresu obrazka partnera"
+                    value={values.obrazokPartner}
                     onChange={handleChange}
                     onBlur={handleBlur}
                   />

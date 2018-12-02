@@ -29,14 +29,14 @@ export class AdminPartnersTable extends React.Component {
             <tbody className="orange">
               {
                 partneri.map(partneri => {
-                    const { id, nazevDiagnoza, popisDiagnoza } = partneri;
+                    const { id, nazevPartner,popisPartner,odkazPartner,logoPartner,obrazokPartner,idDiagnoza } = partneri;
 
                   return (
                     <tr>
                       <th scope="row">{id}</th>
-                      <td>{nazevDiagnoza}</td>
+                      <td>{nazevPartner}</td>
                       <td>
-                        <Link to="/admin/Diagnózy/formular">
+                        <Link to="/admin/Partneři/formular">
                           <FontIcon icon={"edit"}/>
                         </Link>
                       </td>
@@ -44,9 +44,15 @@ export class AdminPartnersTable extends React.Component {
                         <FontIcon
                           icon={"times"}
                           onClick={(values, actions) => {
-                            values.nazevDiagnoza = nazevDiagnoza;
-                            values.popisDiagnoza = popisDiagnoza;
+                            values.nazevPartner = nazevPartner;
+                            values.popisPartner = popisPartner;
+                            values.odkazPartner = odkazPartner;
+                            values.logoPartner = logoPartner;
+                            values.obrazokPartner = obrazokPartner;
+                            values.idDiagnoza = idDiagnoza;
+
                             console.log(values);
+
                             api.post('http://dev.backend.team03.vse.handson.pro/api/partneri', values)
                               .then(({ data }) => {
                                 console.log('-> data', data);
