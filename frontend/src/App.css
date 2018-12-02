@@ -602,27 +602,6 @@ border-radius: 8px;
   padding: 0.5em;
 }
 /* Admin */
-.adminForm {
-  padding: 20px;
-  color: "black";
-  border-top: 1px solid #e5e5e5;
-  background-color: #3D3B30;
-}
-
-.adminForm a {
-  color: #FFC15E;
-  font-weight: lighter;
-  font-size: 1.1em;
-}
-
-.adminForm .form-control{
-  border-color: #FFC15E;
-}
-
-.adminForm .form-control:focus{
-  background-color: #FFC15E;
-}
-
 .form-wrapper{
   padding: 2em;
   background-color: #FFC15E;
@@ -633,6 +612,51 @@ border-radius: 8px;
 
 .admin-input input{
   border: 2px solid #56A3A6;
+}
+
+.adminForm {
+  padding: 20px;
+  color: #8C92A2;
+  border-top: 1px solid #e5e5e5;
+  background-color: #3D3B30;
+  font-size: 1.2em;
+}
+
+.adminForm h4{
+  padding: 20px;
+  color: #e5e5e5;
+  border-top: 1px solid #e5e5e5;
+  background-color: #3D3B30;
+}
+
+.adminForm h3{
+  padding: 20px;
+  color: #e5e5e5;
+}
+
+.adminForm p {
+  color: #FFFFFF;
+}
+
+.adminForm a {
+  color: #FFC15E;
+  font-weight: lighter;
+  font-size: 1.1em;
+}
+
+.adminForm .form-control{
+  border-color: #FFC15E;
+  color: #FFC15E;
+}
+
+.adminForm .form-control:focus{
+  background-color: #FFC15E;
+  color: #3D3B30;
+}
+
+
+.adminForm img {
+  padding: 1em;
 }
 
 /* Customize container */
