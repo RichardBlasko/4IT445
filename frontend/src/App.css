@@ -562,7 +562,9 @@ border-radius: 8px;
   top: 30% !important;
   right: -30px !important;
 }
-
+.row .slider{
+  height: 195px !important;
+}
 /* Custom page footer */
 .footer {
   padding: 20px;
@@ -658,6 +660,9 @@ border-radius: 8px;
 .adminForm img {
   padding: 1em;
 }
+.slider-wrapper{
+  padding-top: 80px
+}
 
 /* Customize container */
 @media (min-width: 768px) {
@@ -708,6 +713,7 @@ border-radius: 8px;
     padding-top: 1em;
     height: 80px
   }
+
   .navbar-brand{
     display: none;
   }

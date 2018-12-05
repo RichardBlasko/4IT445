@@ -19,6 +19,6 @@ export const HomeTemplate = () => (
     <ReasonSlider/>
     <EventSlider/>
     <SocialNetworkSlider/>
-    <PartnerProjectSlider/>
+//    <PartnerProjectSlider/>
   </Layout>
 );
