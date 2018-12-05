@@ -16,7 +16,7 @@ import {FontIcon} from "../atoms/FontIcon";
 
 export class PeriodicitaInput extends Component {
   render() {
-    const { vekOdId, vekDoId, periodicitaId } = this.props;
+    const { vekOd, vekDo, vekOdId, vekDoId, periodicitaId } = this.props;
 
     return (
                       <Row>
@@ -27,7 +27,7 @@ export class PeriodicitaInput extends Component {
                             label="Vek od:"
                             min={1}
                             max={120}
-                            value={18}
+                            value={vekOd}
                           />
                         </Column>
                         <Column md={3}>
@@ -37,7 +37,7 @@ export class PeriodicitaInput extends Component {
                             label="Vek do:"
                             min={1}
                             max={120}
-                            value={39}
+                            value={vekDo}
                           />
                         </Column>
                         <Column md={6}>
