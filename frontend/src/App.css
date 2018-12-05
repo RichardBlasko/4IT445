@@ -562,7 +562,7 @@ border-radius: 8px;
   top: 30% !important;
   right: -30px !important;
 }
-.row .slider{
+.fixslider .row .slider{
   height: 195px !important;
 }
 /* Custom page footer */

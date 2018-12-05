@@ -9,7 +9,7 @@ export const PageWrapper = ({ children }) => (
   <Layout className="container-fluid">
     {children}
     <ScrollUpButton ContainerClassName="scroll-up-button"/>
-    <SupporterSlider/>
+    
     <PageFooter />
   </Layout>
 );
