@@ -34,7 +34,7 @@ render() {
   const { isLoading, pribehy, isLoaded, isError, error } = this.props;
   return(
 
-    <Layout className="part-55 wrapper pb-5 container-fluid"
+    <Layout className="part-55 wrapper pb-5 container-fluid fixslider"
     isLoading={isLoading}
           isLoaded={isLoaded}
           isError={isError}

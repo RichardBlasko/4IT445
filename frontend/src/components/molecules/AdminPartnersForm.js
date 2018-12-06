@@ -113,8 +113,8 @@ export class AdminPartnersForm extends Component {
                   />
                   <InputWithLabel
                     id="obrazokPartner"
-                    label="Adresa obrazka patnera"
-                    placeholder="Zde uveďte adresu obrazka partnera"
+                    label="Adresa obrázka patnera"
+                    placeholder="Zde uveďte adresu obrázka partnera"
                     value={values.obrazokPartner}
                     onChange={handleChange}
                     onBlur={handleBlur}

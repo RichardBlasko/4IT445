@@ -165,9 +165,9 @@ export class AdminPreventionForm extends Component {
                   </Layout>
 
                   <Layout  className="col-md-4">
-                    <PeriodicitaInput vekOdId = "vekOd" vekDoId = "vekDo" periodicitaId = "periodicita"/>
-                    <PeriodicitaInput vekOdId = "vekOd" vekDoId = "vekDo" periodicitaId = "periodicita"/>
-                    <PeriodicitaInput vekOdId = "vekOd" vekDoId = "vekDo" periodicitaId = "periodicita"/>
+                    <PeriodicitaInput vekOd="18" vekDo="39" vekOdId = "vekOd" vekDoId = "vekDo" periodicitaId = "periodicita"/>
+                    <PeriodicitaInput vekOd="40" vekDo="49" vekOdId = "vekOd" vekDoId = "vekDo" periodicitaId = "periodicita"/>
+                    <PeriodicitaInput vekOd="50" vekDo="199" vekOdId = "vekOd" vekDoId = "vekDo" periodicitaId = "periodicita"/>
                   </Layout>
                 </Row>
 
