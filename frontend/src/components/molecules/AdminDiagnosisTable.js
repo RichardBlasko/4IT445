@@ -8,14 +8,26 @@ import {Paragraph} from "../atoms/Paragraph";
 import {Button} from "../atoms/Button/Button";
 import { Link } from '../atoms/Link';
 
+import history from '../../history.js';
+import { withRouter } from 'react-router';
+import { compose } from 'recompose';
+
 import {FontIcon} from "../atoms/FontIcon";
 
 import api from '../../api';
 import {AdminNavBar} from "../molecules/AdminNavBar";
 
-export class AdminDiagnosisTable extends React.Component {
+class AdminDiagnosisTable_ extends React.Component {
+
+
+openEditForm = (e) => {
+  console.log("id: ", e)
+  history.push(this.props.location.pathname + "/formular/" + e)
+}
+
   render() {
     const { diagnozy } = this.props;
+    console.log(this.props)
 
     return (
           <table className="table table-bordered">
@@ -32,13 +44,16 @@ export class AdminDiagnosisTable extends React.Component {
                     const { id, nazevDiagnoza, popisDiagnoza } = diagnozy;
 
                   return (
-                    <tr>
+                    <tr key={id}>
                       <th scope="row">{id}</th>
                       <td>{nazevDiagnoza}</td>
                       <td>
-                        <Link to="/admin/Diagnózy/formular">
-                          <FontIcon icon={"edit"}/>
-                        </Link>
+                        <div style={{padding: "1em", cursor: "pointer"}} onClick={e => this.openEditForm(id)}>
+                        <FontIcon icon={"edit"}/>
+                        </div>
+                        {/* <Link to="/admin/Diagnózy/formular">
+                           <FontIcon icon={"edit"}/>
+                         </Link> */}
                       </td>
                       <td>
                         <FontIcon
@@ -63,3 +78,7 @@ export class AdminDiagnosisTable extends React.Component {
     )
   }
 }
+
+const Page = props => <AdminDiagnosisTable_ {...props} />
+
+export const AdminDiagnosisTable = compose(withRouter)(Page)

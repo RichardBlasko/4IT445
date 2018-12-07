@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Route, Redirect } from 'react-router'
 
 import {Row} from "../atoms/Row";
 import {Button} from "../atoms/Button/Button";
@@ -10,15 +11,25 @@ import {Heading} from "../atoms/Heading";
 import { Link } from '../atoms/Link';
 import {FontIcon} from "../atoms/FontIcon";
 
+import { withRouter } from 'react-router';
+import { compose } from 'recompose';
+
 import api from '../../api';
 import { Formik } from 'formik';
 
 export class AdminDiagnosisForm extends Component {
+
+  state = {
+    redirectUrl: null,
+  };
+
   render() {
     const initialValues = {
       nazevDiagnoza: '',
       popisDiagnoza: ''
     };
+
+    const { redirectUrl } = this.state;
 
     return (
     <Layout className="container100 page-background-overlay">
@@ -32,6 +43,8 @@ export class AdminDiagnosisForm extends Component {
             </Link>
             <Heading level={3} className={"pb-3"}>Diagnóza</Heading>
 
+            {redirectUrl && <Redirect to={redirectUrl} />}
+
             <Formik
               initialValues={initialValues}
               onSubmit={(values, actions) => {
@@ -41,6 +54,7 @@ export class AdminDiagnosisForm extends Component {
                     actions.setSubmitting(false);
                     console.log('-> data', data);
                   })
+                this.setState({ redirectUrl: '/admin/Diagnózy/' });
               }}
               render={({
                 values,
@@ -91,3 +105,7 @@ export class AdminDiagnosisForm extends Component {
    //console.log(values)
  }
 }
+
+const Page = props => <AdminDiagnosisForm {...props} />
+
+export default compose(withRouter)(Page)
