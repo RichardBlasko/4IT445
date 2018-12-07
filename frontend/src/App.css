@@ -626,9 +626,9 @@ border-radius: 8px;
 
 .adminForm {
   padding: 20px;
-  color: #8C92A2;
+  color: #3D3B30;
   border-top: 1px solid #e5e5e5;
-  background-color: #3D3B30;
+  background-color: #FFC15E;
   font-size: 1.2em;
 }
 
@@ -641,7 +641,7 @@ border-radius: 8px;
 
 .adminForm h3{
   padding: 20px;
-  color: #e5e5e5;
+  color: #3D3B30;
 }
 
 .adminForm p {
@@ -655,8 +655,8 @@ border-radius: 8px;
 }
 
 .adminForm .form-control{
-  border-color: #FFC15E;
-  color: #FFC15E;
+  border-color: #3D3B30;
+  color: #3D3B30;
 }
 
 .adminForm .form-control:focus{
