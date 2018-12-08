@@ -222,6 +222,25 @@ a{
   background-image: linear-gradient(207deg, #529B9D 5%, #465BC1 100%, #465BC1 100%);
 
 }
+.storyblock{
+
+}
+
+.storyblock .storyautor
+{
+  color: #F1A730;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.storySlider:nth-child(2n) .storyautor {
+  color: #529B9D;
+}
+
+
+
+
+
 /* Forms */
 .selectbox {
   background-color: #f9f9f9;
@@ -489,6 +508,20 @@ border-radius: 8px;
   font-size: 2em;
   font-weight: bold;
 }
+
+.quote{
+  margin-top: 20px;
+  display: block;
+}
+
+.paragraphtext {
+  font-size: 1.3em;
+  background-color: #f0f0f06e;
+  background
+  padding: 15px 15px;
+  border-radius: 0.5em;
+}
+
 /*Buttons*/
 
 .btn-read{
