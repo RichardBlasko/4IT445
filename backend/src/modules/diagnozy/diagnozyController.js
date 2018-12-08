@@ -73,3 +73,14 @@ export const updateDiagnozyController = async (req, res) => {
   console.log("Done");
   res.status(200).json({ message: responses });
 };
+
+export const diagnozyDetailController = async (req, res, next) => {
+  const { params } = req;
+  const diagnoza = await db.Diagnozy.findById(Number(params.id), {});
+
+  if (!diagnoza) {
+    return next();
+  }
+
+  return res.json({ diagnoza });
+};

@@ -229,7 +229,7 @@ a{
 .storyblock .storyautor
 {
   color: #F1A730;
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: bold;
 }
 
@@ -531,7 +531,6 @@ border-radius: 8px;
 .paragraphtext {
   font-size: 1.3em;
   background-color: #f0f0f06e;
-  background
   padding: 15px 15px;
   border-radius: 0.5em;
 }

@@ -5,11 +5,12 @@ import {
   createDiagnozyController,
   deleteDiagnozyController,
   updateDiagnozyController,
+  diagnozyDetailController
 } from './diagnozyController';
 
 const router = Router();
 router.get('/', diagnozyController);
-router.get('/:id', oneDiagnozyController);
+router.get('/:id', diagnozyDetailController);
 router.post('/', createDiagnozyController);
 router.delete('/', deleteDiagnozyController);
 router.put('/', updateDiagnozyController);
