@@ -381,6 +381,20 @@ div.container100 .center-wrapper {
   margin: 0 -50% 0 0;
   transform: translate(-50%, -50%) }
 
+div.container81 {
+  height: 81vh;
+  min-height: 300px;
+  position: relative }
+
+div.container81 .center-wrapper {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  margin: 0 -50% 0 0;
+  transform: translate(-50%, -50%);
+  width:100%
+}
+
 div.container70 {
   height: 60vh;
   min-height: 300px;

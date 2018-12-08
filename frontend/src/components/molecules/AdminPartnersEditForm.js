@@ -49,7 +49,7 @@ class AdminPartnersEditForm_ extends Component {
                 <FontIcon  icon={"times"}/>
               </Button>
             </Link>
-            <Heading level={3} className={"pb-3"}>Úprava partneri</Heading>
+            <Heading level={3} className={"pb-3"}>Úprava partneři</Heading>
 
             {redirectUrl && <Redirect to={redirectUrl} />}
 
