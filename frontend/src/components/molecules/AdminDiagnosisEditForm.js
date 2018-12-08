@@ -16,6 +16,7 @@ import { compose } from 'recompose';
 
 import api from '../../api';
 import { Formik } from 'formik';
+import {DIAGNOSIS} from "../../mocks/Diagnosis";
 
 class AdminDiagnosisEditForm extends Component {
 
@@ -23,22 +24,12 @@ class AdminDiagnosisEditForm extends Component {
     redirectUrl: null,
   };
 
-
-
-  componentDidMount = async () => {
-
-    // const {startFetchOneDiagnosis} = this.props;
-    // const diagnosis = await startFetchOneDiagnosis(this.props.match.params.id)
-    console.log(this.props.match.params.id)
-    // this.setState({diagnosis})
-  }
-
   render() {
-    const initialValues = {
-      nazevDiagnoza: '',
-      popisDiagnoza: ''
-    };
 
+    const initialValues = {
+      nazevDiagnoza: DIAGNOSIS[this.props.match.params.id-1].nazevDiagnoza,
+      popisDiagnoza: DIAGNOSIS[this.props.match.params.id-1].popisDiagnoza
+    };
 
     const { redirectUrl } = this.state;
 
@@ -52,18 +43,18 @@ class AdminDiagnosisEditForm extends Component {
                 <FontIcon  icon={"times"}/>
               </Button>
             </Link>
-            <Heading level={3} className={"pb-3"}>Diagnóza Edit</Heading>
+            <Heading level={3} className={"pb-3"}>Úprava diagnózy</Heading>
+
+            {redirectUrl && <Redirect to={redirectUrl} />}
 
             <Formik
               initialValues={initialValues}
               onSubmit={(values, actions) => {
-                console.log(values);
-                api.post('http://dev.backend.team03.vse.handson.pro/api/diagnozy', values)
-                  .then(({ data }) => {
-                    actions.setSubmitting(false);
-                    console.log('-> data', data);
-                  })
-                this.setState({ redirectUrl: '/admin/Diagnózy/' });
+                DIAGNOSIS[this.props.match.params.id-1].nazevDiagnoza = values.nazevDiagnoza;
+                console.log(DIAGNOSIS[this.props.match.params.id-1].nazevDiagnoza)
+                DIAGNOSIS[this.props.match.params.id-1].popisDiagnoza = values.popisDiagnoza;
+                console.log(DIAGNOSIS[this.props.match.params.id-1].popisDiagnoza)
+                this.setState({ redirectUrl: '/admin/Diagnózy'});
               }}
               render={({
                 values,

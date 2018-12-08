@@ -20,14 +20,12 @@ import {AdminNavBar} from "../molecules/AdminNavBar";
 class AdminDiagnosisTable_ extends React.Component {
 
 
-openEditForm = (e) => {
-  console.log("id: ", e)
-  history.push(this.props.location.pathname + "/formular/" + e)
-}
+  openEditForm = (e) => {
+    history.push(this.props.location.pathname + "/formular/" + e)
+  }
 
   render() {
     const { diagnozy } = this.props;
-    console.log(this.props)
 
     return (
           <table className="table table-bordered">
@@ -48,25 +46,16 @@ openEditForm = (e) => {
                       <th scope="row">{id}</th>
                       <td>{nazevDiagnoza}</td>
                       <td>
-                        <div style={{padding: "1em", cursor: "pointer"}} onClick={e => this.openEditForm(id)}>
-                        <FontIcon icon={"edit"}/>
-                        </div>
-                        {/* <Link to="/admin/Diagnózy/formular">
-                           <FontIcon icon={"edit"}/>
-                         </Link> */}
+                          <FontIcon
+                            style={{ cursor: "pointer"}}
+                            onClick={e => this.openEditForm(id)}
+                            icon={"edit"}
+                          />
                       </td>
                       <td>
                         <FontIcon
-                          icon={"times"}
-                          onClick={(values, actions) => {
-                            values.nazevDiagnoza = nazevDiagnoza;
-                            values.popisDiagnoza = popisDiagnoza;
-                            console.log(values);
-                            api.post('http://dev.backend.team03.vse.handson.pro/api/diagnozy', values)
-                              .then(({ data }) => {
-                                console.log('-> data', data);
-                              })
-                            }}
+                          style={{ cursor: "pointer"}}
+                          icon={"trash"}
                         />
                       </td>
                     </tr>

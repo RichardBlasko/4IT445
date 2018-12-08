@@ -2,6 +2,9 @@ import {
   DIAGNOSIS_LIST_FETCH_DIAGNOSIS,
   DIAGNOSIS_LIST_FETCH_DIAGNOSIS_SUCCESS,
   DIAGNOSIS_LIST_FETCH_DIAGNOSIS_FAILURE,
+  DIAGNOSIS_LIST_FETCH_ONE_DIAGNOSIS,
+  DIAGNOSIS_LIST_FETCH_ONE_DIAGNOSIS_SUCCESS,
+  DIAGNOSIS_LIST_FETCH_ONE_DIAGNOSIS_FAILURE,
 } from './actions';
 
 const initialState = {
@@ -40,6 +43,34 @@ export const diagnosisListReducer = (state = initialState, action) => {
       };
     }
 
+    case DIAGNOSIS_LIST_FETCH_ONE_DIAGNOSIS:
+      return {
+        ...state,
+        isLoading: true,
+        error: null,
+      };
+
+    case DIAGNOSIS_LIST_FETCH_ONE_DIAGNOSIS_SUCCESS: {
+      const { diagnozy } = action.payload;
+
+      return {
+        ...state,
+        diagnozy,
+        isLoading: false,
+        error: null,
+      };
+    }
+
+    case DIAGNOSIS_LIST_FETCH_ONE_DIAGNOSIS_FAILURE: {
+      const { error } = action.payload;
+
+      return {
+        ...state,
+        error,
+        isLoading: false,
+      };
+    }
+
     default:
       return state;
   }
@@ -50,6 +81,8 @@ export const diagnosisListReducer = (state = initialState, action) => {
 export const getIsLoading = state => state.isLoading;
 
 export const getDiagnosis = state => state.diagnozy || [];
+
+export const getDiagnoza = state => state.diagnoza || [];
 
 export const getIsLoaded = state => state.diagnozy !== null;
 
