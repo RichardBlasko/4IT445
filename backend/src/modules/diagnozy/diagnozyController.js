@@ -6,6 +6,14 @@ export const diagnozyController = async (req, res) => {
   res.json({ diagnozy });
 };
 
+
+export const oneDiagnozyController = async (req, res) => {
+  const {id} = req.params
+  console.log(id)
+  const diagnozy = await db.Diagnozy.findByPk(id);
+  res.json({diagnozy});
+};
+
 export const createDiagnozyController = async (req, res) => {
 
   const newDiagnoza = await db.Diagnozy.create(req.body);

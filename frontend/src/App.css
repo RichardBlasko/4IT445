@@ -400,6 +400,20 @@ div.container100 .center-wrapper {
   margin: 0 -50% 0 0;
   transform: translate(-50%, -50%) }
 
+div.container81 {
+  height: 81vh;
+  min-height: 300px;
+  position: relative }
+
+div.container81 .center-wrapper {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  margin: 0 -50% 0 0;
+  transform: translate(-50%, -50%);
+  width:100%
+}
+
 div.container70 {
   height: 60vh;
   min-height: 300px;
@@ -556,6 +570,14 @@ border-radius: 8px;
   padding: 11px 22px;
 }
 
+.btn-filter2{
+  background-color: #FFC15E;
+  color: #000000;
+  font-size: 1.4em;
+  text-transform: uppercase;
+  padding: 11px 22px;
+}
+
 .btn-form{
   background-color: #3D3B30;
   color: #ffffff;
@@ -651,9 +673,9 @@ border-radius: 8px;
 
 .adminForm {
   padding: 20px;
-  color: #8C92A2;
+  color: #3D3B30;
   border-top: 1px solid #e5e5e5;
-  background-color: #3D3B30;
+  background-color: #FFC15E;
   font-size: 1.2em;
 }
 
@@ -666,7 +688,7 @@ border-radius: 8px;
 
 .adminForm h3{
   padding: 20px;
-  color: #e5e5e5;
+  color: #3D3B30;
 }
 
 .adminForm p {
@@ -680,8 +702,8 @@ border-radius: 8px;
 }
 
 .adminForm .form-control{
-  border-color: #FFC15E;
-  color: #FFC15E;
+  border-color: #3D3B30;
+  color: #3D3B30;
 }
 
 .adminForm .form-control:focus{

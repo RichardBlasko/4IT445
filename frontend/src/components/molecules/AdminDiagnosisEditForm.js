@@ -16,17 +16,19 @@ import { compose } from 'recompose';
 
 import api from '../../api';
 import { Formik } from 'formik';
+import {DIAGNOSIS} from "../../mocks/Diagnosis";
 
-export class AdminDiagnosisForm extends Component {
+class AdminDiagnosisEditForm extends Component {
 
   state = {
     redirectUrl: null,
   };
 
   render() {
+
     const initialValues = {
-      nazevDiagnoza: '',
-      popisDiagnoza: ''
+      nazevDiagnoza: DIAGNOSIS[this.props.match.params.id-1].nazevDiagnoza,
+      popisDiagnoza: DIAGNOSIS[this.props.match.params.id-1].popisDiagnoza
     };
 
     const { redirectUrl } = this.state;
@@ -41,20 +43,18 @@ export class AdminDiagnosisForm extends Component {
                 <FontIcon  icon={"times"}/>
               </Button>
             </Link>
-            <Heading level={3} className={"pb-3"}>Diagnóza</Heading>
+            <Heading level={3} className={"pb-3"}>Úprava diagnózy</Heading>
 
             {redirectUrl && <Redirect to={redirectUrl} />}
 
             <Formik
               initialValues={initialValues}
               onSubmit={(values, actions) => {
-                console.log(values);
-                api.post('http://dev.backend.team03.vse.handson.pro/api/diagnozy', values)
-                  .then(({ data }) => {
-                    actions.setSubmitting(false);
-                    console.log('-> data', data);
-                  })
-                this.setState({ redirectUrl: '/admin/Diagnózy/' });
+                DIAGNOSIS[this.props.match.params.id-1].nazevDiagnoza = values.nazevDiagnoza;
+                console.log(DIAGNOSIS[this.props.match.params.id-1].nazevDiagnoza)
+                DIAGNOSIS[this.props.match.params.id-1].popisDiagnoza = values.popisDiagnoza;
+                console.log(DIAGNOSIS[this.props.match.params.id-1].popisDiagnoza)
+                this.setState({ redirectUrl: '/admin/Diagnózy'});
               }}
               render={({
                 values,
@@ -106,6 +106,6 @@ export class AdminDiagnosisForm extends Component {
  }
 }
 
-const Page = props => <AdminDiagnosisForm {...props} />
+const Page = props => <AdminDiagnosisEditForm {...props} />
 
 export default compose(withRouter)(Page)

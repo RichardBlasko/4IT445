@@ -13,7 +13,16 @@ import {FontIcon} from "../atoms/FontIcon";
 import api from '../../api';
 import {AdminNavBar} from "../molecules/AdminNavBar";
 
-export class AdminPartnersTable extends React.Component {
+import history from '../../history.js';
+import { withRouter } from 'react-router';
+import { compose } from 'recompose';
+
+class AdminPartnersTable_ extends React.Component {
+
+  openEditForm = (e) => {
+    history.push(this.props.location.pathname + "/formular/" + e)
+  }
+
   render() {
     const { partneri } = this.props;
 
@@ -32,32 +41,21 @@ export class AdminPartnersTable extends React.Component {
                     const { id, nazevPartner,popisPartner,odkazPartner,logoPartner,obrazokPartner,idDiagnoza } = partneri;
 
                   return (
-                    <tr>
+                    <tr key={id}>
                       <th scope="row">{id}</th>
                       <td>{nazevPartner}</td>
+
                       <td>
-                        <Link to="/admin/Partneři/formular">
-                          <FontIcon icon={"edit"}/>
-                        </Link>
+                          <FontIcon
+                            style={{ cursor: "pointer"}}
+                            onClick={e => this.openEditForm(id)}
+                            icon={"edit"}
+                          />
                       </td>
                       <td>
                         <FontIcon
-                          icon={"times"}
-                          onClick={(values, actions) => {
-                            values.nazevPartner = nazevPartner;
-                            values.popisPartner = popisPartner;
-                            values.odkazPartner = odkazPartner;
-                            values.logoPartner = logoPartner;
-                            values.obrazokPartner = obrazokPartner;
-                            values.idDiagnoza = idDiagnoza;
-
-                            console.log(values);
-
-                            api.post('http://dev.backend.team03.vse.handson.pro/api/partneri', values)
-                              .then(({ data }) => {
-                                console.log('-> data', data);
-                              })
-                            }}
+                          style={{ cursor: "pointer"}}
+                          icon={"trash"}
                         />
                       </td>
                     </tr>
@@ -69,3 +67,7 @@ export class AdminPartnersTable extends React.Component {
     )
   }
 }
+
+const Page = props => <AdminPartnersTable_ {...props} />
+
+export const AdminPartnersTable = compose(withRouter)(Page)

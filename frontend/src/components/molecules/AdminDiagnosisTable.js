@@ -8,12 +8,22 @@ import {Paragraph} from "../atoms/Paragraph";
 import {Button} from "../atoms/Button/Button";
 import { Link } from '../atoms/Link';
 
+import history from '../../history.js';
+import { withRouter } from 'react-router';
+import { compose } from 'recompose';
+
 import {FontIcon} from "../atoms/FontIcon";
 
 import api from '../../api';
 import {AdminNavBar} from "../molecules/AdminNavBar";
 
-export class AdminDiagnosisTable extends React.Component {
+class AdminDiagnosisTable_ extends React.Component {
+
+
+  openEditForm = (e) => {
+    history.push(this.props.location.pathname + "/formular/" + e)
+  }
+
   render() {
     const { diagnozy } = this.props;
 
@@ -32,26 +42,20 @@ export class AdminDiagnosisTable extends React.Component {
                     const { id, nazevDiagnoza, popisDiagnoza } = diagnozy;
 
                   return (
-                    <tr>
+                    <tr key={id}>
                       <th scope="row">{id}</th>
                       <td>{nazevDiagnoza}</td>
                       <td>
-                        <Link to="/admin/Diagnózy/formular">
-                          <FontIcon icon={"edit"}/>
-                        </Link>
+                          <FontIcon
+                            style={{ cursor: "pointer"}}
+                            onClick={e => this.openEditForm(id)}
+                            icon={"edit"}
+                          />
                       </td>
                       <td>
                         <FontIcon
-                          icon={"times"}
-                          onClick={(values, actions) => {
-                            values.nazevDiagnoza = nazevDiagnoza;
-                            values.popisDiagnoza = popisDiagnoza;
-                            console.log(values);
-                            api.post('http://dev.backend.team03.vse.handson.pro/api/diagnozy', values)
-                              .then(({ data }) => {
-                                console.log('-> data', data);
-                              })
-                            }}
+                          style={{ cursor: "pointer"}}
+                          icon={"trash"}
                         />
                       </td>
                     </tr>
@@ -63,3 +67,7 @@ export class AdminDiagnosisTable extends React.Component {
     )
   }
 }
+
+const Page = props => <AdminDiagnosisTable_ {...props} />
+
+export const AdminDiagnosisTable = compose(withRouter)(Page)
