@@ -1,4 +1,6 @@
 import React from 'react';
+import { Alert } from 'reactstrap';
+
 import {Row} from "../atoms/Row";
 import {Layout} from "../atoms/Layout";
 import {Heading} from "../atoms/Heading";
@@ -19,9 +21,12 @@ import {AdminNavBar} from "../molecules/AdminNavBar";
 
 class AdminDiagnosisTable_ extends React.Component {
 
-
   openEditForm = (e) => {
     history.push(this.props.location.pathname + "/formular/" + e)
+  }
+
+  openAlert = (e) => {
+    alert('Diagnóza ' + e + ' úspešne odstránená.')
   }
 
   render() {
@@ -54,9 +59,11 @@ class AdminDiagnosisTable_ extends React.Component {
                       </td>
                       <td>
                         <FontIcon
-                          style={{ cursor: "pointer"}}
+                          style={{ padding:"1em" ,cursor: "pointer"}}
+                          onClick={e => this.openAlert(nazevDiagnoza)}
                           icon={"trash"}
                         />
+
                       </td>
                     </tr>
                   )

@@ -29,7 +29,7 @@ class AdminDiagnosisEditForm extends Component {
     const initialValues = {
       nazevDiagnoza: DIAGNOSIS[this.props.match.params.id-1].nazevDiagnoza,
       popisDiagnoza: DIAGNOSIS[this.props.match.params.id-1].popisDiagnoza
-    };
+     };
 
     const { redirectUrl } = this.state;
 

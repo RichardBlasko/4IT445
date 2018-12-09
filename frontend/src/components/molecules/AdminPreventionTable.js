@@ -12,7 +12,21 @@ import {FontIcon} from "../atoms/FontIcon";
 
 import {AdminNavBar} from "../molecules/AdminNavBar";
 
-export class AdminPreventionTable extends React.Component {
+import history from '../../history.js';
+import { withRouter } from 'react-router';
+import { compose } from 'recompose';
+
+class AdminPreventionTable_ extends React.Component {
+
+    openEditForm = (e) => {
+      history.push(this.props.location.pathname + "/formular/" + e)
+    }
+
+
+      openAlert = (e) => {
+        alert('Preventívni vyšetření ' + e + ' úspešne odstráneno.')
+      }
+
   render() {
     const { prevence } = this.props;
 
@@ -34,11 +48,19 @@ export class AdminPreventionTable extends React.Component {
                       <th scope="row">{id}</th>
                       <td>{nazevPrevence}</td>
                       <td>
-                        <Link to="/admin/Prevence/formular">
-                          <FontIcon icon={"edit"}/>
-                        </Link>
+                          <FontIcon
+                            style={{ cursor: "pointer"}}
+                            onClick={e => this.openEditForm(id)}
+                            icon={"edit"}
+                          />
                       </td>
-                      <td><FontIcon icon={"times"}/></td>
+                      <td>
+                        <FontIcon
+                          style={{ padding:"1em" ,cursor: "pointer"}}
+                          onClick={e => this.openAlert(nazevPrevence)}
+                          icon={"trash"}
+                        />
+                      </td>
                     </tr>
                   )
                 })
@@ -48,3 +70,7 @@ export class AdminPreventionTable extends React.Component {
     )
   }
 }
+
+const Page = props => <AdminPreventionTable_ {...props} />
+
+export const AdminPreventionTable = compose(withRouter)(Page)

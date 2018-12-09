@@ -23,6 +23,10 @@ class AdminPartnersTable_ extends React.Component {
     history.push(this.props.location.pathname + "/formular/" + e)
   }
 
+  openAlert = (e) => {
+    alert('Partner ' + e + ' úspešne odstránen.')
+  }
+
   render() {
     const { partneri } = this.props;
 
@@ -54,7 +58,8 @@ class AdminPartnersTable_ extends React.Component {
                       </td>
                       <td>
                         <FontIcon
-                          style={{ cursor: "pointer"}}
+                          style={{ padding:"1em" ,cursor: "pointer"}}
+                          onClick={e => this.openAlert(nazevPartner)}
                           icon={"trash"}
                         />
                       </td>
