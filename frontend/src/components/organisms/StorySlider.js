@@ -25,7 +25,6 @@ class StorySliderRaw extends Component {
 
     const { startFetchPribehy } = this.props;
     startFetchPribehy();
-    console.log(this.props);
 
   }
 
@@ -34,12 +33,7 @@ render() {
   const { isLoading, pribehy, isLoaded, isError, error } = this.props;
   return(
 
-    <Layout className="part-55 wrapper pb-5 container-fluid fixslider"
-    isLoading={isLoading}
-          isLoaded={isLoaded}
-          isError={isError}
-          diagnozy={pribehy}
-          error={error}>
+    <Layout className="part-55 wrapper pb-5 container-fluid fixslider">
       <Row className={"justify-content-center"}>
         <Column lg={10} md={10} sm={12} xs={12}>
           <Layout className="container70">
@@ -80,49 +74,12 @@ render() {
                       )}
                       >
 
-                      <Column lg={12} md={12} sm={12} xs={12} className={"mb-3 storySlider"}>
-                        <StoryCard
-                          id={1}
-                          diagnose={"Rakovina tlustého střeva"}
-                          person={"Ivana"}
-                          age ={"56"}
-                          story={"O rakovině tlustého střeva a konečníku jsem poprvé slyšela až v době, kdy jsem už měla nějaké problémy - hlavně silné střevní křeče, časté zvracení a …"}
-                          img={"https://images.pexels.com/photos/1164531/pexels-photo-1164531.jpeg?cs=srgb&dl=arm-blood-close-up-1164531.jpg"}
-                        />
-                        </Column>
 
-                       <Column lg={12} md={12} sm={12} xs={12} className={"mb-3 storySlider"}>
-                         <StoryCard
-                           id={1}
-                           diagnose={"Rakovina tlustého střeva"}
-                           person={"Maria"}
-                           age ={"56"}
-                           story={"O rakovině tlustého střeva a konečníku jsem poprvé slyšela až v době, kdy jsem už měla nějaké problémy - hlavně silné střevní křeče, časté zvracení a …"}
-                           img={"https://images.pexels.com/photos/1164531/pexels-photo-1164531.jpeg?cs=srgb&dl=arm-blood-close-up-1164531.jpg"}
-                         />
-                         </Column>
-
-                         <Column lg={12} md={12} sm={12} xs={12} className={"mb-3 storySlider"}>
-                           <StoryCard
-                             id={1}
-                             diagnose={"Rakovina tlustého střeva"}
-                             person={"Tereza"}
-                             age ={"56"}
-                             story={"O rakovině tlustého střeva a konečníku jsem poprvé slyšela až v době, kdy jsem už měla nějaké problémy - hlavně silné střevní křeče, časté zvracení a …"}
-                             img={"https://images.pexels.com/photos/1164531/pexels-photo-1164531.jpeg?cs=srgb&dl=arm-blood-close-up-1164531.jpg"}
-                           />
-                           </Column>
-                           <Column lg={12} md={12} sm={12} xs={12} className={"mb-3 storySlider"}>
-                             <StoryCard
-                               id={1}
-                               diagnose={"Rakovina tlustého střeva"}
-                               person={"Anna"}
-                               age ={"56"}
-                               story={"O rakovině tlustého střeva a konečníku jsem poprvé slyšela až v době, kdy jsem už měla nějaké problémy - hlavně silné střevní křeče, časté zvracení a …"}
-                               img={"https://images.pexels.com/photos/1164531/pexels-photo-1164531.jpeg?cs=srgb&dl=arm-blood-close-up-1164531.jpg"}
-                             />
-                             </Column>
-
+                        {pribehy.map(pribehy => (
+                          <Column lg={12} md={12} sm={12} xs={12} className={"mb-3 storySlider"}>
+                          <StoryCard pribehy={pribehy} key={pribehy.id} />
+                          </Column>
+                        ))}
 
                   </Carousel>
                   </Row>
