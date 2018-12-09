@@ -48,13 +48,7 @@ render() {
                 </Column>
                 <Column lg={8} md={8} sm={12} xs={12}>
                   <Row>
-                  {/*
-                  <Column lg={1} md={1} sm={1} xs={1} className={"text-center"}>
-                    <Layout className={"mt-3"}>
-                      <button onClick={previousSlide}><FontIcon icon={"chevron-left"} className={"slider-navigator mr-5 mt-2"}/></button>
-                    </Layout>
-                  </Column>
-  */}
+
 
                   <Column lg={12} md={12} sm={12} xs={12} className={"mb-3 storySlider"}>
                   <Row>

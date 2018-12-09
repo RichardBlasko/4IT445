@@ -9,8 +9,8 @@ import {Column} from "../atoms/Column";
 
 export const StoryCard  = ({ pribehy }) => {
   console.log(pribehy)
-  const { id, autorPribeh,autorVek, textPribeh, idDiagnozy } = pribehy;
-  
+  const { id, autorPribeh, autorVek, textPribeh, idDiagnozy} = pribehy;
+
   return (
   <Layout className={"card storyCard"}>
     <Layout className="section mt-2 mb-2">
