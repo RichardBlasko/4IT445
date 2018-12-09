@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Route, Redirect } from 'react-router'
 
 import {Layout} from '../atoms/Layout';
 import {Paragraph} from '../atoms/Paragraph';
@@ -20,6 +21,8 @@ import { Formik } from 'formik';
 
 export class AdminPreventionForm extends Component {
   state = {
+    redirectUrl: null,
+
     anamnezy: [{
       nazev:"",
       vekOd:null,
@@ -71,6 +74,8 @@ export class AdminPreventionForm extends Component {
       obrazek: null
     };
 
+    const { redirectUrl } = this.state;
+
     return (
     <Layout className=" page-background-overlay">
       <Row className={"justify-content-center"}>
@@ -83,6 +88,8 @@ export class AdminPreventionForm extends Component {
             </Link>
             <Heading level={3} className={"pb-3"}>Preventívni vyšetření</Heading>
 
+            {redirectUrl && <Redirect to={redirectUrl} />}
+
             <Formik
               initialValues={initialValues}
               onSubmit={(values, actions) => {
@@ -92,6 +99,7 @@ export class AdminPreventionForm extends Component {
                     actions.setSubmitting(false);
                     console.log('-> data', data);
                   })
+                this.setState({ redirectUrl: '/admin/Prevence'});
               }}
               render={({
                 values,
