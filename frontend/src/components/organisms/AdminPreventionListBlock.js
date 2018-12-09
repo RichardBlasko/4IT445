@@ -13,7 +13,7 @@ export const AdminPreventionListBlock = ({
 
   <Layout className="part-60 wrapper pb-5 ">
     <Row className={"justify-content-center pt-2 mb-3"}>
-      <Layout className={"col-md-8 col-xs-8 card-radius orange p-4"}>
+      <Layout className={"col-md-8 col-xs-8 card-radius grey p-4"}>
         <AdminPreventionTable prevence={prevence}/>
       </Layout>
     </Row>

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Route, Redirect } from 'react-router'
 
 import {Row} from "../atoms/Row";
 import {Button} from "../atoms/Button/Button";
@@ -15,6 +16,10 @@ import api from '../../api';
 import { Formik } from 'formik';
 
 export class AdminPartnersForm extends Component {
+  state = {
+    redirectUrl: null,
+  };
+
   render() {
     const { diagnozy } = this.props;
     const initialValues = {
@@ -25,6 +30,8 @@ export class AdminPartnersForm extends Component {
       obrazokPartner: null,
       idDiagnoza: null
     };
+
+    const { redirectUrl } = this.state;
 
     return (
     <Layout className=" page-background-overlay">
@@ -38,6 +45,8 @@ export class AdminPartnersForm extends Component {
             </Link>
             <Heading level={3} className={"pb-3"}>Partnerský projekt</Heading>
 
+            {redirectUrl && <Redirect to={redirectUrl} />}
+
             <Formik
               initialValues={initialValues}
               onSubmit={(values, actions) => {
@@ -47,6 +56,7 @@ export class AdminPartnersForm extends Component {
                     actions.setSubmitting(false);
                     console.log('-> data', data);
                   })
+                this.setState({ redirectUrl: '/admin/Partneři/' });
               }}
               render={({
                 values,
@@ -113,8 +123,8 @@ export class AdminPartnersForm extends Component {
                   />
                   <InputWithLabel
                     id="obrazokPartner"
-                    label="Adresa obrazka patnera"
-                    placeholder="Zde uveďte adresu obrazka partnera"
+                    label="Adresa obrázka patnera"
+                    placeholder="Zde uveďte adresu obrázka partnera"
                     value={values.obrazokPartner}
                     onChange={handleChange}
                     onBlur={handleBlur}

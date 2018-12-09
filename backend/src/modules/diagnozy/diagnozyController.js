@@ -6,6 +6,14 @@ export const diagnozyController = async (req, res) => {
   res.json({ diagnozy });
 };
 
+
+export const oneDiagnozyController = async (req, res) => {
+  const {id} = req.params
+  console.log(id)
+  const diagnozy = await db.Diagnozy.findByPk(id);
+  res.json({diagnozy});
+};
+
 export const createDiagnozyController = async (req, res) => {
 
   const newDiagnoza = await db.Diagnozy.create(req.body);
@@ -64,4 +72,15 @@ export const updateDiagnozyController = async (req, res) => {
 
   console.log("Done");
   res.status(200).json({ message: responses });
+};
+
+export const diagnozyDetailController = async (req, res, next) => {
+  const { params } = req;
+  const diagnoza = await db.Diagnozy.findById(Number(params.id), {});
+
+  if (!diagnoza) {
+    return next();
+  }
+
+  return res.json({ diagnoza });
 };

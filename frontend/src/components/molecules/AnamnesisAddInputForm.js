@@ -30,9 +30,9 @@ export const AnamnesisAddInputForm = ({anamnezy, anamnesis}) => {
             />
           </Layout>
           <Layout  className="col-md-4">
-            <PeriodicitaInput vekOdId = {vekOdId} vekDoId = {vekDoId} periodicitaId = {periodicitaId}/>
-            <PeriodicitaInput vekOdId = {vekOdId} vekDoId = {vekDoId} periodicitaId = {periodicitaId}/>
-            <PeriodicitaInput vekOdId = {vekOdId} vekDoId = {vekDoId} periodicitaId = {periodicitaId}/>
+            <PeriodicitaInput vekOd="18" vekDo="39" vekOdId = {vekOdId} vekDoId = {vekDoId} periodicitaId = {periodicitaId}/>
+            <PeriodicitaInput vekOd="40" vekDo="49" vekOdId = {vekOdId} vekDoId = {vekDoId} periodicitaId = {periodicitaId}/>
+            <PeriodicitaInput vekOd="50" vekDo="199" vekOdId = {vekOdId} vekDoId = {vekDoId} periodicitaId = {periodicitaId}/>
           </Layout>
         </Row>
         </div>

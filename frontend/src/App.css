@@ -222,6 +222,26 @@ a{
   background-image: linear-gradient(207deg, #529B9D 5%, #465BC1 100%, #465BC1 100%);
 
 }
+.storyblock{
+
+}
+
+.storyblock .storyautor
+{
+  color: #F1A730;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.storySlider:nth-child(2n) .storyautor {
+  color: #529B9D;
+}
+
+
+
+
+
 /* Forms */
 .selectbox {
   background-color: #f9f9f9;
@@ -381,6 +401,20 @@ div.container100 .center-wrapper {
   margin: 0 -50% 0 0;
   transform: translate(-50%, -50%) }
 
+div.container81 {
+  height: 81vh;
+  min-height: 300px;
+  position: relative }
+
+div.container81 .center-wrapper {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  margin: 0 -50% 0 0;
+  transform: translate(-50%, -50%);
+  width:100%
+}
+
 div.container70 {
   height: 60vh;
   min-height: 300px;
@@ -489,6 +523,19 @@ border-radius: 8px;
   font-size: 2em;
   font-weight: bold;
 }
+
+.quote{
+  margin-top: 20px;
+  display: block;
+}
+
+.paragraphtext {
+  font-size: 1.3em;
+  background-color: #f0f0f06e;
+  padding: 15px 15px;
+  border-radius: 0.5em;
+}
+
 /*Buttons*/
 
 .btn-read{
@@ -520,6 +567,14 @@ border-radius: 8px;
   font-size: 1.4em;
   text-transform: uppercase;
   margin-top: -23px;
+  padding: 11px 22px;
+}
+
+.btn-filter2{
+  background-color: #FFC15E;
+  color: #000000;
+  font-size: 1.4em;
+  text-transform: uppercase;
   padding: 11px 22px;
 }
 
@@ -562,7 +617,9 @@ border-radius: 8px;
   top: 30% !important;
   right: -30px !important;
 }
-
+.fixslider .row .slider{
+  height: 195px !important;
+}
 /* Custom page footer */
 .footer {
   padding: 20px;
@@ -602,27 +659,6 @@ border-radius: 8px;
   padding: 0.5em;
 }
 /* Admin */
-.adminForm {
-  padding: 20px;
-  color: "black";
-  border-top: 1px solid #e5e5e5;
-  background-color: #3D3B30;
-}
-
-.adminForm a {
-  color: #FFC15E;
-  font-weight: lighter;
-  font-size: 1.1em;
-}
-
-.adminForm .form-control{
-  border-color: #FFC15E;
-}
-
-.adminForm .form-control:focus{
-  background-color: #FFC15E;
-}
-
 .form-wrapper{
   padding: 2em;
   background-color: #FFC15E;
@@ -633,6 +669,54 @@ border-radius: 8px;
 
 .admin-input input{
   border: 2px solid #56A3A6;
+}
+
+.adminForm {
+  padding: 20px;
+  color: #3D3B30;
+  border-top: 1px solid #e5e5e5;
+  background-color: #FFC15E;
+  font-size: 1.2em;
+}
+
+.adminForm h4{
+  padding: 20px;
+  color: #e5e5e5;
+  border-top: 1px solid #e5e5e5;
+  background-color: #3D3B30;
+}
+
+.adminForm h3{
+  padding: 20px;
+  color: #3D3B30;
+}
+
+.adminForm p {
+  color: #FFFFFF;
+}
+
+.adminForm a {
+  color: #FFC15E;
+  font-weight: lighter;
+  font-size: 1.1em;
+}
+
+.adminForm .form-control{
+  border-color: #3D3B30;
+  color: #3D3B30;
+}
+
+.adminForm .form-control:focus{
+  background-color: #FFC15E;
+  color: #3D3B30;
+}
+
+
+.adminForm img {
+  padding: 1em;
+}
+.slider-wrapper{
+  padding-top: 80px
 }
 
 /* Customize container */
@@ -684,6 +768,7 @@ border-radius: 8px;
     padding-top: 1em;
     height: 80px
   }
+
   .navbar-brand{
     display: none;
   }
@@ -804,4 +889,72 @@ border-radius: 8px;
 .table {
     border: 1px solid black;
     border-collapse: collapse;
+}
+
+/* Customize the checkbox admin (the container) */
+.life-style-check {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.life-style-check input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #ccc;
+}
+
+/* On mouse-over, add a grey background color */
+.life-style-check:hover input ~ .checkmark {
+  background-color: #56A3A6;
+}
+
+/* When the checkbox is checked, add a blue background */
+.life-style-check input:checked ~ .checkmark {
+  background-color: #56A3A6;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.life-style-check input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.life-style-check .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
