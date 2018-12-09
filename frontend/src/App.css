@@ -522,6 +522,8 @@ border-radius: 8px;
 .quotation{
   font-size: 2em;
   font-weight: bold;
+  width: 100%;
+display: block;
 }
 
 .quote{
