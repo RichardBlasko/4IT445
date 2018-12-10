@@ -86,32 +86,32 @@ class AdminPartnersTable_ extends React.Component {
                         onClick={e => this.handleOpenModal(nazevPartner)}
                         icon={"trash"}
                       />
-                      <ReactModal
-                        isOpen={this.state.showModal}
-                        contentLabel={this.state.diagnoza}
-                        className="Modal"
-                        overlayClassName="Overlay"
-                        shouldCloseOnEsc={true}
-                        shouldReturnFocusAfterClose={true}
-                      >
-                        <Button
-                          onClick={this.handleCloseModal}
-                          variant="admin"
-                          type="submit"
+                        <ReactModal
+                          isOpen={this.state.showModal}
+                          contentLabel={this.state.partner}
+                          className="Modal"
+                          overlayClassName="Overlay"
+                          shouldCloseOnEsc={true}
+                          shouldReturnFocusAfterClose={true}
                         >
-                          <FontIcon  icon={"times"}/>
-                        </Button>
-                        <Heading level={1} className={"pb-3"}></Heading>
-                        <Heading level={3} className={"pb-3"}>{this.state.partner}</Heading>
-                        <Heading level={6} className={"pb-3"}>Naozaj si prajete odstrániť partnera?</Heading>
-                        <Heading level={6} className={"pb-3"}></Heading>
-                        <Button
-                          variant="admin"
-                          className="float-right"
-                          onClick={this.handleCloseModal}>
-                          Odstrániť
-                        </Button>
-                      </ReactModal>
+                          <Button
+                            onClick={this.handleCloseModal}
+                            variant="admin"
+                            type="submit"
+                          >
+                            <FontIcon  icon={"times"}/>
+                          </Button>
+                          <Heading level={1} className={"pb-3"}></Heading>
+                          <Heading level={3} className={"pb-3"}>{this.state.partner}</Heading>
+                          <Heading level={6} className={"pb-3"}>Naozaj si prajete odstrániť partnera?</Heading>
+                          <Heading level={6} className={"pb-3"}></Heading>
+                          <Button
+                            variant="admin"
+                            className="float-right"
+                            onClick={this.handleCloseModal}>
+                            Odstrániť
+                          </Button>
+                        </ReactModal>
                       </td>
                     </tr>
                   )
