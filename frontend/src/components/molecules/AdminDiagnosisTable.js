@@ -1,5 +1,4 @@
 import React from 'react';
-import { Alert } from 'reactstrap';
 
 import {Row} from "../atoms/Row";
 import {Layout} from "../atoms/Layout";
