@@ -14,9 +14,7 @@ export const PREVENTIONS = [
   { id: 3,
     nazevPrevence: "Odběr moči",
     duvodPrevence: "Duvod Odběr moči",
-    popisPrevence: "Po správné přípravě pacienta se odebere střední proud první ranní moče. Pacient vymočí první porci mimo odběrovou nádobu a teprve další porci vymočí do odběrové nádoby. Optimální množství odebrané moči je přibližně 10 ml. Poslední proud moči vede také mimo odběrovou nádobu. Jako primární odběrovou nádobu je možno použít buď přímo plastovou kónickou zkumavku nebo jinou, čistě vymytou nádobu, ve které nesmí být zbytky desinfekčních činidel. Z této nádoby je pak odlit vzorek moči o objemu cca 10 ml do plastové kónické zkumavky.
-
-Moč v uzavřené plastové kónické zkumavce se dopraví do laboratoře do jedné hodiny po vymočení.",
+    popisPrevence: "Po správné přípravě pacienta se odebere střední proud první ranní moče. Pacient vymočí první porci mimo odběrovou nádobu a teprve další porci vymočí do odběrové nádoby. Optimální množství odebrané moči je přibližně 10 ml. Poslední proud moči vede také mimo odběrovou nádobu. Jako primární odběrovou nádobu je možno použít buď přímo plastovou kónickou zkumavku nebo jinou, čistě vymytou nádobu, ve které nesmí být zbytky desinfekčních činidel. Z této nádoby je pak odlit vzorek moči o objemu cca 10 ml do plastové kónické zkumavky. Moč v uzavřené plastové kónické zkumavce se dopraví do laboratoře do jedné hodiny po vymočení.",
     pohlavi: "Muz",
     obrazek: null,},
   { id: 4,
@@ -28,11 +26,7 @@ Moč v uzavřené plastové kónické zkumavce se dopraví do laboratoře do jed
   { id: 5,
     nazevPrevence: "Krevní tlak",
     duvodPrevence: null,
-    popisPrevence: "Krvný tlak (KT) je hydrostatický tlak, vyvíjaný krvou na steny ciev. Najvyšší je v aorte a veľkých tepnách a je vytváraný sťahom (kontrakciou) komôr srdca. Štandardné hodnoty KT u dospelého človeka v pokoji sú 120 mm Hg počas kontrakcie (systoly) komôr a 80 mm Hg počas uvoľnenia (diastoly) komôr.
-
-Systolický alebo horný tlak krvi zodpovedá tlaku v tepnách počas systoly, čiže sťahu komôr. Systolický krvný tlak sa vytvára, keď sa srdce sťahuje a pumpuje krv do artérií.
-
-Diastolický alebo dolný tlak krvi zodpovedá tlaku v tepnách počas diastoly, čiže plnenia komôr krvou. Diastolický krvný tlak vzniká, keď srdce vzápätí ochabne.",
+    popisPrevence: "Krvný tlak (KT) je hydrostatický tlak, vyvíjaný krvou na steny ciev. Najvyšší je v aorte a veľkých tepnách a je vytváraný sťahom (kontrakciou) komôr srdca. Štandardné hodnoty KT u dospelého človeka v pokoji sú 120 mm Hg počas kontrakcie (systoly) komôr a 80 mm Hg počas uvoľnenia (diastoly) komôr. Systolický alebo horný tlak krvi zodpovedá tlaku v tepnách počas systoly, čiže sťahu komôr. Systolický krvný tlak sa vytvára, keď sa srdce sťahuje a pumpuje krv do artérií. Diastolický alebo dolný tlak krvi zodpovedá tlaku v tepnách počas diastoly, čiže plnenia komôr krvou. Diastolický krvný tlak vzniká, keď srdce vzápätí ochabne.",
     pohlavi: "Muz",
     obrazek: null,},
   { id: 6,
@@ -50,23 +44,13 @@ Diastolický alebo dolný tlak krvi zodpovedá tlaku v tepnách počas diastoly,
   { id: 8,
     nazevPrevence: "Samovyšetření prsu",
     duvodPrevence: null,
-    popisPrevence: "Veľmi účinným preventívnym účinkom je samovyšetrovanie prsníkov. Dokážeme si ho hravo urobiť v súkromí domova, bez behania po lekároch, stačí sa len naučiť niekoľko základných hmatov. Tie vám, spolu s názornými ukážkami, prinášame práve dnes.
-
-S našimi otázkami sme sa tiež obrátili priamo na erudovaného odborník gynekológa s dlhoročnou praxou, pána MUDr. Milana Mrázika.",
+    popisPrevence: "Veľmi účinným preventívnym účinkom je samovyšetrovanie prsníkov. Dokážeme si ho hravo urobiť v súkromí domova, bez behania po lekároch, stačí sa len naučiť niekoľko základných hmatov. Tie vám, spolu s názornými ukážkami, prinášame práve dnes. S našimi otázkami sme sa tiež obrátili priamo na erudovaného odborník gynekológa s dlhoročnou praxou, pána MUDr. Milana Mrázika.",
     pohlavi: "Zena",
     obrazek: null,},
   { id: 9,
     nazevPrevence: "Mamograf",
     duvodPrevence: null,
-    popisPrevence: "Vykonáva sa na špecializovaných pracoviskách. Vyšetreniu predchádza vyplnenie dotazníka s informáciami o anamnéze, prekonaných operáciách, ťažkostiach a podobne, aby sa zistilo, či Zena patrí do rizikovej skupiny.
-
-Samotné vyšetrenie prebieha postojačky. Zena sa vyzlečie do pol pása a za pomoci rádiologickej asistentky, ktorá vyšetrenie technicky vykoná, špeciálne kompresné platničky mamografu stlačia postupne oba jej prsníky.
-
-Je to dôležité, aby sa zhotovili snímky vysokej kvality, na ktorých je možné rozoznať aj malé zmeny v prsníku.
-
-Stlačenie môže byť trochu nepríjemné a Zena môže cítiť tlak, nemalo by však byť bolestivé. Celé vyšetrenie trvá približne desať minút.
-
-V závislosti od konkrétneho pracoviska sa výsledky dozvie ihneď po vyšetrení alebo až po niekoľkých dňoch, v zásade by však nemalo ísť o dlhšiu dobu ako týždeň.",
+    popisPrevence: "Vykonáva sa na špecializovaných pracoviskách. Vyšetreniu predchádza vyplnenie dotazníka s informáciami o anamnéze, prekonaných operáciách, ťažkostiach a podobne, aby sa zistilo, či Zena patrí do rizikovej skupiny. Samotné vyšetrenie prebieha postojačky. Zena sa vyzlečie do pol pása a za pomoci rádiologickej asistentky, ktorá vyšetrenie technicky vykoná, špeciálne kompresné platničky mamografu stlačia postupne oba jej prsníky. Je to dôležité, aby sa zhotovili snímky vysokej kvality, na ktorých je možné rozoznať aj malé zmeny v prsníku. Stlačenie môže byť trochu nepríjemné a Zena môže cítiť tlak, nemalo by však byť bolestivé. Celé vyšetrenie trvá približne desať minút. V závislosti od konkrétneho pracoviska sa výsledky dozvie ihneď po vyšetrení alebo až po niekoľkých dňoch, v zásade by však nemalo ísť o dlhšiu dobu ako týždeň.",
     pohlavi: "Zena",
     obrazek: null,},
   { id: 10,
@@ -84,18 +68,13 @@ V závislosti od konkrétneho pracoviska sa výsledky dozvie ihneď po vyšetren
   { id: 12,
     nazevPrevence: "Preventivní gynekologické vyšetření",
     duvodPrevence: null,
-    popisPrevence: "Na preventívnu prehliadku má nárok každá Zena raz za rok po dovŕšení 18. roku alebo od prvého tehotenstva. Preventívnu prehliadku vykonáva lekár so špecializáciou v špecializačnom odbore gynekológia a pôrodníctvo.
-
-Ako prebieha prehliadka? S najväčšou pravdepodobnosťou vám lekár položí otázky, ktoré sa týkajú vášho zdravotného stavu za obdobie, odkedy ste absolvovali poslednú návštevu. Jedna z prvých otázok býva zameraná na pravidelnosť a priebeh menštruácie. Je dobré, ak si vediete menštruačný kalendár a na preventívnu prehliadku si ho zoberiete so sebou.",
+    popisPrevence: "Na preventívnu prehliadku má nárok každá Zena raz za rok po dovŕšení 18. roku alebo od prvého tehotenstva. Preventívnu prehliadku vykonáva lekár so špecializáciou v špecializačnom odbore gynekológia a pôrodníctvo. Ako prebieha prehliadka? S najväčšou pravdepodobnosťou vám lekár položí otázky, ktoré sa týkajú vášho zdravotného stavu za obdobie, odkedy ste absolvovali poslednú návštevu. Jedna z prvých otázok býva zameraná na pravidelnosť a priebeh menštruácie. Je dobré, ak si vediete menštruačný kalendár a na preventívnu prehliadku si ho zoberiete so sebou.",
     pohlavi: "Zena",
     obrazek: null,},
   { id: 13,
     nazevPrevence: "EKG",
     duvodPrevence: null,
-    popisPrevence: "Elektrokardiografie (EKG) je základní vyšetřovací metoda v kardiologii. Jejím principem je snímání elektrické srdeční aktivity a v podobě elektrokardiogramu (časový záznam EKG křivek) umožňuje její hodnocení. EKG vyšetření je většinou neinvazivní. Pomocí elektrod umístěných na kůži, ale i na stěně jícnu či přímo v srdci, měříme rozdíl napětí jako projev šíření akčního potenciálu myokardem.
-
-
-Protože je elektrická aktivita srdce podmínkou mechanické, má EKG důležitou diagnostickou roli u řady srdečních chorob. Navíc s jeho pomocí dokážeme odhalit i poruchy extrakardiálních příčin (např. poruchy činnosti štítné žlázy, iontové dysbalance), přesto samotné vyšetření EKG nemá takovou výpovědní hodnotu a vždy je důležité posuzovat celkový klinický obraz.",
+    popisPrevence: "Elektrokardiografie (EKG) je základní vyšetřovací metoda v kardiologii. Jejím principem je snímání elektrické srdeční aktivity a v podobě elektrokardiogramu (časový záznam EKG křivek) umožňuje její hodnocení. EKG vyšetření je většinou neinvazivní. Pomocí elektrod umístěných na kůži, ale i na stěně jícnu či přímo v srdci, měříme rozdíl napětí jako projev šíření akčního potenciálu myokardem. Protože je elektrická aktivita srdce podmínkou mechanické, má EKG důležitou diagnostickou roli u řady srdečních chorob. Navíc s jeho pomocí dokážeme odhalit i poruchy extrakardiálních příčin (např. poruchy činnosti štítné žlázy, iontové dysbalance), přesto samotné vyšetření EKG nemá takovou výpovědní hodnotu a vždy je důležité posuzovat celkový klinický obraz.",
     pohlavi: "Muz",
     obrazek: null,},
   { id: 14,
