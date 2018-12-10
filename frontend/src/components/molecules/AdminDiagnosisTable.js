@@ -21,6 +21,7 @@ import {AdminNavBar} from "../molecules/AdminNavBar";
 import ReactDOM from 'react-dom';
 import ReactModal from 'react-modal';
 ReactModal.setAppElement('#root');
+
 class AdminDiagnosisTable_ extends React.Component {
 
   constructor () {
@@ -82,7 +83,7 @@ class AdminDiagnosisTable_ extends React.Component {
                       </td>
                       <td>
                         <FontIcon
-                          style={{ padding:"1em" ,cursor: "pointer"}}
+                          style={{ cursor: "pointer"}}
                           //onClick={e => this.handleOpenModal}
                           onClick={e => this.handleOpenModal(nazevDiagnoza)}
                           icon={"trash"}
