@@ -2,9 +2,16 @@ import React, {Component} from 'react';
 import {FontIcon} from "../atoms/FontIcon";
 import {Layout} from "../atoms/Layout";
 
+
 import {TopNavBar} from "../organisms/TopNavBar";
 
+<<<<<<< HEAD
+import { CSSTransitionGroup } from 'react-transition-group'
+
+=======
+
 import Transition from 'react-transition-group/Transition';
+>>>>>>> 2b7fda5d853ee3317c8e2ecd297e9fc1e1a6b81c
 import {Link} from "../atoms/Link";
 import {Image} from "../atoms/Image";
 import {Row} from "../atoms/Row";
@@ -46,12 +53,20 @@ export class BurgerMenu extends Component {
         </Row>
         }
         {!collapse &&
+<<<<<<< HEAD
+        <CSSTransitionGroup
+=======
         <Transition
+>>>>>>> 2b7fda5d853ee3317c8e2ecd297e9fc1e1a6b81c
           transitionName="fade"
           transitionEnterTimeout={1000}
           transitionLeaveTimeout={1000}>
           <TopNavBar close={this.collapseMenu}/>
+<<<<<<< HEAD
+        </CSSTransitionGroup >
+=======
         </Transition>
+>>>>>>> 2b7fda5d853ee3317c8e2ecd297e9fc1e1a6b81c
         }
       </Layout>
     );
