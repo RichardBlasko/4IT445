@@ -5,7 +5,8 @@ import {Layout} from "../atoms/Layout";
 
 import {TopNavBar} from "../organisms/TopNavBar";
 
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+
+import Transition from 'react-transition-group/Transition';
 import {Link} from "../atoms/Link";
 import {Image} from "../atoms/Image";
 import {Row} from "../atoms/Row";
@@ -47,12 +48,12 @@ export class BurgerMenu extends Component {
         </Row>
         }
         {!collapse &&
-        <ReactCSSTransitionGroup
+        <Transition
           transitionName="fade"
           transitionEnterTimeout={1000}
           transitionLeaveTimeout={1000}>
           <TopNavBar close={this.collapseMenu}/>
-        </ReactCSSTransitionGroup>
+        </Transition>
         }
       </Layout>
     );
