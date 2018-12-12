@@ -2,9 +2,7 @@ import React, {Component} from 'react';
 import {FontIcon} from "../atoms/FontIcon";
 import {Layout} from "../atoms/Layout";
 
-
 import {TopNavBar} from "../organisms/TopNavBar";
-
 
 import Transition from 'react-transition-group/Transition';
 import {Link} from "../atoms/Link";
