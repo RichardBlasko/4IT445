@@ -18,10 +18,11 @@ export const StoryCard  = ({ pribehy }) => {
         <Row>
           <Column lg={12} md={12}  className="mt-1 mt-md-0">
               <Heading level={4} className="card-title white-text">{autorPribeh}, {autorVek} let</Heading>
-  {/*            <Heading level={6} className="card-title">{diagnose}</Heading> */}
+ <Heading level={7} className="white-text">{getDiagnoseName(pribehy)}</Heading>
               <span className="quotation text-justify white-text">❝</span>
-              <Paragraph className="text-justify white-text">
-                {textPribeh}
+              <Paragraph className="text-justify white-text"
+              maxLength="110">
+                {lessText(textPribeh)}
               </Paragraph>
             <NavLink className="storieslink white-text" exact to={`/pribehy/${id}`}>
               Celý příběh
@@ -32,4 +33,26 @@ export const StoryCard  = ({ pribehy }) => {
     </Layout>
   </Layout>
   );
+
+
 };
+
+function getDiagnoseName(pribehy){
+
+  var a = Object.values(pribehy);
+  var s = JSON.stringify(a[5])+" ";
+  s = s.substring(2);
+  var stringArray = s.split(",");
+  s = stringArray[1]+" ";
+  stringArray = s.split(":");
+  s= stringArray[1]+" ";;
+
+  return s.substring(1, s.length-3);
+}
+
+function lessText (textPribeh) {
+
+  var s = textPribeh+" ";
+  s = s.substring(0, 200)+"...";
+  return s;
+}

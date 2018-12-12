@@ -18,6 +18,7 @@ import {AdminEventPage} from "./components/pages/AdminEventPage";
 import {AdminSocialPage} from "./components/pages/AdminSocialPage";
 import {AdminPartnersPage} from "./components/pages/AdminPartnersPage";
 import {AdminPreventionFormPage} from "./components/pages/AdminPreventionFormPage";
+import {AdminPreventionEditFormPage} from "./components/pages/AdminPreventionEditFormPage";
 import {AdminDiagnosisFormPage} from "./components/pages/AdminDiagnosisFormPage";
 import {AdminDiagnosisEditFormPage} from "./components/pages/AdminDiagnosisEditFormPage";
 import {AdminPartnersFormPage} from "./components/pages/AdminPartnersFormPage";
@@ -41,6 +42,7 @@ export const AppRoutes = () => (
       <Route path="/admin/Příspěvky" exact component={AdminSocialPage} />
       <Route path="/admin/Partneři" exact component={AdminPartnersPage} />
       <Route path="/admin/Prevence/formular" exact component={AdminPreventionFormPage} />
+      <Route path="/admin/Prevence/formular/:id" exact component={AdminPreventionEditFormPage} />
       <Route path="/admin/Diagnózy/formular" exact component={AdminDiagnosisFormPage} />
       <Route path="/admin/Diagnózy/formular/:id" exact component={AdminDiagnosisEditFormPage} />
       <Route path="/admin/Partneři/formular" exact component={AdminPartnersFormPage} />

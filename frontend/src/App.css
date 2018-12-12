@@ -522,6 +522,8 @@ border-radius: 8px;
 .quotation{
   font-size: 2em;
   font-weight: bold;
+  width: 100%;
+display: block;
 }
 
 .quote{
@@ -711,6 +713,27 @@ border-radius: 8px;
   color: #3D3B30;
 }
 
+.Modal {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    right: 30%;
+    bottom: 50%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 3em;
+    background-color: #FFC15E;
+  }
+
+.Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f0f0f0;
+  }
 
 .adminForm img {
   padding: 1em;

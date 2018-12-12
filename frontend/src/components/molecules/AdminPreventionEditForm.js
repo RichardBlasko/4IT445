@@ -23,7 +23,7 @@ import api from '../../api';
 import { Formik } from 'formik';
 import {PREVENTIONS} from "../../mocks/Preventions";
 
-class AdminPreventionEditForm extends Component {
+class AdminPreventionEditForm_ extends Component {
 
   state = {
     redirectUrl: null,
@@ -319,6 +319,6 @@ class AdminPreventionEditForm extends Component {
  }
 }
 
-const Page = props => <AdminPreventionEditForm {...props} />
+const Page = props => <AdminPreventionEditForm_ {...props} />
 
-export default compose(withRouter)(Page)
+export const AdminPreventionEditForm = compose(withRouter)(Page)
