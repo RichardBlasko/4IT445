@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {FontIcon} from "../atoms/FontIcon";
 import {Layout} from "../atoms/Layout";
 
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import Transition from 'react-transition-group/Transition';
 import {InputWithButton} from "./InputWithButton";
 
 export class SearchInput extends Component {
@@ -27,12 +27,12 @@ export class SearchInput extends Component {
       <Layout className={"float-right"}>
         {collapse && <FontIcon onClick={this.collapseInput} icon={"search"}/>}
         {!collapse &&
-        <ReactCSSTransitionGroup
+        <Transition
           transitionName="fade"
           transitionEnterTimeout={1000}
           transitionLeaveTimeout={1000}>
           <InputWithButton className={"search-input"} buttonCss={"input-search-button"} buttonText={<FontIcon icon={"search"}/>}/>
-        </ReactCSSTransitionGroup>
+        </Transition>
         }
       </Layout>
     );
