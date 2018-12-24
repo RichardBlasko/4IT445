@@ -6,11 +6,10 @@ import {ListInline} from "../atoms/List/ListInline";
 import {ListInlineItem} from "../atoms/List/ListInlineItem";
 import {Paragraph} from "../atoms/Paragraph";
 import {Button} from "../atoms/Button/Button";
-{/*import LazyLoad from 'react-lazy-load';
-import { CSSTransitionGroup } from 'react-transition-group';*/}
+
 
 export const PreventionCard = ({ prevence }) => {
-  const { id, nazevPrevence, duvodPrevence, popisPrevence } = prevence;
+  const { nazevPrevence, popisPrevence } = prevence;
 
   return (
     <div className="widget-list">

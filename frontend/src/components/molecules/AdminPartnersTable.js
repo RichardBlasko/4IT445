@@ -1,27 +1,14 @@
 import React from 'react';
-import {Row} from "../atoms/Row";
-import {Layout} from "../atoms/Layout";
 import {Heading} from "../atoms/Heading";
-import {ListInline} from "../atoms/List/ListInline";
-import {ListInlineItem} from "../atoms/List/ListInlineItem";
-import {Paragraph} from "../atoms/Paragraph";
 import {Button} from "../atoms/Button/Button";
-import { Link } from '../atoms/Link';
-
 import {FontIcon} from "../atoms/FontIcon";
-
-import api from '../../api';
-import {AdminNavBar} from "../molecules/AdminNavBar";
-
 import history from '../../history.js';
 import { withRouter } from 'react-router';
 import { compose } from 'recompose';
-
-import ReactDOM from 'react-dom';
 import ReactModal from 'react-modal';
 ReactModal.setAppElement('#root');
 
-class AdminPartnersTable_ extends React.Component {
+class AdminPartnersTableRaw extends React.Component {
   constructor () {
       super();
       this.state = {
@@ -66,7 +53,7 @@ class AdminPartnersTable_ extends React.Component {
             <tbody className="orange">
               {
                 partneri.map(partneri => {
-                    const { id, nazevPartner,popisPartner,odkazPartner,logoPartner,obrazokPartner,idDiagnoza } = partneri;
+                    const { id, nazevPartner } = partneri;
 
                   return (
                     <tr key={id}>
@@ -123,6 +110,6 @@ class AdminPartnersTable_ extends React.Component {
   }
 }
 
-const Page = props => <AdminPartnersTable_ {...props} />
+const Page = props => <AdminPartnersTableRaw {...props} />
 
 export const AdminPartnersTable = compose(withRouter)(Page)

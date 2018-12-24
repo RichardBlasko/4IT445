@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-import {Label} from '../atoms/Form/Label';
 import {FormGroup} from '../atoms/Form/FormGroup';
 import Select from "react-select";
+
 
 export class MultiSelectWithLabel extends Component {
 

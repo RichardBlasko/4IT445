@@ -5,8 +5,6 @@ import {Heading} from "../atoms/Heading";
 import {Paragraph} from '../atoms/Paragraph';
 import {Column} from "../atoms/Column";
 import {Row} from "../atoms/Row";
-
-import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
 import { Timeline } from 'react-twitter-widgets'
 
 export const TwitterBlock = () => (

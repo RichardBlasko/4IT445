@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Route, Redirect } from 'react-router'
+import { Redirect } from 'react-router'
 
 import {Row} from "../atoms/Row";
 import {Button} from "../atoms/Button/Button";
@@ -14,12 +14,10 @@ import {FontIcon} from "../atoms/FontIcon";
 
 import { withRouter } from 'react-router';
 import { compose } from 'recompose';
-
-import api from '../../api';
 import { Formik } from 'formik';
 import {PARTNERS} from "../../mocks/Partners";
 
-class AdminPartnersEditForm_ extends Component {
+class AdminPartnersEditFormRaw extends Component {
 
   state = {
     redirectUrl: null,
@@ -106,7 +104,6 @@ class AdminPartnersEditForm_ extends Component {
                       label="Seznam diagnóz"
                       multi
                       options={diagnozy.map(diagnozy => {
-                          const { id, nazevDiagnoza, popisDiagnoza } = diagnozy;
                         return {label: diagnozy.nazevDiagnoza, value: diagnozy.nazevDiagnoza}
                       })}
                       name="preventions"
@@ -164,6 +161,6 @@ class AdminPartnersEditForm_ extends Component {
  }
 }
 
-const Page = props => <AdminPartnersEditForm_ {...props} />
+const Page = props => <AdminPartnersEditFormRaw {...props} />
 
 export const AdminPartnersEditForm = compose(withRouter)(Page)

@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import { Route, Redirect } from 'react-router'
+import { Redirect } from 'react-router'
 
 import {Layout} from '../atoms/Layout';
-import {Paragraph} from '../atoms/Paragraph';
 import {Row} from "../atoms/Row";
 import {InputWithLabel} from "../molecules/InputWithLabel";
 import {Heading} from "../atoms/Heading";
@@ -10,12 +9,10 @@ import {Button} from "../atoms/Button/Button";
 import {Column} from "../atoms/Column";
 import {TextareaWithLabel} from "../molecules/TextareaWithLabel";
 import {MultiSelectWithLabel} from "./MultiSelectWithLabel";
-import {SelectWithLabel} from "./SelectWithLabel";
 import { Link } from '../atoms/Link';
 import {FontIcon} from "../atoms/FontIcon";
 import {PeriodicitaInput} from "../molecules/PeriodicitaInput";
 import {AnamnesisAddInputForm} from "../molecules/AnamnesisAddInputForm";
-
 import api from '../../api';
 import { Formik } from 'formik';
 
@@ -64,7 +61,7 @@ export class AdminPreventionForm extends Component {
   render() {
     const { diagnozy } = this.props;
     let {anamnezy, personalAnamnezy} = this.state
-    let {lecimse, anamnesis} = this.props;
+    let {anamnesis} = this.props;
 
     const initialValues = {
       nazevPrevence: '',
@@ -188,7 +185,6 @@ export class AdminPreventionForm extends Component {
                       label="Seznam diagnóz"
                       multi
                       options={diagnozy.map(diagnozy => {
-                          const { id, nazevDiagnoza, popisDiagnoza } = diagnozy;
                         return {label: diagnozy.nazevDiagnoza, value: diagnozy.nazevDiagnoza}
                       })}
                       name="preventions"

@@ -1,26 +1,14 @@
 import React from 'react';
-import {Row} from "../atoms/Row";
-import {Layout} from "../atoms/Layout";
 import {Heading} from "../atoms/Heading";
-import {ListInline} from "../atoms/List/ListInline";
-import {ListInlineItem} from "../atoms/List/ListInlineItem";
-import {Paragraph} from "../atoms/Paragraph";
 import {Button} from "../atoms/Button/Button";
-import { Link } from '../atoms/Link';
-
 import {FontIcon} from "../atoms/FontIcon";
-
-import {AdminNavBar} from "../molecules/AdminNavBar";
-
 import history from '../../history.js';
 import { withRouter } from 'react-router';
 import { compose } from 'recompose';
-
-import ReactDOM from 'react-dom';
 import ReactModal from 'react-modal';
 ReactModal.setAppElement('#root');
 
-class AdminPreventionTable_ extends React.Component {
+class AdminPreventionTableRaw extends React.Component {
   constructor () {
       super();
       this.state = {
@@ -66,7 +54,7 @@ class AdminPreventionTable_ extends React.Component {
             <tbody className="orange">
               {
                 prevence.map(prevence => {
-                    const { id, nazevPrevence, popisPrevence, duvodPrevence } = prevence;
+                    const { id, nazevPrevence } = prevence;
                   return (
                     <tr>
                       <th scope="row">{id}</th>
@@ -121,6 +109,6 @@ class AdminPreventionTable_ extends React.Component {
   }
 }
 
-const Page = props => <AdminPreventionTable_ {...props} />
+const Page = props => <AdminPreventionTableRaw {...props} />
 
 export const AdminPreventionTable = compose(withRouter)(Page)

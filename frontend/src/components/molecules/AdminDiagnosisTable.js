@@ -1,28 +1,16 @@
 import React from 'react';
 
-import {Row} from "../atoms/Row";
-import {Layout} from "../atoms/Layout";
 import {Heading} from "../atoms/Heading";
-import {ListInline} from "../atoms/List/ListInline";
-import {ListInlineItem} from "../atoms/List/ListInlineItem";
-import {Paragraph} from "../atoms/Paragraph";
 import {Button} from "../atoms/Button/Button";
-import { Link } from '../atoms/Link';
-
 import history from '../../history.js';
 import { withRouter } from 'react-router';
 import { compose } from 'recompose';
-
 import {FontIcon} from "../atoms/FontIcon";
 
-import api from '../../api';
-import {AdminNavBar} from "../molecules/AdminNavBar";
-
-import ReactDOM from 'react-dom';
 import ReactModal from 'react-modal';
 ReactModal.setAppElement('#root');
 
-class AdminDiagnosisTable_ extends React.Component {
+class AdminDiagnosisTableRaw extends React.Component {
 
   constructor () {
       super();
@@ -68,7 +56,7 @@ class AdminDiagnosisTable_ extends React.Component {
             <tbody className="orange">
               {
                 diagnozy.map(diagnozy => {
-                    const { id, nazevDiagnoza, popisDiagnoza } = diagnozy;
+                    const { id, nazevDiagnoza } = diagnozy;
 
                   return (
                     <tr key={id}>
@@ -125,5 +113,5 @@ class AdminDiagnosisTable_ extends React.Component {
   }
 }
 
-const Page = props => <AdminDiagnosisTable_ {...props} />
+const Page = props => <AdminDiagnosisTableRaw {...props} />
 export const AdminDiagnosisTable = compose(withRouter)(Page)

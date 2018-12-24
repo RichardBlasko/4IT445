@@ -23,7 +23,7 @@ class StoryListTemplateRaw extends Component {
   }
 
 render() {
-    const { isLoading, pribehy, isLoaded, isError, error } = this.props;
+    const { pribehy } = this.props;
     return(
       <Layout>
         <HeadBlock category={"Za 5 minut 12"} descr={"Příběhy těch, kterým prevence zachránila život"}/>

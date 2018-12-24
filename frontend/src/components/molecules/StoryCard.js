@@ -2,14 +2,13 @@ import React from 'react';
 import {Layout} from "../atoms/Layout";
 import {Paragraph} from "../atoms/Paragraph";
 import {Heading} from "../atoms/Heading";
-import {Button} from "../atoms/Button/Button";
 import {NavLink} from "../atoms/Nav/NavLink";
 import {Row} from "../atoms/Row";
 import {Column} from "../atoms/Column";
 
 export const StoryCard  = ({ pribehy }) => {
   console.log(pribehy)
-  const { id, autorPribeh, autorVek, textPribeh, idDiagnozy} = pribehy;
+  const { id, autorPribeh, autorVek, textPribeh} = pribehy;
 
   return (
   <Layout className={"card storyCard"}>

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 import {Layout} from '../atoms/Layout';
 import {Row} from "../atoms/Row";
@@ -8,10 +8,10 @@ import {PeriodicitaInput} from "../molecules/PeriodicitaInput";
 export const AnamnesisAddInputForm = ({anamnezy, anamnesis}) => {
   return (
     anamnezy.map((val, idx) => {
-      let anamnezyId = 'anamnezy-${idx}',
-          vekOdId = 'vekOd-${idx}',
-          vekDoId = 'vekDo-${idx}',
-          periodicitaId = 'periodicita-${idx}'
+      let anamnezyId = `anamnezy-${idx}`,
+          vekOdId = `vekOd-${idx}`,
+          vekDoId = `vekDo-${idx}`,
+          periodicitaId = `periodicita-${idx}`
 
       return(
         <div key={idx}>

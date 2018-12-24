@@ -1,18 +1,8 @@
 import React, {Component} from 'react';
 
-import {Layout} from '../atoms/Layout';
-import {Paragraph} from '../atoms/Paragraph';
 import {Row} from "../atoms/Row";
 import {InputWithLabel} from "../molecules/InputWithLabel";
-import {Heading} from "../atoms/Heading";
-import {Button} from "../atoms/Button/Button";
 import {Column} from "../atoms/Column";
-import {TextareaWithLabel} from "../molecules/TextareaWithLabel";
-import {MultiSelectWithLabel} from "./MultiSelectWithLabel";
-import {SelectWithLabel} from "./SelectWithLabel";
-import { Link } from '../atoms/Link';
-import {FontIcon} from "../atoms/FontIcon";
-
 
 export class PeriodicitaInput extends Component {
   render() {

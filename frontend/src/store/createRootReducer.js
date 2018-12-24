@@ -11,7 +11,6 @@ import { pribehyListReducer } from '../services/PribehyList/reducer';
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['preventionCard'],
   whitelist: ['shoppingCart'],
 };
 

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Route, Redirect } from 'react-router'
+import { Redirect } from 'react-router'
 
 import {Row} from "../atoms/Row";
 import {Button} from "../atoms/Button/Button";
@@ -10,11 +10,8 @@ import {TextareaWithLabel} from "../molecules/TextareaWithLabel";
 import {Heading} from "../atoms/Heading";
 import { Link } from '../atoms/Link';
 import {FontIcon} from "../atoms/FontIcon";
-
 import { withRouter } from 'react-router';
 import { compose } from 'recompose';
-
-import api from '../../api';
 import { Formik } from 'formik';
 import {DIAGNOSIS} from "../../mocks/Diagnosis";
 

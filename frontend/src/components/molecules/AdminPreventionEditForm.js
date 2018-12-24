@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import { Route, Redirect } from 'react-router'
+import { Redirect } from 'react-router'
 
 import {Layout} from '../atoms/Layout';
-import {Paragraph} from '../atoms/Paragraph';
 import {Row} from "../atoms/Row";
 import {InputWithLabel} from "../molecules/InputWithLabel";
 import {Heading} from "../atoms/Heading";
@@ -10,7 +9,6 @@ import {Button} from "../atoms/Button/Button";
 import {Column} from "../atoms/Column";
 import {TextareaWithLabel} from "../molecules/TextareaWithLabel";
 import {MultiSelectWithLabel} from "./MultiSelectWithLabel";
-import {SelectWithLabel} from "./SelectWithLabel";
 import { Link } from '../atoms/Link';
 import {FontIcon} from "../atoms/FontIcon";
 import {PeriodicitaInput} from "../molecules/PeriodicitaInput";
@@ -18,12 +16,10 @@ import {AnamnesisAddInputForm} from "../molecules/AnamnesisAddInputForm";
 
 import { withRouter } from 'react-router';
 import { compose } from 'recompose';
-
-import api from '../../api';
 import { Formik } from 'formik';
 import {PREVENTIONS} from "../../mocks/Preventions";
 
-class AdminPreventionEditForm_ extends Component {
+class AdminPreventionEditFormRaw extends Component {
 
   state = {
     redirectUrl: null,
@@ -70,7 +66,7 @@ class AdminPreventionEditForm_ extends Component {
 
     const { diagnozy } = this.props;
     let {anamnezy, personalAnamnezy} = this.state
-    let {lecimse, anamnesis} = this.props;
+    let {anamnesis} = this.props;
 
     const initialValues = {
       nazevPrevence: PREVENTIONS[this.props.match.params.id-1].nazevPrevence,
@@ -198,7 +194,6 @@ class AdminPreventionEditForm_ extends Component {
                         label="Seznam diagnóz"
                         multi
                         options={diagnozy.map(diagnozy => {
-                            const { id, nazevDiagnoza, popisDiagnoza } = diagnozy;
                           return {label: diagnozy.nazevDiagnoza, value: diagnozy.nazevDiagnoza}
                         })}
                         name="preventions"
@@ -319,6 +314,6 @@ class AdminPreventionEditForm_ extends Component {
  }
 }
 
-const Page = props => <AdminPreventionEditForm_ {...props} />
+const Page = props => <AdminPreventionEditFormRaw {...props} />
 
 export const AdminPreventionEditForm = compose(withRouter)(Page)

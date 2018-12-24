@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
 import Carousel from 'nuka-carousel';
 import { connect } from 'react-redux';
-
 import {Layout} from '../atoms/Layout';
 import {Row} from "../atoms/Row";
 import {Column} from "../atoms/Column";
 import {Heading} from "../atoms/Heading";
-import {Button} from "../atoms/Button/Button";
 import {NavLink} from "../atoms/Nav/NavLink";
 import {StoryCard} from "../molecules/StoryCard";
 import {FontIcon} from "../atoms/FontIcon";
@@ -30,7 +28,7 @@ class StorySliderRaw extends Component {
 
 
 render() {
-  const { isLoading, pribehy, isLoaded, isError, error } = this.props;
+  const { pribehy } = this.props;
   return(
 
     <Layout className="part-55 wrapper pb-5 container-fluid fixslider">

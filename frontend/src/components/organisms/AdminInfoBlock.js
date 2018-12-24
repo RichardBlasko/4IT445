@@ -3,7 +3,6 @@ import React from 'react';
 import {Layout} from '../atoms/Layout';
 import {Column} from "../atoms/Column";
 import {Row} from "../atoms/Row";
-import {Button} from "../atoms/Button/Button";
 import {AdminInfoCard} from "../molecules/AdminInfoCard";
 
 export const AdminInfoBlock = ({children}) => (

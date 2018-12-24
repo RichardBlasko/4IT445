@@ -46,7 +46,7 @@ export class FilterBox extends React.Component {
   renderCollpase = () => {
     return (
       <Row className={"justify-content-center m-2 mb-3"}>
-        <a href={"#"} onClick={() => this.expandHandler()} className={"detail-link"}>Podrobnější vyhledávání</a>
+        <a href={""} onClick={() => this.expandHandler()} className={"detail-link"}>Podrobnější vyhledávání</a>
       </Row>
     )
   }
@@ -101,14 +101,14 @@ export class FilterBox extends React.Component {
           </div>
         </Row>
         <Row className={"justify-content-center m-2 mb-3"}>
-          <a href={"#"} onClick={() => this.expandHandler()} className={"detail-link"}>Skrýt podrobnější vyhledávání</a>
+          <a href={""} onClick={() => this.expandHandler()} className={"detail-link"}>Skrýt podrobnější vyhledávání</a>
         </Row>
       </Layout>
     )
   }
 
   render() {
-    let {min = 18, max = 120, anamnesis, styles} = this.props;
+    let {min = 18, max = 120, anamnesis} = this.props;
     let {expand} = this.state;
     return (
       <form action={"/prevence"}>

@@ -11,7 +11,6 @@ export const StoryBlock = ({ pribehy }) => {
           autorPribeh,
           autorVek,
           textPribeh,
-          idDiagnozy,
         } = pribehy;
   return (
 <Layout>
