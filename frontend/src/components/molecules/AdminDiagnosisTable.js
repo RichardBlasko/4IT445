@@ -41,6 +41,10 @@ class AdminDiagnosisTableRaw extends React.Component {
     alert('Diagnóza ' + e + ' úspešne odstránená.')
   }
 
+  validateForm() {
+    return this.state.diagnoza.nazevDiagnoza > 0 && this.state.diagnoza.popisDiagnoza > 0;
+  }
+
   render() {
     const { diagnozy } = this.props;
 
