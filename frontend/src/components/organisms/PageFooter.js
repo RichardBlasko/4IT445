@@ -22,7 +22,7 @@ export class PageFooter extends Component {
       <Layout className="footer pt-5">
         <Row className={"justify-content-center mb-3"}>
           <Column md={4} xs={11} className={"order-md-1"}>
-            <Heading level={5} className={"pb-3"}>Podělte se s námi o Vaše příběhy</Heading>
+            <Heading level={5} className={"pb-3"}>Podělte se s námi o Vaše dotazy</Heading>
             <form>
               <Row>
                 <Layout className="col-md-6">
