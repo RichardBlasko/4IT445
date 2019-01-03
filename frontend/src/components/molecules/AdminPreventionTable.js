@@ -36,7 +36,7 @@ class AdminPreventionTableRaw extends React.Component {
 
 
       openAlert = (e) => {
-        alert('Preventívni vyšetření ' + e + ' úspešne odstráneno.')
+        alert('Preventívni vyšetření ' + e + ' úspěšně odstraněno.')
       }
 
   render() {

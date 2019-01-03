@@ -38,7 +38,7 @@ class AdminDiagnosisTableRaw extends React.Component {
   }
 
   openAlert = (e) => {
-    alert('Diagnóza ' + e + ' úspešne odstránená.')
+    alert('Diagnóza ' + e + ' úspěšně odstraněna.')
   }
 
   validateForm() {

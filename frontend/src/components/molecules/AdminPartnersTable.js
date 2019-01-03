@@ -35,7 +35,7 @@ class AdminPartnersTableRaw extends React.Component {
   }
 
   openAlert = (e) => {
-    alert('Partner ' + e + ' úspešne odstránen.')
+    alert('Partner ' + e + ' úspěšně odstraněn.')
   }
 
   render() {
