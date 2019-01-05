@@ -21,7 +21,7 @@ class AdminPribehyTableRaw extends React.Component {
     }
 
   handleOpenModal = (e) => {
-    console.log(e);
+    //console.log(e);
     this.setState({ showModal: true, pribehy: e });
 
   }
@@ -30,8 +30,12 @@ class AdminPribehyTableRaw extends React.Component {
     this.setState({ showModal: false });
   }
 
-    openEditForm = (e) => {
-      history.push(this.props.location.pathname + "/formular/" + e)
+    openEditForm = (e,p) => {
+      //console.log(p);
+     //history.push(this.props.location.pathname + "/formular/" + e);
+      history.push(
+           this.props.location.pathname + "/formular/" + e, { pribeh: p }
+      )
     }
 
 
@@ -42,7 +46,6 @@ class AdminPribehyTableRaw extends React.Component {
   render() {
     const { pribehy } = this.props;
 
-    console.log(pribehy);
 
     return (
           <table className="table table-bordered">
@@ -56,7 +59,7 @@ class AdminPribehyTableRaw extends React.Component {
             <tbody className="orange">
               {
                 pribehy.map(pribehy => {
-                    const { id, autorPribeh } = pribehy;
+                    const { id, autorPribeh, autorVek, autorText, idDiagnozy } = pribehy;
                   return (
                     <tr>
                       <th scope="row">{id}</th>
@@ -64,7 +67,7 @@ class AdminPribehyTableRaw extends React.Component {
                       <td>
                           <FontIcon
                             style={{ cursor: "pointer"}}
-                            onClick={e => this.openEditForm(id)}
+                            onClick={e => this.openEditForm(id,pribehy)}
                             icon={"edit"}
                           />
                       </td>

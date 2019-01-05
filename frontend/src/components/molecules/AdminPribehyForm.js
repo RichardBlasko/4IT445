@@ -74,11 +74,11 @@ export class AdminPribehyForm extends Component {
                     onChange={handleChange}
                     onBlur={handleBlur}
                   />
-                  <TextareaWithLabel
+                  <InputWithLabel
                     id="autorVek"
                     label="Věk autora"
                     placeholder="Zde uveďte věk autora příběhu"
-                    rows={10}
+                    type="number"
                     value={values.autorVek}
                     onChange={handleChange}
                     onBlur={handleBlur}
@@ -101,7 +101,7 @@ export class AdminPribehyForm extends Component {
 
               <Row>
                 <Layout className="col-md-9">
-                  <InputWithLabel
+                  <TextareaWithLabel
                     id="textPribeh"
                     label="Text příběhu"
                     placeholder="Zde uveďte text příběhu"

@@ -11,29 +11,28 @@ import {MultiSelectWithLabel} from "./MultiSelectWithLabel";
 import {Heading} from "../atoms/Heading";
 import { Link } from '../atoms/Link';
 import {FontIcon} from "../atoms/FontIcon";
-
+import api from '../../api';
 import { withRouter } from 'react-router';
 import { compose } from 'recompose';
 import { Formik } from 'formik';
-import {PARTNERS} from "../../mocks/Partners";
+
 
 class AdminPribehyEditFormRaw extends Component {
-
-  state = {
+    state = {
     redirectUrl: null,
   };
 
   render() {
-
+    const pribeh  = this.props.location.state.pribeh;
+    console.log(pribeh);
     const { diagnozy } = this.props;
     const initialValues = {
-      nazevPartner: PARTNERS[this.props.match.params.id-1].nazevPartner,
-      popisPartner: PARTNERS[this.props.match.params.id-1].popisPartner,
-      kontaktPartner: PARTNERS[this.props.match.params.id-1].kontaktPartner,
-      logoPartner: PARTNERS[this.props.match.params.id-1].logoPartner,
-      obrazokPartner: PARTNERS[this.props.match.params.id-1].obrazokPartner,
-      idDiagnoza: PARTNERS[this.props.match.params.id-1].idDiagnoza
+      autorPribeh: pribeh.autorPribeh,
+      autorVek: pribeh.autorVek,
+      textPribeh: pribeh.textPribeh,
+      idDiagnozy: null
     };
+    //console.log(this.props);
 
     const { redirectUrl } = this.state;
 
@@ -54,18 +53,10 @@ class AdminPribehyEditFormRaw extends Component {
             <Formik
               initialValues={initialValues}
               onSubmit={(values, actions) => {
-                PARTNERS[this.props.match.params.id-1].nazevPartner = values.nazevPartner;
-                console.log(PARTNERS[this.props.match.params.id-1].nazevPartner)
-                PARTNERS[this.props.match.params.id-1].popisPartner = values.popisPartner;
-                console.log(PARTNERS[this.props.match.params.id-1].popisPartner)
-                PARTNERS[this.props.match.params.id-1].kontaktPartner = values.kontaktPartner;
-                console.log(PARTNERS[this.props.match.params.id-1].kontaktPartner)
-                PARTNERS[this.props.match.params.id-1].logoPartner = values.logoPartner;
-                console.log(PARTNERS[this.props.match.params.id-1].logoPartner)
-                PARTNERS[this.props.match.params.id-1].obrazokPartner = values.obrazokPartner;
-                console.log(PARTNERS[this.props.match.params.id-1].obrazokPartner)
-                PARTNERS[this.props.match.params.id-1].idDiagnoza = values.idDiagnoza;
-                console.log(PARTNERS[this.props.match.params.id-1].idDiagnoza)
+                api.put('http://dev.backend.team03.vse.handson.pro/api/pribehy', values)
+                  .then(({ data }) => {
+                    actions.setSubmitting(false);
+                  })
               this.setState({ redirectUrl: '/admin/Příběhy' });
               }}
               render={({
@@ -77,78 +68,65 @@ class AdminPribehyEditFormRaw extends Component {
               }) => (
 
               <form onSubmit={handleSubmit}>
-                <Row>
-                  <Layout className="col-md-9">
-                    <InputWithLabel
-                      id="nazevPartner"
-                      label="Název patnera"
-                      placeholder="Zde uveďte název partnera"
-                      value={values.nazevPartner}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                    />
-                    <TextareaWithLabel
-                      id="popisPartner"
-                      label="Popis partnera"
-                      placeholder="Zde uveďte popis partnera"
-                      rows={10}
-                      value={values.popisPartner}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                    />
-                  </Layout>
+              <Row>
+                <Layout className="col-md-9">
+                  <InputWithLabel
+                    id="autorPribeh"
+                    label="Autor příběhu"
+                    placeholder="Zde uveďte jméno autora příběhu"
+                    value={values.autorPribeh}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+                  <InputWithLabel
+                    id="autorVek"
+                    label="Věk autora"
+                    placeholder="Zde uveďte věk autora příběhu"
+                    type="number"
+                    value={values.autorVek}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+                </Layout>
 
-                  <Layout  className="col-md-3">
-                    <MultiSelectWithLabel
-                      id="idDiagnoza"
-                      label="Seznam diagnóz"
-                      multi
-                      options={diagnozy.map(diagnozy => {
-                        return {label: diagnozy.nazevDiagnoza, value: diagnozy.nazevDiagnoza}
-                      })}
-                      name="preventions"
-                      placeholder="Vyber..."
-                    />
-                  </Layout>
-                </Row>
+                <Layout  className="col-md-3">
+                  <MultiSelectWithLabel
+                    id="idDiagnozy"
+                    label="Seznam diagnóz"
+                    value={pribeh.idDiagnozy}
+                    multi
+                    options={diagnozy.map(diagnozy => {
+                      return {label: diagnozy.nazevDiagnoza, value: diagnozy.idDiagnozy}
+                    })}
+                    name="preventions"
+                    placeholder="Vyber..."
+                  />
+                </Layout>
+              </Row>
 
-                <Row>
-                  <Layout className="col-md-9">
-                    <InputWithLabel
-                      id="kontaktPartner"
-                      label="Webová stránka patnera"
-                      placeholder="Zde uveďte webovú stránku partnera"
-                      value={values.kontaktPartner}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                    />
-                    <InputWithLabel
-                      id="logoPartner"
-                      label="URL adresa loga patnera"
-                      placeholder="Zde uveďte URL adresu obrazka loga partnera"
-                      value={values.logoPartner}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                    />
-                    <InputWithLabel
-                      id="obrazokPartner"
-                      label="Adresa obrázka patnera"
-                      placeholder="Zde uveďte adresu obrázka partnera"
-                      value={values.obrazokPartner}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                    />
-                  </Layout>
-                  <Column xs={12}>
-                      <Button
-                        variant="admin"
-                        className="float-right"
-                        type="submit"
-                        disabled={isSubmitting}>
-                        Uložiť
-                      </Button>
-                  </Column>
-                </Row>
+              <Row>
+                <Layout className="col-md-9">
+                  <TextareaWithLabel
+                    id="textPribeh"
+                    label="Text příběhu"
+                    placeholder="Zde uveďte text příběhu"
+                    value={values.textPribeh}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+
+                </Layout>
+                <Column xs={12}>
+                    <Button
+                      variant="admin"
+                      className="float-right"
+                      type="submit"
+                      disabled={isSubmitting}>
+                      Uložiť
+                    </Button>
+                </Column>
+              </Row>
+
               </form>
               )}
             />
