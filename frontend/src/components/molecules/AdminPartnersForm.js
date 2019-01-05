@@ -11,9 +11,12 @@ import {MultiSelectWithLabel} from "./MultiSelectWithLabel";
 import {Heading} from "../atoms/Heading";
 import { Link } from '../atoms/Link';
 import {FontIcon} from "../atoms/FontIcon";
+import TextInput from '../molecules/TextInput'
 
 import api from '../../api';
-import { Formik } from 'formik';
+import {Field, Formik} from 'formik'
+import * as Yup from 'yup'
+import isEmpty from 'lodash/isEmpty'
 
 export class AdminPartnersForm extends Component {
   state = {
@@ -48,6 +51,14 @@ export class AdminPartnersForm extends Component {
             {redirectUrl && <Redirect to={redirectUrl} />}
 
             <Formik
+              validationSchema={Yup.object().shape({
+                nazevPartner: Yup.string()
+                  .min(3, 'Název partnera musí mít nejméně 3 znaky.')
+                  .required('Název partnera je povinný.'),
+                kontaktPartner: Yup.string()
+                  .min(3, 'Webová stránka patnera musí mít nejméně 3 znaky.')
+                  .required('Webová stránka patnera je povinná.'),
+              })}
               initialValues={initialValues}
               onSubmit={(values, actions) => {
                 console.log(values);
@@ -63,19 +74,23 @@ export class AdminPartnersForm extends Component {
                 handleBlur,
                 handleChange,
                 handleSubmit,
+                errors,
+                dirty,
                 isSubmitting,
               }) => (
 
             <form onSubmit={handleSubmit}>
               <Row>
                 <Layout className="col-md-9">
-                  <InputWithLabel
-                    id="nazevPartner"
-                    label="Název patnera"
-                    placeholder="Zde uveďte název partnera"
+                  <Field
+                    type="text"
+                    name="nazevPartner"
+                    label="Zde uveďte název partnera"
+                    className={"admin-input"}
                     value={values.nazevPartner}
                     onChange={handleChange}
                     onBlur={handleBlur}
+                    component={TextInput}
                   />
                   <TextareaWithLabel
                     id="popisPartner"
@@ -104,13 +119,15 @@ export class AdminPartnersForm extends Component {
 
               <Row>
                 <Layout className="col-md-9">
-                  <InputWithLabel
-                    id="kontaktPartner"
+                  <Field
+                    type="text"
+                    name="kontaktPartner"
                     label="Webová stránka patnera"
-                    placeholder="Zde uveďte webovú stránku partnera"
+                    className={"admin-input"}
                     value={values.kontaktPartner}
                     onChange={handleChange}
                     onBlur={handleBlur}
+                    component={TextInput}
                   />
                   <InputWithLabel
                     id="logoPartner"
@@ -134,7 +151,7 @@ export class AdminPartnersForm extends Component {
                       variant="admin"
                       className="float-right"
                       type="submit"
-                      disabled={isSubmitting}>
+                      disabled={isSubmitting || !isEmpty(errors) || !dirty}>
                       Uložiť
                     </Button>
                 </Column>
