@@ -24,6 +24,8 @@ import {AdminDiagnosisEditFormPage} from "./components/pages/AdminDiagnosisEditF
 import {AdminPartnersFormPage} from "./components/pages/AdminPartnersFormPage";
 import {AdminPartnersEditFormPage} from "./components/pages/AdminPartnersEditFormPage";
 import {PartnersPage} from "./components/pages/PartnersPage";
+import {AdminPribehyFormPage} from "./components/pages/AdminPribehyFormPage";
+import {AdminPribehyEditFormPage} from "./components/pages/AdminPribehyEditFormPage";
 
 export const AppRoutes = () => (
     <Switch>
@@ -47,6 +49,8 @@ export const AppRoutes = () => (
       <Route path="/admin/Diagnózy/formular/:id" exact component={AdminDiagnosisEditFormPage} />
       <Route path="/admin/Partneři/formular" exact component={AdminPartnersFormPage} />
       <Route path="/admin/Partneři/formular/:id" exact component={AdminPartnersEditFormPage} />
+      <Route path="/admin/Příběhy/formular" exact component={AdminPribehyFormPage} />
+      <Route path="/admin/Příběhy/formular/:id" exact component={AdminPribehyEditFormPage} />
       <Route path="/login" exact component={AdminLoginPage} />
       <Route path="/partneri" exact component={PartnersPage} />
     </Switch>
