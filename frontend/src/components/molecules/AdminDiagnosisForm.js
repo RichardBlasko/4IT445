@@ -54,9 +54,6 @@ export class AdminDiagnosisForm extends Component {
                 nazevDiagnoza: Yup.string()
                   .min(3, 'Název diagnózy musí mít nejméně 3 znaky.')
                   .required('Název diagnózy je povinný.'),
-                popisDiagnoza: Yup.string()
-                  .min(5, 'Popis diagnózy musí mít nejméně 5 znaků.')
-                  .required('Popis diagnózy je povinný.'),
               })}
               initialValues={initialValues}
               onSubmit={(values, actions) => {
