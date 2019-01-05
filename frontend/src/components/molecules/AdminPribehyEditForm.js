@@ -24,7 +24,6 @@ class AdminPribehyEditFormRaw extends Component {
 
   render() {
     const pribeh  = this.props.location.state.pribeh;
-    console.log(pribeh);
     const { diagnozy } = this.props;
     const initialValues = {
       autorPribeh: pribeh.autorPribeh,
@@ -32,7 +31,6 @@ class AdminPribehyEditFormRaw extends Component {
       textPribeh: pribeh.textPribeh,
       idDiagnozy: null
     };
-    //console.log(this.props);
 
     const { redirectUrl } = this.state;
 
@@ -135,7 +133,6 @@ class AdminPribehyEditFormRaw extends Component {
       </Row>
     </Layout>
   );
-   //console.log(values)
  }
 }
 

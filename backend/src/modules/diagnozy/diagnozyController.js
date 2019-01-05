@@ -8,8 +8,7 @@ export const diagnozyController = async (req, res) => {
 
 
 export const oneDiagnozyController = async (req, res) => {
-  const {id} = req.params
-  console.log(id)
+  const {id} = req.params;
   const diagnozy = await db.Diagnozy.findByPk(id);
   res.json({diagnozy});
 };
@@ -70,7 +69,6 @@ export const updateDiagnozyController = async (req, res) => {
     )
   );
 
-  console.log("Done");
   res.status(200).json({ message: responses });
 };
 

@@ -47,11 +47,9 @@ export class AdminPribehyForm extends Component {
             <Formik
               initialValues={initialValues}
               onSubmit={(values, actions) => {
-                console.log(values);
                 api.post('http://dev.backend.team03.vse.handson.pro/api/pribehy', values)
                   .then(({ data }) => {
                     actions.setSubmitting(false);
-                    console.log('-> data', data);
                   })
                 this.setState({ redirectUrl: '/admin/Příběhy/' });
               }}
