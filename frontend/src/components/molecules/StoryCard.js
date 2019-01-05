@@ -17,7 +17,7 @@ export const StoryCard  = ({ pribehy }) => {
         <Row>
           <Column lg={12} md={12}  className="mt-1 mt-md-0">
               <Heading level={4} className="card-title white-text">{autorPribeh}, {autorVek} let</Heading>
- <Heading level={7} className="white-text">{getDiagnoseName(pribehy)}</Heading>
+ <Heading level={6} className="white-text">{getDiagnoseName(pribehy)}</Heading>
               <span className="quotation text-justify white-text">❝</span>
               <Paragraph className="text-justify white-text"
               maxLength="110">

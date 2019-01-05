@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 
 import {Layout} from '../atoms/Layout';
@@ -15,6 +16,7 @@ import {Column} from "../atoms/Column";
 import {List} from "../atoms/List/List";
 import {ListItem} from "../atoms/List/ListItem";
 import {Image} from "../atoms/Image";
+import ContactForm from "../molecules/ContactForm";
 
 export class PageFooter extends Component {
   render() {
@@ -23,30 +25,7 @@ export class PageFooter extends Component {
         <Row className={"justify-content-center mb-3"}>
           <Column md={4} xs={11} className={"order-md-1"}>
             <Heading level={5} className={"pb-3"}>Podělte se s námi o Vaše dotazy</Heading>
-            <form>
-              <Row>
-                <Layout className="col-md-6">
-                  <InputWithLabel
-                    id="name"
-                    label="Jméno"
-                    placeholder="Vaše jméno"
-                  />
-                </Layout>
-                <Layout className="col-md-6">
-                  <InputWithLabel
-                    id="email"
-                    label="Email"
-                    placeholder="Váš email"
-                    type="email"
-                  />
-                </Layout>
-              </Row>
-              <TextareaWithLabel
-                id="message"
-                label="Zpráva"
-              />
-              <Button title="Odeslat zprávu" variant="send" type="submit" className={"mb-3"}/>
-            </form>
+            <ContactForm env={this.props.env} />
           </Column>
           <Column md={4} xs={11} className={"footer-menu order-md-3"}>
             <Heading level={5} className={"pt-2"}>PROČ #PREVENCEMASMYSL?</Heading>
@@ -121,3 +100,7 @@ export class PageFooter extends Component {
     );
   }
 }
+
+PageFooter.propTypes = {
+  env: PropTypes.object.isRequired
+};
