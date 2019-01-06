@@ -7,8 +7,9 @@ import { withRouter } from 'react-router';
 import { compose } from 'recompose';
 import ReactModal from 'react-modal';
 import api from '../../api';
-ReactModal.setAppElement('#root');
 
+
+ReactModal.setAppElement('#root');
 
 class AdminPribehyTableRaw extends React.Component {
   constructor () {
@@ -45,11 +46,10 @@ class AdminPribehyTableRaw extends React.Component {
       }
       handleDeleteAndClose = (e) =>{
         const idToDelete  = e.id;
-        console.log(idToDelete);
         api.delete('http://dev.backend.team03.vse.handson.pro/api/pribehy', { data: { id: idToDelete } })
             .then(({ data }) => {
               this.handleCloseModal();
-              this.setState({ redirectUrl: '/admin/Příběhy/' });
+              this.setState({ redirectUrl: '/admin/Příběhy' });
               window.location.reload();
             })
 
@@ -72,6 +72,7 @@ class AdminPribehyTableRaw extends React.Component {
               {
                 pribehy.map(pribehy => {
                     const { id, autorPribeh, autorVek, autorText, idDiagnozy } = pribehy;
+
                   return (
                     <tr>
                       <th scope="row">{id}</th>
@@ -112,7 +113,7 @@ class AdminPribehyTableRaw extends React.Component {
                             variant="admin"
                             className="float-right"
                             onClick={() => { this.handleDeleteAndClose(this.state) }}>
-                            Odstrániť
+                            Odstránit
                           </Button>
                         </ReactModal>
                       </td>

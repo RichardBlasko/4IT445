@@ -11,7 +11,7 @@ import {MultiSelectWithLabel} from "./MultiSelectWithLabel";
 import {Heading} from "../atoms/Heading";
 import { Link } from '../atoms/Link';
 import {FontIcon} from "../atoms/FontIcon";
-
+import api from '../../api';
 import { withRouter } from 'react-router';
 import { compose } from 'recompose';
 import { Formik } from 'formik';
@@ -26,13 +26,14 @@ class AdminPartnersEditFormRaw extends Component {
   render() {
 
     const { diagnozy } = this.props;
+    const partner  = this.props.location.state.partner;
     const initialValues = {
-      nazevPartner: PARTNERS[this.props.match.params.id-1].nazevPartner,
-      popisPartner: PARTNERS[this.props.match.params.id-1].popisPartner,
-      kontaktPartner: PARTNERS[this.props.match.params.id-1].kontaktPartner,
-      logoPartner: PARTNERS[this.props.match.params.id-1].logoPartner,
-      obrazokPartner: PARTNERS[this.props.match.params.id-1].obrazokPartner,
-      idDiagnoza: PARTNERS[this.props.match.params.id-1].idDiagnoza
+      nazevPartner: partner.nazevPartner,
+      popisPartner: partner.popisPartner,
+      kontaktPartner: partner.kontaktPartner,
+      logoPartner: partner.logoPartner,
+      obrazokPartner: partner.obrazokPartner,
+      idDiagnoza: null
     };
 
     const { redirectUrl } = this.state;
@@ -47,25 +48,17 @@ class AdminPartnersEditFormRaw extends Component {
                 <FontIcon  icon={"times"}/>
               </Button>
             </Link>
-            <Heading level={3} className={"pb-3"}>Úprava partneři</Heading>
+            <Heading level={3} className={"pb-3"}>Úprava partnerů</Heading>
 
             {redirectUrl && <Redirect to={redirectUrl} />}
 
             <Formik
               initialValues={initialValues}
               onSubmit={(values, actions) => {
-                PARTNERS[this.props.match.params.id-1].nazevPartner = values.nazevPartner;
-                console.log(PARTNERS[this.props.match.params.id-1].nazevPartner)
-                PARTNERS[this.props.match.params.id-1].popisPartner = values.popisPartner;
-                console.log(PARTNERS[this.props.match.params.id-1].popisPartner)
-                PARTNERS[this.props.match.params.id-1].kontaktPartner = values.kontaktPartner;
-                console.log(PARTNERS[this.props.match.params.id-1].kontaktPartner)
-                PARTNERS[this.props.match.params.id-1].logoPartner = values.logoPartner;
-                console.log(PARTNERS[this.props.match.params.id-1].logoPartner)
-                PARTNERS[this.props.match.params.id-1].obrazokPartner = values.obrazokPartner;
-                console.log(PARTNERS[this.props.match.params.id-1].obrazokPartner)
-                PARTNERS[this.props.match.params.id-1].idDiagnoza = values.idDiagnoza;
-                console.log(PARTNERS[this.props.match.params.id-1].idDiagnoza)
+                api.put('http://dev.backend.team03.vse.handson.pro/api/partneri', values)
+                  .then(({ data }) => {
+                    actions.setSubmitting(false);
+                  })
               this.setState({ redirectUrl: '/admin/Partneři' });
               }}
               render={({
@@ -157,7 +150,6 @@ class AdminPartnersEditFormRaw extends Component {
       </Row>
     </Layout>
   );
-   //console.log(values)
  }
 }
 

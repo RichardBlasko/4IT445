@@ -6,6 +6,8 @@ import history from '../../history.js';
 import { withRouter } from 'react-router';
 import { compose } from 'recompose';
 import ReactModal from 'react-modal';
+import api from '../../api';
+
 ReactModal.setAppElement('#root');
 
 class AdminPartnersTableRaw extends React.Component {
@@ -21,7 +23,6 @@ class AdminPartnersTableRaw extends React.Component {
     }
 
   handleOpenModal = (e) => {
-    console.log(e);
     this.setState({ showModal: true, partner: e });
 
   }
@@ -30,12 +31,24 @@ class AdminPartnersTableRaw extends React.Component {
     this.setState({ showModal: false });
   }
 
-  openEditForm = (e) => {
-    history.push(this.props.location.pathname + "/formular/" + e)
+  openEditForm = (e,p) => {
+    history.push(
+      this.props.location.pathname + "/formular/" + e, { partner: p }
+    )
   }
 
   openAlert = (e) => {
     alert('Partner ' + e + ' úspěšně odstraněn.')
+  }
+
+  handleDeleteAndClose = (e) =>{
+    const idToDelete  = e.id;
+    api.delete('http://dev.backend.team03.vse.handson.pro/api/partneri', { data: { id: idToDelete } })
+        .then(({ data }) => {
+          this.handleCloseModal();
+          this.setState({ redirectUrl: '/admin/Partneři' });
+          window.location.reload();
+        })
   }
 
   render() {
@@ -53,7 +66,7 @@ class AdminPartnersTableRaw extends React.Component {
             <tbody className="orange">
               {
                 partneri.map(partneri => {
-                    const { id, nazevPartner } = partneri;
+                    const { id, nazevPartner, popisPartner, kontaktPartner, logoPartner, obrazokPartner } = partneri;
 
                   return (
                     <tr key={id}>
@@ -63,14 +76,14 @@ class AdminPartnersTableRaw extends React.Component {
                       <td>
                           <FontIcon
                             style={{ cursor: "pointer"}}
-                            onClick={e => this.openEditForm(id)}
+                            onClick={e => this.openEditForm(id, partneri)}
                             icon={"edit"}
                           />
                       </td>
                       <td>
                       <FontIcon
                         style={{ cursor: "pointer"}}
-                        onClick={e => this.handleOpenModal(nazevPartner)}
+                        onClick={e => this.handleOpenModal(id, nazevPartner)}
                         icon={"trash"}
                       />
                         <ReactModal
@@ -89,14 +102,14 @@ class AdminPartnersTableRaw extends React.Component {
                             <FontIcon  icon={"times"}/>
                           </Button>
                           <Heading level={1} className={"pb-3"}></Heading>
-                          <Heading level={3} className={"pb-3"}>{this.state.partner}</Heading>
-                          <Heading level={6} className={"pb-3"}>Naozaj si prajete odstrániť partnera?</Heading>
+                          <Heading level={3} className={"pb-3"}>{partneri.nazevPartner}</Heading>
+                          <Heading level={6} className={"pb-3"}>Vážně chcete odstranit partnera?</Heading>
                           <Heading level={6} className={"pb-3"}></Heading>
                           <Button
                             variant="admin"
                             className="float-right"
-                            onClick={this.handleCloseModal}>
-                            Odstrániť
+                            onClick={() => {this.handleDeleteAndClose(partneri) }}>
+                            Odstránit
                           </Button>
                         </ReactModal>
                       </td>

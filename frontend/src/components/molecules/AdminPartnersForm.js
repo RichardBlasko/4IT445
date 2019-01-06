@@ -61,13 +61,13 @@ export class AdminPartnersForm extends Component {
               })}
               initialValues={initialValues}
               onSubmit={(values, actions) => {
-                console.log(values);
                 api.post('http://dev.backend.team03.vse.handson.pro/api/partneri', values)
                   .then(({ data }) => {
                     actions.setSubmitting(false);
-                    console.log('-> data', data);
+                    this.setState({ redirectUrl: '/admin/Partneři' });
+                    window.location.reload();
                   })
-                this.setState({ redirectUrl: '/admin/Partneři/' });
+
               }}
               render={({
                 values,
@@ -166,6 +166,5 @@ export class AdminPartnersForm extends Component {
       </Row>
     </Layout>
   );
-   //console.log(values)
  }
 }
