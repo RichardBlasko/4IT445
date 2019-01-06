@@ -35,7 +35,7 @@ class AdminPribehyEditFormRaw extends Component {
     const { redirectUrl } = this.state;
 
     return (
-    <Layout className=" page-background-overlay">
+    <Layout className="container100 page-background-overlay">
       <Row className={"justify-content-center"}>
         <Column lg={10} md={10} sm={12} xs={12} className="pt-5">
           <Layout className="adminForm">
@@ -107,6 +107,7 @@ class AdminPribehyEditFormRaw extends Component {
                   <TextareaWithLabel
                     id="textPribeh"
                     label="Text příběhu"
+                    rows="10"
                     placeholder="Zde uveďte text příběhu"
                     value={values.textPribeh}
                     onChange={handleChange}
