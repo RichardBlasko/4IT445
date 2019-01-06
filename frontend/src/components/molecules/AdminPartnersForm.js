@@ -85,7 +85,8 @@ export class AdminPartnersForm extends Component {
                   <Field
                     type="text"
                     name="nazevPartner"
-                    label="Zde uveďte název partnera"
+                    label="Název partnera  *"
+                    placeholder="Zde uveďte název partnera"
                     className={"admin-input"}
                     value={values.nazevPartner}
                     onChange={handleChange}
@@ -122,7 +123,8 @@ export class AdminPartnersForm extends Component {
                   <Field
                     type="text"
                     name="kontaktPartner"
-                    label="Webová stránka patnera"
+                    label="Webová stránka patnera  *"
+                    placeholder="Zde uveďte webovú stránku partnera"
                     className={"admin-input"}
                     value={values.kontaktPartner}
                     onChange={handleChange}

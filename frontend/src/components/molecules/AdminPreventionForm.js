@@ -7,14 +7,18 @@ import {InputWithLabel} from "../molecules/InputWithLabel";
 import {Heading} from "../atoms/Heading";
 import {Button} from "../atoms/Button/Button";
 import {Column} from "../atoms/Column";
+import TextInput from '../molecules/TextInput'
 import {TextareaWithLabel} from "../molecules/TextareaWithLabel";
 import {MultiSelectWithLabel} from "./MultiSelectWithLabel";
 import { Link } from '../atoms/Link';
 import {FontIcon} from "../atoms/FontIcon";
 import {PeriodicitaInput} from "../molecules/PeriodicitaInput";
 import {AnamnesisAddInputForm} from "../molecules/AnamnesisAddInputForm";
+
 import api from '../../api';
-import { Formik } from 'formik';
+import {Field, Formik} from 'formik'
+import * as Yup from 'yup'
+import isEmpty from 'lodash/isEmpty'
 
 export class AdminPreventionForm extends Component {
   state = {
@@ -88,6 +92,11 @@ export class AdminPreventionForm extends Component {
             {redirectUrl && <Redirect to={redirectUrl} />}
 
             <Formik
+              validationSchema={Yup.object().shape({
+                nazevPrevence: Yup.string()
+                  .min(3, 'Název prevence musí mít nejméně 3 znaky.')
+                  .required('Název prevence je povinný.'),
+              })}
               initialValues={initialValues}
               onSubmit={(values, actions) => {
                 console.log(values);
@@ -103,19 +112,24 @@ export class AdminPreventionForm extends Component {
                 handleBlur,
                 handleChange,
                 handleSubmit,
+                errors,
+                dirty,
                 isSubmitting,
               }) => (
 
               <form onSubmit={handleSubmit}>
                 <Row>
                   <Layout className="col-md-12">
-                    <InputWithLabel
-                      id="Název"
-                      label="Název preventívniho vyšetření"
+                    <Field
+                      type="text"
+                      name="nazevPrevence"
+                      label="Název preventívniho vyšetření  *"
                       placeholder="Zde uveďte název preventívniho vyšetření"
+                      className={"admin-input"}
                       value={values.nazevPrevence}
                       onChange={handleChange}
                       onBlur={handleBlur}
+                      component={TextInput}
                     />
                   </Layout>
                 </Row>
@@ -136,7 +150,7 @@ export class AdminPreventionForm extends Component {
 
                   <Layout className="col-md-1">
                     <label className="Nadpis">
-                      Pro:
+                      Pro:  *
                     </label>
                     <div className="custom-control custom-checkbox-inline ">
                       <input className="custom-control-input" type="checkbox" value="" id="defaultCheck1"/>
@@ -287,7 +301,7 @@ export class AdminPreventionForm extends Component {
                         variant="admin"
                         className="float-right"
                         type="submit"
-                        disabled={isSubmitting}>
+                        disabled={isSubmitting || !isEmpty(errors) || !dirty}>
                         Uložiť
                       </Button>
                     </Link>

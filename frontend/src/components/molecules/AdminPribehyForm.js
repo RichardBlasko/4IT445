@@ -5,6 +5,7 @@ import {Button} from "../atoms/Button/Button";
 import {Column} from "../atoms/Column";
 import {Layout} from '../atoms/Layout';
 import {InputWithLabel} from "../molecules/InputWithLabel";
+import TextareaInput from '../molecules/TextareaInput'
 import {TextareaWithLabel} from "../molecules/TextareaWithLabel";
 import {MultiSelectWithLabel} from "./MultiSelectWithLabel";
 import {Heading} from "../atoms/Heading";
@@ -12,7 +13,9 @@ import { Link } from '../atoms/Link';
 import {FontIcon} from "../atoms/FontIcon";
 
 import api from '../../api';
-import { Formik } from 'formik';
+import {Field, Formik} from 'formik'
+import * as Yup from 'yup'
+import isEmpty from 'lodash/isEmpty'
 
 export class AdminPribehyForm extends Component {
   state = {
@@ -31,7 +34,7 @@ export class AdminPribehyForm extends Component {
     const { redirectUrl } = this.state;
 
     return (
-    <Layout className=" page-background-overlay">
+    <Layout className="container100 page-background-overlay">
       <Row className={"justify-content-center"}>
         <Column lg={10} md={10} sm={12} xs={12} className="pt-5">
           <Layout className="adminForm">
@@ -45,6 +48,11 @@ export class AdminPribehyForm extends Component {
             {redirectUrl && <Redirect to={redirectUrl} />}
 
             <Formik
+              validationSchema={Yup.object().shape({
+                textPribeh: Yup.string()
+                  .min(10, 'Text příběhu musí mít nejméně 10 znaků.')
+                  .required('Text příběhu je povinný.'),
+              })}
               initialValues={initialValues}
               onSubmit={(values, actions) => {
                 api.post('http://dev.backend.team03.vse.handson.pro/api/pribehy', values)
@@ -58,6 +66,8 @@ export class AdminPribehyForm extends Component {
                 handleBlur,
                 handleChange,
                 handleSubmit,
+                errors,
+                dirty,
                 isSubmitting,
               }) => (
 
@@ -99,13 +109,16 @@ export class AdminPribehyForm extends Component {
 
               <Row>
                 <Layout className="col-md-9">
-                  <TextareaWithLabel
-                    id="textPribeh"
-                    label="Text příběhu"
+                  <Field
+                    type="text"
+                    name="textPribeh"
+                    label="Text příběhu *"
                     placeholder="Zde uveďte text příběhu"
+                    className={"admin-input"}
                     value={values.textPribeh}
                     onChange={handleChange}
                     onBlur={handleBlur}
+                    component={TextareaInput}
                   />
 
                 </Layout>
@@ -114,7 +127,7 @@ export class AdminPribehyForm extends Component {
                       variant="admin"
                       className="float-right"
                       type="submit"
-                      disabled={isSubmitting}>
+                      disabled={isSubmitting || !isEmpty(errors) || !dirty}>
                       Uložiť
                     </Button>
                 </Column>

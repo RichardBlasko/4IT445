@@ -81,7 +81,8 @@ export class AdminDiagnosisForm extends Component {
                     <Field
                       type="text"
                       name="nazevDiagnoza"
-                      label="Zde uveďte název diagnózy"
+                      label="Název diagnózy  *"
+                      placeholder="Zde uveďte název diagnózy"
                       className={"admin-input"}
                       value={values.nazevDiagnoza}
                       onChange={handleChange}
@@ -91,7 +92,8 @@ export class AdminDiagnosisForm extends Component {
                       <Field
                         type="text"
                         name="popisDiagnoza"
-                        label="Zde uveďte popis diagnózy"
+                        label="Popis diagnózy"
+                        placeholder="Zde uveďte popis diagnózy"
                         className={"admin-input"}
                         value={values.popisDiagnoza}
                         onChange={handleChange}
