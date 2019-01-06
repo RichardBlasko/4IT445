@@ -641,11 +641,15 @@ display: block;
 }
 
 .footer .form-control{
-  border-color: #FFC15E;
+  border: none;
+  color: white;
+  background-color: #616161;
+  border-radius: 4px;
 }
 
 .footer .form-control:focus{
-  background-color: #FFC15E;
+
+
 }
 
 .footer img {
