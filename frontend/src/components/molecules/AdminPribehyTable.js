@@ -48,12 +48,10 @@ class AdminPribehyTableRaw extends React.Component {
         console.log(idToDelete);
         api.delete('http://dev.backend.team03.vse.handson.pro/api/pribehy', { data: { id: idToDelete } })
             .then(({ data }) => {
-              //actions.setSubmitting(false);
-              console.log('-> data', data);
               this.handleCloseModal();
-
+              this.setState({ redirectUrl: '/admin/Příběhy/' });
+              window.location.reload();
             })
-            this.setState({ redirectUrl: '/admin/Příběhy/' });
 
       }
 

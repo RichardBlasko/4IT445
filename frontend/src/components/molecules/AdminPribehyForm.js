@@ -58,8 +58,10 @@ export class AdminPribehyForm extends Component {
                 api.post('http://dev.backend.team03.vse.handson.pro/api/pribehy', values)
                   .then(({ data }) => {
                     actions.setSubmitting(false);
+                    this.setState({ redirectUrl: '/admin/Příběhy' });
+                    window.location.reload();
                   })
-                this.setState({ redirectUrl: '/admin/Příběhy/' });
+
               }}
               render={({
                 values,
@@ -77,6 +79,7 @@ export class AdminPribehyForm extends Component {
                   <InputWithLabel
                     id="autorPribeh"
                     label="Autor příběhu"
+                    tabindex="1"
                     placeholder="Zde uveďte jméno autora příběhu"
                     value={values.autorPribeh}
                     onChange={handleChange}
@@ -84,6 +87,7 @@ export class AdminPribehyForm extends Component {
                   />
                   <InputWithLabel
                     id="autorVek"
+                    tabindex="2"
                     label="Věk autora"
                     placeholder="Zde uveďte věk autora příběhu"
                     type="number"
@@ -111,6 +115,7 @@ export class AdminPribehyForm extends Component {
                 <Layout className="col-md-9">
                   <Field
                     type="text"
+                    tabindex="3"
                     name="textPribeh"
                     label="Text příběhu *"
                     placeholder="Zde uveďte text příběhu"
