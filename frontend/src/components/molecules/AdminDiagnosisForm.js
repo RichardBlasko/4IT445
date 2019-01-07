@@ -5,10 +5,8 @@ import {Row} from "../atoms/Row";
 import {Button} from "../atoms/Button/Button";
 import {Column} from "../atoms/Column";
 import {Layout} from '../atoms/Layout';
-import {InputWithLabel} from "../molecules/InputWithLabel";
 import TextInput from '../molecules/TextInput'
 import TextareaInput from '../molecules/TextareaInput'
-import {TextareaWithLabel} from "../molecules/TextareaWithLabel";
 import {Heading} from "../atoms/Heading";
 import { Link } from '../atoms/Link';
 import {FontIcon} from "../atoms/FontIcon";

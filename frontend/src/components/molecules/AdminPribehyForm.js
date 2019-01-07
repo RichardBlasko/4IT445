@@ -6,12 +6,10 @@ import {Column} from "../atoms/Column";
 import {Layout} from '../atoms/Layout';
 import {InputWithLabel} from "../molecules/InputWithLabel";
 import TextareaInput from '../molecules/TextareaInput'
-import {TextareaWithLabel} from "../molecules/TextareaWithLabel";
 import {MultiSelectWithLabel} from "./MultiSelectWithLabel";
 import {Heading} from "../atoms/Heading";
 import { Link } from '../atoms/Link';
 import {FontIcon} from "../atoms/FontIcon";
-
 import api from '../../api';
 import {Field, Formik} from 'formik'
 import * as Yup from 'yup'

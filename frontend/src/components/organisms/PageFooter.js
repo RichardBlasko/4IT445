@@ -3,10 +3,7 @@ import React, {Component} from 'react';
 
 import {Layout} from '../atoms/Layout';
 import {Paragraph} from '../atoms/Paragraph';
-import {TextareaWithLabel} from "../molecules/TextareaWithLabel";
-import {InputWithLabel} from "../molecules/InputWithLabel";
 import {Row} from "../atoms/Row";
-import {Button} from "../atoms/Button/Button";
 import {Heading} from "../atoms/Heading";
 import {ListInline} from "../atoms/List/ListInline";
 import {ListInlineItem} from "../atoms/List/ListInlineItem";

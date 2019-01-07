@@ -8,7 +8,7 @@ import {TextareaWithLabel} from "../molecules/TextareaWithLabel";
 import {Button} from "../atoms/Button/Button";
 
 import ReCAPTCHA from "react-google-recaptcha";
-import {Field, Formik} from 'formik'
+import {Formik} from 'formik'
 import * as Yup from 'yup'
 import isEmpty from 'lodash/isEmpty'
 
@@ -87,12 +87,7 @@ export default class ContactForm extends Component {
 
   render() {
 
-        const reCaptchaRef = React.createRef();
-        const value = "";
-      const initialValues = {
-        meno: '',
-        email: '@',
-      };
+      const reCaptchaRef = React.createRef();
 
     const { load } = this.state || {};
 

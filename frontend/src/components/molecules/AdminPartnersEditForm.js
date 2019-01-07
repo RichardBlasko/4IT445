@@ -15,7 +15,6 @@ import api from '../../api';
 import { withRouter } from 'react-router';
 import { compose } from 'recompose';
 import { Formik } from 'formik';
-import {PARTNERS} from "../../mocks/Partners";
 
 class AdminPartnersEditFormRaw extends Component {
 

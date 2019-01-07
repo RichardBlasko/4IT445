@@ -66,7 +66,7 @@ class AdminPartnersTableRaw extends React.Component {
             <tbody className="orange">
               {
                 partneri.map(partneri => {
-                    const { id, nazevPartner, popisPartner, kontaktPartner, logoPartner, obrazokPartner } = partneri;
+                    const { id, nazevPartner } = partneri;
 
                   return (
                     <tr key={id}>

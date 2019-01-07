@@ -71,7 +71,7 @@ class AdminPribehyTableRaw extends React.Component {
             <tbody className="orange">
               {
                 pribehy.map(pribehy => {
-                    const { id, autorPribeh, autorVek, autorText, idDiagnozy } = pribehy;
+                    const { id, autorPribeh } = pribehy;
 
                   return (
                     <tr>
