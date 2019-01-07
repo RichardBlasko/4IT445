@@ -21,7 +21,6 @@ class AdminPreventionTableRaw extends React.Component {
     }
 
   handleOpenModal = (e) => {
-    console.log(e);
     this.setState({ showModal: true, prevence: e });
 
   }

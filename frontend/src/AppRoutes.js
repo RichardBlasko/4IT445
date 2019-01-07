@@ -1,13 +1,11 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
-
 import {HomePage} from './components/pages/HomePage';
 import {PreventionListPage} from "./components/pages/PreventionListPage";
 import {DiagnoseListPage} from "./components/pages/DiagnoseListPage";
 import {StoryListPage} from "./components/pages/StoryListPage";
 import {EventListPage} from "./components/pages/EventListPage";
 import {SocialNetworkListPage} from "./components/pages/SocialNetworkListPage";
-
 import {AdminHomePage} from "./components/pages/AdminHomePage";
 import {AboutPage} from "./components/pages/AboutPage";
 import {AdminLoginPage} from "./components/pages/AdminLoginPage";

@@ -40,7 +40,6 @@ export const fetchOneDiagnosisFailure = error => ({
 
 export const startFetchOneDiagnosis = id => (dispatch, getState, { api }) => {
   dispatch(fetchOneDiagnosis());
-  console.log(id)
   api
     .get('http://dev.backend.team03.vse.handson.pro/api/diagnozy/'+id,id)
     .then(({ data }) => {
@@ -53,22 +52,15 @@ export const startFetchOneDiagnosis = id => (dispatch, getState, { api }) => {
 };
 
 export const startFetchDiagnosis = () => (dispatch, getState, { api }) => {
-// export const startFetchDiagnosis = message => (dispatch, getState, { api }) => {
   dispatch(fetchDiagnosis());
 
   api
-//  .post("url", message)
     .get('http://dev.backend.team03.vse.handson.pro/api/diagnozy')
     .then(({ data }) => {
-    //.then(( data ) => {
-    //  console.log(data)
-      //const status = data.status
       const { diagnozy } = data;
       dispatch(fetchDiagnosisSuccess(diagnozy));
     })
-    //.catch(() => {
     .catch(error => {
-      //dispatch(fetchDiagnosisFailure('Failed fetching diagnosis'));
       dispatch(fetchDiagnosisFailure(error));
     });
 };

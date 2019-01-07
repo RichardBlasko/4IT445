@@ -99,11 +99,9 @@ export class AdminPreventionForm extends Component {
               })}
               initialValues={initialValues}
               onSubmit={(values, actions) => {
-                console.log(values);
                 api.post('http://dev.backend.team03.vse.handson.pro/api/prevence', values)
                   .then(({ data }) => {
                     actions.setSubmitting(false);
-                    console.log('-> data', data);
                   })
                 this.setState({ redirectUrl: '/admin/Prevence'});
               }}

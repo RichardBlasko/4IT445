@@ -96,15 +96,10 @@ class AdminPreventionEditFormRaw extends Component {
               initialValues={initialValues}
               onSubmit={(values, actions) => {
                 PREVENTIONS[this.props.match.params.id-1].nazevPrevence = values.nazevPrevence;
-                console.log(PREVENTIONS[this.props.match.params.id-1].nazevPrevence)
                 PREVENTIONS[this.props.match.params.id-1].duvodPrevence = values.duvodPrevence;
-                console.log(PREVENTIONS[this.props.match.params.id-1].duvodPrevence)
                 PREVENTIONS[this.props.match.params.id-1].popisPrevence = values.popisPrevence;
-                console.log(PREVENTIONS[this.props.match.params.id-1].popisPrevence)
                 PREVENTIONS[this.props.match.params.id-1].pohlavi = values.pohlavi;
-                console.log(PREVENTIONS[this.props.match.params.id-1].pohlavi)
                 PREVENTIONS[this.props.match.params.id-1].obrazek = values.obrazek;
-                console.log(PREVENTIONS[this.props.match.params.id-1].obrazek)
                 this.setState({ redirectUrl: '/admin/Prevence'});
               }}
               render={({
@@ -310,7 +305,6 @@ class AdminPreventionEditFormRaw extends Component {
       </Row>
     </Layout>
   );
-   //console.log(values)
  }
 }
 

@@ -57,11 +57,9 @@ export class AdminDiagnosisForm extends Component {
               })}
               initialValues={initialValues}
               onSubmit={(values, actions) => {
-                console.log(values);
                 api.post('http://dev.backend.team03.vse.handson.pro/api/diagnozy', values)
                   .then(({ data }) => {
                     actions.setSubmitting(false);
-                    console.log('-> data', data);
                   })
                 this.setState({ redirectUrl: '/admin/Diagnózy/' });
               }}
@@ -119,7 +117,6 @@ export class AdminDiagnosisForm extends Component {
       </Row>
     </Layout>
   );
-   //console.log(values)
  }
 }
 

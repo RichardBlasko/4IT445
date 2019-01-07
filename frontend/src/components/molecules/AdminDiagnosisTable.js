@@ -24,7 +24,6 @@ class AdminDiagnosisTableRaw extends React.Component {
     }
 
   handleOpenModal = (e) => {
-    console.log(e);
     this.setState({ showModal: true, diagnoza: e });
 
   }

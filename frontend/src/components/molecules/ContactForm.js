@@ -82,7 +82,6 @@ export default class ContactForm extends Component {
           formEmailSent: true
         });
       })
-      // Handle errors here however you like
       .catch(err => console.error('Failed to send feedback. Error: ', err));
   }
 

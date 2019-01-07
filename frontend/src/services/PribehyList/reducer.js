@@ -21,8 +21,6 @@ export const pribehyListReducer = (state = initialState, action) => {
 
     case PRIBEHY_LIST_FETCH_PRIBEHY_SUCCESS: {
       const { pribehy } = action.payload;
-
-      console.log(pribehy);
       return {
         ...state,
         pribehy,

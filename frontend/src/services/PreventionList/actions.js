@@ -20,7 +20,6 @@ export const fetchPreventionsFailure = error => ({
 
 export const startFetchPreventions = () => (dispatch, getState, { api }) => {
   dispatch(fetchPreventions());
-
   api
     .get('http://dev.backend.team03.vse.handson.pro/api/prevence')
     .then(({ data }) => {

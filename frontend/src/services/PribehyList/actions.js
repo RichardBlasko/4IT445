@@ -27,10 +27,8 @@ export const startFetchPribehy = () => (dispatch, getState, { api }) => {
     .get('http://dev.backend.team03.vse.handson.pro/api/pribehy')
     .then(({ data }) => {
     //.then(( data ) => {
-    //  console.log(data)
       //const status = data.status
       const { pribehy } = data;
-      console.log(pribehy);
       dispatch(fetchPribehySuccess(pribehy));
     })
     //.catch(() => {

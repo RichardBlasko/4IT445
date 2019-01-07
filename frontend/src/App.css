@@ -15,6 +15,12 @@ p{
 a{
   text-decoration: underline;
 }
+
+tr:hover {
+  background-color: #55a3a6;
+  color: white;
+}
+
 .list {
   list-style: none;
   padding-left: 1em;

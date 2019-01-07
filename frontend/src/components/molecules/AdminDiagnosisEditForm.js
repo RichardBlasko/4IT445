@@ -48,9 +48,7 @@ class AdminDiagnosisEditForm extends Component {
               initialValues={initialValues}
               onSubmit={(values, actions) => {
                 DIAGNOSIS[this.props.match.params.id-1].nazevDiagnoza = values.nazevDiagnoza;
-                console.log(DIAGNOSIS[this.props.match.params.id-1].nazevDiagnoza)
                 DIAGNOSIS[this.props.match.params.id-1].popisDiagnoza = values.popisDiagnoza;
-                console.log(DIAGNOSIS[this.props.match.params.id-1].popisDiagnoza)
                 this.setState({ redirectUrl: '/admin/Diagnózy'});
               }}
               render={({
@@ -99,7 +97,6 @@ class AdminDiagnosisEditForm extends Component {
       </Row>
     </Layout>
   );
-   //console.log(values)
  }
 }
 
