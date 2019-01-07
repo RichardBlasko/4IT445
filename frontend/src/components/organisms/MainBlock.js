@@ -4,9 +4,8 @@ import {Layout} from '../atoms/Layout';
 import {Heading} from "../atoms/Heading";
 import {FilterBox} from "../molecules/FilterBox";
 import {BurgerMenu} from "../molecules/BurgerMenu";
-import {Paragraph} from "../atoms/Paragraph";
 import {NavLink} from "../atoms/Nav/NavLink";
-import {Link} from "../atoms/Link.js";
+
 
 
 export class MainBlock extends React.Component {

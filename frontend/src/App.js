@@ -4,6 +4,9 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
 import ScrollToTop from 'react-router-scroll-top';
 
+import { Router } from 'react-router-dom';
+import history from './history';
+
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
@@ -18,9 +21,11 @@ class App extends Component {
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <BrowserRouter>
-            <ScrollToTop>
-              <AppRoutes />
-            </ScrollToTop>
+        <Router history={history}>
+          <ScrollToTop>
+            <AppRoutes />
+          </ScrollToTop>
+        </Router>
           </BrowserRouter>
         </PersistGate>
       </Provider>

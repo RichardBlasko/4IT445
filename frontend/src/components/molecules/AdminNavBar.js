@@ -47,7 +47,6 @@ export const AdminNavBarRaw = ({close}) => (
           </NavItem>
           <NavItem className="nav-item">
             <NavLink className="nav-link" to="/login">
-              <FontIcon icon={"sign-out-alt"}/>
               Odhlásit se
             </NavLink>
           </NavItem>

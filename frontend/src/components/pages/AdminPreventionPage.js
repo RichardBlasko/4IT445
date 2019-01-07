@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 
 import {AdminPreventionListTemplate} from '../templates/AdminPreventionListTemplate';
 import {AdminPageWrapper} from "../organisms/AdminPageWrapper";
-import {TinyButton as ScrollUpButton} from "react-scroll-up-button";
-import {Layout} from '../atoms/Layout';
 import { startFetchPreventions } from '../../services/PreventionList/actions';
 
 import {

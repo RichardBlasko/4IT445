@@ -1,34 +1,34 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 
-import {AdminPreventionListTemplate} from '../templates/AdminPreventionListTemplate';
+import {AdminPribehyListTemplate} from '../templates/AdminPribehyListTemplate';
 import {AdminPageWrapper} from "../organisms/AdminPageWrapper";
-import { startFetchPreventions } from '../../services/PreventionList/actions';
+import { startFetchPribehy } from '../../services/PribehyList/actions';
 
 import {
   getIsLoading,
-  getPreventions,
+  getPribehy,
   getIsLoaded,
   getError,
   getIsError,
-} from '../../services/PreventionList/reducer';
+} from '../../services/PribehyList/reducer';
 
 class AdminStoryPageRaw extends Component {
   componentDidMount() {
-    const { startFetchPreventions } = this.props;
-    startFetchPreventions();
+    const { startFetchPribehy } = this.props;
+    startFetchPribehy();
   }
 
   render() {
-    const { isLoading, prevence, isLoaded, isError, error } = this.props;
+    const { isLoading, pribehy, isLoaded, isError, error } = this.props;
 
     return (
       <AdminPageWrapper>
-        <AdminPreventionListTemplate
+        <AdminPribehyListTemplate
           isLoading={isLoading}
           isLoaded={isLoaded}
           isError={isError}
-          prevence={prevence}
+          pribehy={pribehy}
           error={error}
         />
       </AdminPageWrapper>
@@ -37,18 +37,18 @@ class AdminStoryPageRaw extends Component {
 }
 
 const mapStateToProps = storeState => {
-  const { preventionCard } = storeState;
+  const { pribehyList } = storeState;
   return {
-    isLoading: getIsLoading(preventionCard),
-    prevence: getPreventions(preventionCard),
-    isLoaded: getIsLoaded(preventionCard),
-    error: getError(preventionCard),
-    isError: getIsError(preventionCard),
+    isLoading: getIsLoading(pribehyList),
+    pribehy: getPribehy(pribehyList),
+    isLoaded: getIsLoaded(pribehyList),
+    error: getError(pribehyList),
+    isError: getIsError(pribehyList),
   };
 };
 
 const mapDispatchToProps = {
-  startFetchPreventions,
+  startFetchPribehy,
 };
 
 export const AdminStoryPage = connect(

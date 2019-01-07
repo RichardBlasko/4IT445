@@ -2,22 +2,22 @@ export const DIAGNOSIS = [
 {
 "id": 1,
 "nazevDiagnoza": "Chronická renální nedostatečnost",
-"popisDiagnoza": null
+"popisDiagnoza": "Toto je choroba Chronická renální nedostatečnost"
 },
 {
 "id": 2,
 "nazevDiagnoza": "Dyslipidémie",
-"popisDiagnoza": null
+"popisDiagnoza": "Toto je choroba Dyslipidémie"
 },
 {
 "id": 3,
 "nazevDiagnoza": "Hyperurikémie",
-"popisDiagnoza": null
+"popisDiagnoza": "Toto je choroba Hyperurikémie"
 },
 {
 "id": 4,
 "nazevDiagnoza": "Diabetes",
-"popisDiagnoza": null
+"popisDiagnoza": "Toto je choroba diabetes"
 },
 {
 "id": 5,

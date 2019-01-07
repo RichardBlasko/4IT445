@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Redirect } from 'react-router'
 
 import {Row} from "../atoms/Row";
 import {Button} from "../atoms/Button/Button";
@@ -10,11 +11,18 @@ import {MultiSelectWithLabel} from "./MultiSelectWithLabel";
 import {Heading} from "../atoms/Heading";
 import { Link } from '../atoms/Link';
 import {FontIcon} from "../atoms/FontIcon";
+import TextInput from '../molecules/TextInput'
 
 import api from '../../api';
-import { Formik } from 'formik';
+import {Field, Formik} from 'formik'
+import * as Yup from 'yup'
+import isEmpty from 'lodash/isEmpty'
 
 export class AdminPartnersForm extends Component {
+  state = {
+    redirectUrl: null,
+  };
+
   render() {
     const { diagnozy } = this.props;
     const initialValues = {
@@ -25,6 +33,8 @@ export class AdminPartnersForm extends Component {
       obrazokPartner: null,
       idDiagnoza: null
     };
+
+    const { redirectUrl } = this.state;
 
     return (
     <Layout className=" page-background-overlay">
@@ -38,34 +48,50 @@ export class AdminPartnersForm extends Component {
             </Link>
             <Heading level={3} className={"pb-3"}>Partnerský projekt</Heading>
 
+            {redirectUrl && <Redirect to={redirectUrl} />}
+
             <Formik
+              validationSchema={Yup.object().shape({
+                nazevPartner: Yup.string()
+                  .min(3, 'Název partnera musí mít nejméně 3 znaky.')
+                  .required('Název partnera je povinný.'),
+                kontaktPartner: Yup.string()
+                  .min(3, 'Webová stránka patnera musí mít nejméně 3 znaky.')
+                  .required('Webová stránka patnera je povinná.'),
+              })}
               initialValues={initialValues}
               onSubmit={(values, actions) => {
-                console.log(values);
                 api.post('http://dev.backend.team03.vse.handson.pro/api/partneri', values)
                   .then(({ data }) => {
                     actions.setSubmitting(false);
-                    console.log('-> data', data);
+                    this.setState({ redirectUrl: '/admin/Partneři' });
+                    window.location.reload();
                   })
+
               }}
               render={({
                 values,
                 handleBlur,
                 handleChange,
                 handleSubmit,
+                errors,
+                dirty,
                 isSubmitting,
               }) => (
 
             <form onSubmit={handleSubmit}>
               <Row>
                 <Layout className="col-md-9">
-                  <InputWithLabel
-                    id="nazevPartner"
-                    label="Název patnera"
+                  <Field
+                    type="text"
+                    name="nazevPartner"
+                    label="Název partnera  *"
                     placeholder="Zde uveďte název partnera"
+                    className={"admin-input"}
                     value={values.nazevPartner}
                     onChange={handleChange}
                     onBlur={handleBlur}
+                    component={TextInput}
                   />
                   <TextareaWithLabel
                     id="popisPartner"
@@ -84,7 +110,6 @@ export class AdminPartnersForm extends Component {
                     label="Seznam diagnóz"
                     multi
                     options={diagnozy.map(diagnozy => {
-                        const { id, nazevDiagnoza, popisDiagnoza } = diagnozy;
                       return {label: diagnozy.nazevDiagnoza, value: diagnozy.nazevDiagnoza}
                     })}
                     name="preventions"
@@ -95,13 +120,16 @@ export class AdminPartnersForm extends Component {
 
               <Row>
                 <Layout className="col-md-9">
-                  <InputWithLabel
-                    id="kontaktPartner"
-                    label="Webová stránka patnera"
+                  <Field
+                    type="text"
+                    name="kontaktPartner"
+                    label="Webová stránka patnera  *"
                     placeholder="Zde uveďte webovú stránku partnera"
+                    className={"admin-input"}
                     value={values.kontaktPartner}
                     onChange={handleChange}
                     onBlur={handleBlur}
+                    component={TextInput}
                   />
                   <InputWithLabel
                     id="logoPartner"
@@ -113,8 +141,8 @@ export class AdminPartnersForm extends Component {
                   />
                   <InputWithLabel
                     id="obrazokPartner"
-                    label="Adresa obrazka patnera"
-                    placeholder="Zde uveďte adresu obrazka partnera"
+                    label="Adresa obrázka patnera"
+                    placeholder="Zde uveďte adresu obrázka partnera"
                     value={values.obrazokPartner}
                     onChange={handleChange}
                     onBlur={handleBlur}
@@ -125,7 +153,7 @@ export class AdminPartnersForm extends Component {
                       variant="admin"
                       className="float-right"
                       type="submit"
-                      disabled={isSubmitting}>
+                      disabled={isSubmitting || !isEmpty(errors) || !dirty}>
                       Uložiť
                     </Button>
                 </Column>
@@ -138,6 +166,5 @@ export class AdminPartnersForm extends Component {
       </Row>
     </Layout>
   );
-   //console.log(values)
  }
 }

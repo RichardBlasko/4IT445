@@ -1,12 +1,11 @@
 import React from 'react';
 import InputRange from 'react-input-range';
 import 'react-input-range/lib/css/index.css'
-
 import {Layout} from "../atoms/Layout";
 import {Label} from "../atoms/Form/Label";
 import {Row} from "../atoms/Row";
 import {Column} from "../atoms/Column";
-import {Input} from "../atoms/Form/Input";
+
 
 export default class InputRangeCustom extends React.Component {
   constructor(props) {

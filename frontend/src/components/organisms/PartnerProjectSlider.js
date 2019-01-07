@@ -4,13 +4,7 @@ import Carousel from 'nuka-carousel';
 import {Layout} from '../atoms/Layout';
 import {Heading} from "../atoms/Heading";
 import {Row} from "../atoms/Row";
-import {Column} from "../atoms/Column";
-import {NavLink} from "../atoms/Nav/NavLink";
-import {Button} from "../atoms/Button/Button";
-import {FontIcon} from "../atoms/FontIcon";
-import {EventCard} from "../molecules/EventCard";
 
-import {EVENTS} from "../../mocks/Events";
 
 export const PartnerProjectSlider = ({children}) => (
   <Layout className="part-60 wrapper pb-5 orange ">
@@ -20,6 +14,7 @@ export const PartnerProjectSlider = ({children}) => (
       <Row className={"justify-content-center"}>
       <Heading level={4} className="part-sub blue-text">Spolupráce je základ</Heading>
     </Row>
+    <a href="/partneri">
     <Row className={"justify-content-center"}>
     <Carousel
         autoplay={true}
@@ -28,13 +23,14 @@ export const PartnerProjectSlider = ({children}) => (
         width={"80%"}
         wrapAround = {true}
     >
-      <img src = "/static/img/logo-avon.jpg"/>
-      <img src = "/static/img/logo-lpr.png"/>
-      <img src = "/static/img/logo-avon2.jpg"/>
-      <img src = "/static/img/logo-loono.png"/>
-      <img src = "/static/img/logo-stk.png"/>
-      <img src = "/static/img/logo-loono2.png"/>
+      <img src="/static/img/logo-avon.jpg" alt="logoavon"/>
+      <img src="/static/img/logo-lpr.png" alt="logolpr"/>
+      <img src="/static/img/logo-avon2.jpg" alt="logoavon2"/>
+      <img src="/static/img/logo-loono.png" alt="logoloono"/>
+      <img src="/static/img/logo-stk.png" alt="logostk"/>
+      <img src="/static/img/logo-loono2.png" alt="logoloono2"/>
     </Carousel>
     </Row>
+    </a>
   </Layout>
 );

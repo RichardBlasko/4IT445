@@ -1,25 +1,29 @@
 import React, {Component} from 'react';
+import { Redirect } from 'react-router'
 
 import {Layout} from '../atoms/Layout';
-import {Paragraph} from '../atoms/Paragraph';
 import {Row} from "../atoms/Row";
 import {InputWithLabel} from "../molecules/InputWithLabel";
 import {Heading} from "../atoms/Heading";
 import {Button} from "../atoms/Button/Button";
 import {Column} from "../atoms/Column";
+import TextInput from '../molecules/TextInput'
 import {TextareaWithLabel} from "../molecules/TextareaWithLabel";
 import {MultiSelectWithLabel} from "./MultiSelectWithLabel";
-import {SelectWithLabel} from "./SelectWithLabel";
 import { Link } from '../atoms/Link';
 import {FontIcon} from "../atoms/FontIcon";
 import {PeriodicitaInput} from "../molecules/PeriodicitaInput";
 import {AnamnesisAddInputForm} from "../molecules/AnamnesisAddInputForm";
 
 import api from '../../api';
-import { Formik } from 'formik';
+import {Field, Formik} from 'formik'
+import * as Yup from 'yup'
+import isEmpty from 'lodash/isEmpty'
 
 export class AdminPreventionForm extends Component {
   state = {
+    redirectUrl: null,
+
     anamnezy: [{
       nazev:"",
       vekOd:null,
@@ -61,7 +65,7 @@ export class AdminPreventionForm extends Component {
   render() {
     const { diagnozy } = this.props;
     let {anamnezy, personalAnamnezy} = this.state
-    let {lecimse, anamnesis} = this.props;
+    let {anamnesis} = this.props;
 
     const initialValues = {
       nazevPrevence: '',
@@ -70,6 +74,8 @@ export class AdminPreventionForm extends Component {
       pohlavi: '',
       obrazek: null
     };
+
+    const { redirectUrl } = this.state;
 
     return (
     <Layout className=" page-background-overlay">
@@ -83,34 +89,45 @@ export class AdminPreventionForm extends Component {
             </Link>
             <Heading level={3} className={"pb-3"}>Preventívni vyšetření</Heading>
 
+            {redirectUrl && <Redirect to={redirectUrl} />}
+
             <Formik
+              validationSchema={Yup.object().shape({
+                nazevPrevence: Yup.string()
+                  .min(3, 'Název prevence musí mít nejméně 3 znaky.')
+                  .required('Název prevence je povinný.'),
+              })}
               initialValues={initialValues}
               onSubmit={(values, actions) => {
-                console.log(values);
                 api.post('http://dev.backend.team03.vse.handson.pro/api/prevence', values)
                   .then(({ data }) => {
                     actions.setSubmitting(false);
-                    console.log('-> data', data);
                   })
+                this.setState({ redirectUrl: '/admin/Prevence'});
               }}
               render={({
                 values,
                 handleBlur,
                 handleChange,
                 handleSubmit,
+                errors,
+                dirty,
                 isSubmitting,
               }) => (
 
               <form onSubmit={handleSubmit}>
                 <Row>
                   <Layout className="col-md-12">
-                    <InputWithLabel
-                      id="Název"
-                      label="Název preventívniho vyšetření"
+                    <Field
+                      type="text"
+                      name="nazevPrevence"
+                      label="Název preventívniho vyšetření  *"
                       placeholder="Zde uveďte název preventívniho vyšetření"
+                      className={"admin-input"}
                       value={values.nazevPrevence}
                       onChange={handleChange}
                       onBlur={handleBlur}
+                      component={TextInput}
                     />
                   </Layout>
                 </Row>
@@ -131,7 +148,7 @@ export class AdminPreventionForm extends Component {
 
                   <Layout className="col-md-1">
                     <label className="Nadpis">
-                      Pro:
+                      Pro:  *
                     </label>
                     <div className="custom-control custom-checkbox-inline ">
                       <input className="custom-control-input" type="checkbox" value="" id="defaultCheck1"/>
@@ -165,9 +182,9 @@ export class AdminPreventionForm extends Component {
                   </Layout>
 
                   <Layout  className="col-md-4">
-                    <PeriodicitaInput vekOdId = "vekOd" vekDoId = "vekDo" periodicitaId = "periodicita"/>
-                    <PeriodicitaInput vekOdId = "vekOd" vekDoId = "vekDo" periodicitaId = "periodicita"/>
-                    <PeriodicitaInput vekOdId = "vekOd" vekDoId = "vekDo" periodicitaId = "periodicita"/>
+                    <PeriodicitaInput vekOd="18" vekDo="39" vekOdId = "vekOd" vekDoId = "vekDo" periodicitaId = "periodicita"/>
+                    <PeriodicitaInput vekOd="40" vekDo="49" vekOdId = "vekOd" vekDoId = "vekDo" periodicitaId = "periodicita"/>
+                    <PeriodicitaInput vekOd="50" vekDo="199" vekOdId = "vekOd" vekDoId = "vekDo" periodicitaId = "periodicita"/>
                   </Layout>
                 </Row>
 
@@ -180,7 +197,6 @@ export class AdminPreventionForm extends Component {
                       label="Seznam diagnóz"
                       multi
                       options={diagnozy.map(diagnozy => {
-                          const { id, nazevDiagnoza, popisDiagnoza } = diagnozy;
                         return {label: diagnozy.nazevDiagnoza, value: diagnozy.nazevDiagnoza}
                       })}
                       name="preventions"
@@ -283,7 +299,7 @@ export class AdminPreventionForm extends Component {
                         variant="admin"
                         className="float-right"
                         type="submit"
-                        disabled={isSubmitting}>
+                        disabled={isSubmitting || !isEmpty(errors) || !dirty}>
                         Uložiť
                       </Button>
                     </Link>

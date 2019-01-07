@@ -2,8 +2,19 @@ import db from '../../models/';
 
 
 export const pribehyController = async (req, res) => {
-  const pribehy = await db.Pribehy.findAll({});
+  /*const pribehy = await db.Pribehy.findAll({});
+  res.json({ pribehy });*/
+  db.Diagnozy.hasMany(db.Pribehy,{foreignKey:'idDiagnozy'});
+  db.Pribehy.belongsTo(db.Diagnozy,{foreignKey:'idDiagnozy'});
+
+  const pribehy = await db.Pribehy.findAll({include:[db.Diagnozy]})
   res.json({ pribehy });
+
+/*  await db.Pribehy.findAll({model:[{model:db.Diagnozy, required: true}]}).then(function(d){
+    console.log(d);
+  });
+  res.json( "hello" ); */
+  //console.log(pribehy);
 };
 
 export const createPribehyController = async (req, res) => {

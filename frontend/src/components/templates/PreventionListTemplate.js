@@ -7,7 +7,6 @@ import {FilterBox} from "../molecules/FilterBox";
 import {GENDERS} from "../../mocks/Genders";
 import {ANAMNESIS} from "../../mocks/Anamnes";
 import {STYLES} from "../../mocks/LifeStyle";
-import {PREVENTIONS} from "../../mocks/Preventions";
 import {PreventionCard} from "../molecules/PreventionCard";
 import {NavLink} from "../atoms/Nav/NavLink";
 
