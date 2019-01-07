@@ -12,8 +12,6 @@ import {Formik} from 'formik'
 import * as Yup from 'yup'
 import isEmpty from 'lodash/isEmpty'
 
-const TEST_SITE_KEY = "6LdWooYUAAAAAJXTKTSjkSFgKqkJ20fEUiYum_Ul";
-const DELAY = 1500;
 
 export default class ContactForm extends Component {
   state = {
