@@ -14,9 +14,9 @@ import {FontIcon} from "../atoms/FontIcon";
 import TextInput from '../molecules/TextInput'
 
 import api from '../../api';
-import {Field, Formik} from 'formik'
-import * as Yup from 'yup'
-import isEmpty from 'lodash/isEmpty'
+import {Field, Formik} from 'formik';
+import * as Yup from 'yup';
+import isEmpty from 'lodash/isEmpty';
 
 export class AdminPartnersForm extends Component {
   state = {
@@ -154,7 +154,7 @@ export class AdminPartnersForm extends Component {
                       className="float-right"
                       type="submit"
                       disabled={isSubmitting || !isEmpty(errors) || !dirty}>
-                      Uložiť
+                      Uložit
                     </Button>
                 </Column>
               </Row>

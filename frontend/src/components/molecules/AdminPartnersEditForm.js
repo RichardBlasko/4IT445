@@ -15,6 +15,7 @@ import api from '../../api';
 import { withRouter } from 'react-router';
 import { compose } from 'recompose';
 import { Formik } from 'formik';
+import isEmpty from 'lodash/isEmpty';
 
 class AdminPartnersEditFormRaw extends Component {
 
@@ -27,6 +28,7 @@ class AdminPartnersEditFormRaw extends Component {
     const { diagnozy } = this.props;
     const partner  = this.props.location.state.partner;
     const initialValues = {
+      id: partner.id,
       nazevPartner: partner.nazevPartner,
       popisPartner: partner.popisPartner,
       kontaktPartner: partner.kontaktPartner,
@@ -54,17 +56,47 @@ class AdminPartnersEditFormRaw extends Component {
             <Formik
               initialValues={initialValues}
               onSubmit={(values, actions) => {
-                api.put('http://dev.backend.team03.vse.handson.pro/api/partneri', values)
+
+                const idToEdit = values.id;
+                const nazevToEdit = values.nazevPartner;
+                const popisToEdit = values.popisPartner;
+                const kontaktToEdit = values.kontaktPartner;
+                const logoToEdit = values.logoPartner;
+                const obrazokToEdit = values.obrazokPartner;
+                const jsonData = {
+	"items":
+	[
+		{
+      "id": values.id,
+      "nazevPartner": values.nazevPartner,
+      "popisPartner": values.popisPartner,
+      "kontaktPartner": values.kontaktPartner,
+      "logoPartner": values.logoPartner,
+      "obrazokPartner": values.obrazokPartner
+    }
+	]
+};
+
+                api.put('http://dev.backend.team03.vse.handson.pro/api/partneri', jsonData
+
+
+
+              )
                   .then(({ data }) => {
                     actions.setSubmitting(false);
+                    console.log('-> data', data);
+                    this.setState({ redirectUrl: '/admin/Partneři' });
+                    window.location.reload();
                   })
-              this.setState({ redirectUrl: '/admin/Partneři' });
+
               }}
               render={({
                 values,
                 handleBlur,
                 handleChange,
                 handleSubmit,
+                errors,
+                dirty,
                 isSubmitting,
               }) => (
 
@@ -136,8 +168,8 @@ class AdminPartnersEditFormRaw extends Component {
                         variant="admin"
                         className="float-right"
                         type="submit"
-                        disabled={isSubmitting}>
-                        Uložiť
+                        disabled={isSubmitting || !isEmpty(errors) || !dirty}>
+                        Uložit
                       </Button>
                   </Column>
                 </Row>
