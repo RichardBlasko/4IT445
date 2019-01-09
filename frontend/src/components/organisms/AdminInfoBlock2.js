@@ -13,25 +13,25 @@ export const AdminInfoBlock2 = ({children}) => (
             <Column lg={3} md={6} sm={6} xs={12} className={"mb-2"}>
               <AdminInfoCard
                 about={"Příběhy"}
-                number={"32"}
+                number={"6"}
               />
             </Column>
             <Column lg={3} md={6} sm={6} xs={12} className={"mb-2"}>
               <AdminInfoCard
                 about={"Události"}
-                number={"13"}
+                number={"0"}
               />
             </Column>
             <Column lg={3} md={6} sm={6} xs={12} className={"mb-2"}>
               <AdminInfoCard
                 about={"Příspěvky"}
-                number={"13/151"}
+                number={"13/15"}
               />
             </Column>
             <Column lg={3} md={6} sm={6} xs={12} className={"mb-2"}>
               <AdminInfoCard
                 about={"Partneři"}
-                number={"3"}
+                number={"4"}
               />
             </Column>
           </Row>

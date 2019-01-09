@@ -17,11 +17,11 @@ export const AdminInfoCard = ({about, number}) => (
           <Column md={12} lg={12} className="mt-4 mt-md-0">
             <CardTitle className={"text-left"}>
               <NavLink exact to={"/admin/" + about} className="linkprevence">
-                <Heading level={3}>{about}</Heading>
+                <Heading level={4}>{about}</Heading>
               </NavLink>
             </CardTitle>
             <CardBody className="text-right">
-              <Heading level={2}>{number}</Heading>
+              <Heading level={5}>{number}</Heading>
             </CardBody>
           </Column>
                 <Row className={"justify-content-center"}>
