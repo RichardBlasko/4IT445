@@ -13,13 +13,13 @@ export const AdminInfoBlock = ({children}) => (
             <Column lg={6} md={6} sm={6} xs={12} className={"mb-2"}>
               <AdminInfoCard
                 about={"Prevence"}
-                number={"32"}
+                number={"16"}
               />
             </Column>
             <Column lg={6} md={6} sm={6} xs={12} className={"mb-2"}>
               <AdminInfoCard
                 about={"Diagnózy"}
-                number={"80"}
+                number={"52"}
               />
             </Column>
           </Row>

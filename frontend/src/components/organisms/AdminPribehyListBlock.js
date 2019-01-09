@@ -18,7 +18,7 @@ export const AdminPribehyListBlock = ({
       </Layout>
     </Row>
     <Row className={"justify-content-center  pt-2 mb-3"}>
-      <Layout className={"col-md-2 col-xs-2 card-radius p-4"}>
+      <Layout className={"col-md-2 col-xs-2 card-radius p-1"}>
       <Link to={"/admin/Příběhy/formular"}>
         <Button title={"Přidej příběhy"} variant="form" type="submit"/>
       </Link>

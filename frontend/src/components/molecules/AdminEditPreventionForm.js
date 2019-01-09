@@ -27,7 +27,7 @@ export class AdminPreventionForm extends Component {
                 <FontIcon  icon={"times"}/>
               </Button>
             </Link>
-            <Heading level={3} className={"pb-3"}>Preventívni vyšetření</Heading>
+            <Heading level={4} className={"pb-3"}>Preventívni vyšetření</Heading>
               <form>
                 <Row>
                   <Layout className="col-md-6">

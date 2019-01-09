@@ -9,7 +9,7 @@ export class AdminPageFooter extends Component {
     return (
       <Layout className="footer">
         <Column md={4} xs={11}>
-          <Heading level={5} >Admin module</Heading>
+          <Heading level={6} >Admin module</Heading>
         </Column>
       </Layout>
     );

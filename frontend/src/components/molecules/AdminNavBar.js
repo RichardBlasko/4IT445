@@ -16,7 +16,7 @@ export const AdminNavBarRaw = ({close}) => (
     <NavBar>
     <FontIcon icon="times" className={"mobile-close"}  onClick={close}/>
     <Link className="navbar-brand " to="/admin">
-      <Image src={"/static/img/logo09.png"} className={"img-fluid"}/>
+      <Image src={"/static/img/logo.png"} className={"img-fluid"}/>
     </Link>
       <Layout className="navbar-collapse  justify-content-end">
         <Nav className="nav-pills">

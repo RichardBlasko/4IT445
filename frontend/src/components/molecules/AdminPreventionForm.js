@@ -181,7 +181,7 @@ export class AdminPreventionForm extends Component {
                     />
                   </Layout>
 
-                  <Layout  className="col-md-4">
+                  <Layout  className="col-md-5">
                     <PeriodicitaInput vekOd="18" vekDo="39" vekOdId = "vekOd" vekDoId = "vekDo" periodicitaId = "periodicita"/>
                     <PeriodicitaInput vekOd="40" vekDo="49" vekOdId = "vekOd" vekDoId = "vekDo" periodicitaId = "periodicita"/>
                     <PeriodicitaInput vekOd="50" vekDo="199" vekOdId = "vekOd" vekDoId = "vekDo" periodicitaId = "periodicita"/>
@@ -258,7 +258,9 @@ export class AdminPreventionForm extends Component {
                         </label>
                       </div>
                     </Column>
-                    <Column md={4}>
+                    <Column md={3}>
+                    </Column>
+                    <Column md={5}>
                       <InputWithLabel
                         id="periodicita"
                         type="number"
@@ -280,7 +282,9 @@ export class AdminPreventionForm extends Component {
                       </label>
                     </div>
                     </Column>
-                    <Column md={4}>
+                    <Column md={3}>
+                    </Column>
+                    <Column md={5}>
                       <InputWithLabel
                         id="periodicita"
                         type="number"
