@@ -15,6 +15,8 @@ import api from '../../api';
 import { withRouter } from 'react-router';
 import { compose } from 'recompose';
 import { Formik } from 'formik';
+import isEmpty from 'lodash/isEmpty';
+
 
 
 class AdminPribehyEditFormRaw extends Component {
@@ -26,6 +28,7 @@ class AdminPribehyEditFormRaw extends Component {
     const pribeh  = this.props.location.state.pribeh;
     const { diagnozy } = this.props;
     const initialValues = {
+      id: pribeh.id,
       autorPribeh: pribeh.autorPribeh,
       autorVek: pribeh.autorVek,
       textPribeh: pribeh.textPribeh,
@@ -51,17 +54,35 @@ class AdminPribehyEditFormRaw extends Component {
             <Formik
               initialValues={initialValues}
               onSubmit={(values, actions) => {
-                api.put('http://dev.backend.team03.vse.handson.pro/api/pribehy', values)
+
+            const jsonData = {
+	"items":
+	[
+		{
+      "id": values.id,
+      "autorPribeh": values.autorPribeh,
+      "autorVek": values.autorVek,
+      "textPribeh": values.textPribeh,
+
+    }
+	]
+};
+                api.put('http://dev.backend.team03.vse.handson.pro/api/pribehy', jsonData
+            )
                   .then(({ data }) => {
                     actions.setSubmitting(false);
+                    this.setState({ redirectUrl: '/admin/Příběhy' });
+                    window.location.reload();
                   })
-              this.setState({ redirectUrl: '/admin/Příběhy' });
+
               }}
               render={({
                 values,
                 handleBlur,
                 handleChange,
                 handleSubmit,
+                errors,
+                dirty,
                 isSubmitting,
               }) => (
 
@@ -120,7 +141,7 @@ class AdminPribehyEditFormRaw extends Component {
                       variant="admin"
                       className="float-right"
                       type="submit"
-                      disabled={isSubmitting}>
+                      disabled={isSubmitting || !isEmpty(errors) || !dirty}>
                       Uložiť
                     </Button>
                 </Column>

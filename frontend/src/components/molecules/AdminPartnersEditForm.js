@@ -56,14 +56,7 @@ class AdminPartnersEditFormRaw extends Component {
             <Formik
               initialValues={initialValues}
               onSubmit={(values, actions) => {
-
-                const idToEdit = values.id;
-                const nazevToEdit = values.nazevPartner;
-                const popisToEdit = values.popisPartner;
-                const kontaktToEdit = values.kontaktPartner;
-                const logoToEdit = values.logoPartner;
-                const obrazokToEdit = values.obrazokPartner;
-                const jsonData = {
+const jsonData = {
 	"items":
 	[
 		{
@@ -77,10 +70,7 @@ class AdminPartnersEditFormRaw extends Component {
 	]
 };
 
-                api.put('http://dev.backend.team03.vse.handson.pro/api/partneri', jsonData
-
-
-
+    api.put('http://dev.backend.team03.vse.handson.pro/api/partneri', jsonData
               )
                   .then(({ data }) => {
                     actions.setSubmitting(false);
@@ -88,7 +78,6 @@ class AdminPartnersEditFormRaw extends Component {
                     this.setState({ redirectUrl: '/admin/Partneři' });
                     window.location.reload();
                   })
-
               }}
               render={({
                 values,
