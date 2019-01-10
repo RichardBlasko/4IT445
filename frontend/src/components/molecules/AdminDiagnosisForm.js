@@ -59,7 +59,7 @@ export class AdminDiagnosisForm extends Component {
                   .then(({ data }) => {
                     actions.setSubmitting(false);
                   })
-                this.setState({ redirectUrl: '/admin/Diagnózy/' });
+                this.setState({ redirectUrl: '/admin/Diagnózy' });
               }}
               render={({
                 values,
