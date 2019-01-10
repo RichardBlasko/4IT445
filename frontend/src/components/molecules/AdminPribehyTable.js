@@ -105,8 +105,8 @@ class AdminPribehyTableRaw extends React.Component {
                           >
                             <FontIcon  icon={"times"}/>
                           </Button>
-                          <Heading level={1} className={"pb-3"}></Heading>
-                          <Heading level={3} className={"pb-3"}>{this.state.pribehy}</Heading>
+                          <Heading level={3} className={"pb-3"}></Heading>
+                          <Heading level={4} className={"pb-3"}>{this.state.pribehy}</Heading>
                           <Heading level={6} className={"pb-3"}>Vážně chcete odstranit příběh?</Heading>
                           <Heading level={6} className={"pb-3"}></Heading>
                           <Button
