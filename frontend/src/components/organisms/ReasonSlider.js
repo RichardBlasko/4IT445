@@ -23,17 +23,17 @@ export const ReasonSlider = ({children}) => (
                     <ReasonCard
                       reason={"Nic to nestojí"}
                       icon={"hand-holding-usd"}
-                      text={"Tento důvod je důležitý proto a proto. Velmi důležity je tento důvod. Pomůže vám předejít tomu a tomu. A je důležitý proto a proto."}
+                      text={"Proč nevyužívat to, co je zcela zdarma a máme na to nárok? Pacient má na preventivní prohlídku zákonný nárok. Lékař ale nemá povinnost svého pacienta na prevence zvát. Lékař ale vede přesnou evidenci, kdy na ni pacient naposledy byl. Buďte aktivní a ptejte se."}
                     />
                   </Column>
                   <Column lg={6} md={6} sm={6} xs={12} className={"mb-3"}>
                     <ReasonCard
                       reason={"Včasné odhalení zvyšuje šance"}
                       icon={"chart-line"}
-                      text={"Tento důvod je důležitý proto a proto. Velmi důležity je tento důvod. Pomůže vám předejít tomu a tomu. A je důležitý proto a proto."}
+                      text={"Preventivní prohlídky mají klíčový význam ve snížení rizika výskytu závažných onemocnění i nákladů na následnou léčbu. Včasné odhalení příznaků závažného onemocnění navíc zvyšuje šance na úplné vyléčení"}
                     />
                   </Column>
-              
+
                 </Row>
               </Column>
             </Row>
