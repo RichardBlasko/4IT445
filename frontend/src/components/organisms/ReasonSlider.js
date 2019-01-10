@@ -33,20 +33,7 @@ export const ReasonSlider = ({children}) => (
                       text={"Tento důvod je důležitý proto a proto. Velmi důležity je tento důvod. Pomůže vám předejít tomu a tomu. A je důležitý proto a proto."}
                     />
                   </Column>
-                  <Column lg={6} md={6} sm={6} xs={12} className={"mb-3"}>
-                    <ReasonCard
-                      reason={"Pro vlastní klid"}
-                      icon={"hand-holding-heart"}
-                      text={"Tento důvod je důležitý proto a proto. Velmi důležity je tento důvod. Pomůže vám předejít tomu a tomu. A je důležitý proto a proto."}
-                    />
-                  </Column>
-                  <Column lg={6} md={6} sm={6} xs={12} className={"mb-3"}>
-                    <ReasonCard
-                      reason={"Pro vlastní klid"}
-                      icon={"hand-holding-heart"}
-                      text={"Tento důvod je důležitý proto a proto. Velmi důležity je tento důvod. Pomůže vám předejít tomu a tomu. A je důležitý proto a proto."}
-                    />
-                  </Column>
+              
                 </Row>
               </Column>
             </Row>

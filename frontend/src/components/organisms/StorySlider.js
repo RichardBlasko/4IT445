@@ -51,8 +51,8 @@ render() {
                   <Column lg={12} md={12} sm={12} xs={12} className={"mb-3 storySlider"}>
                   <Row>
                   <Carousel
-                      autoplay={false}
-                      autoplayInterval={7000}
+                      autoplay={true}
+                      autoplayInterval={4100}
                       cellSpacing = {10}
                       width={"100%"}
                       wrapAround = {true}
