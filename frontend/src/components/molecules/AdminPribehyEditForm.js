@@ -128,7 +128,7 @@ class AdminPribehyEditFormRaw extends Component {
                   <TextareaWithLabel
                     id="textPribeh"
                     label="Text příběhu"
-                    rows="10"
+                    rows="5"
                     placeholder="Zde uveďte text příběhu"
                     value={values.textPribeh}
                     onChange={handleChange}
