@@ -38,7 +38,7 @@ class AdminPribehyEditFormRaw extends Component {
     const { redirectUrl } = this.state;
 
     return (
-    <Layout className="container100 page-background-overlay">
+    <Layout className=" page-background-overlay">
       <Row className={"justify-content-center"}>
         <Column lg={10} md={10} sm={12} xs={12} className="pt-5">
           <Layout className="adminForm">
