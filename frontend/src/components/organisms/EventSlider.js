@@ -23,7 +23,7 @@ export const EventSlider = ({children}) => (
                 <Heading level={4} className="part-sub blue-text">Cesta k prevenci</Heading>
               </Column>
               <Column lg={9} md={9} sm={12} xs={12}>
-                <Row className={"row-eq-height"}>
+                <Row className={"row-eq-height akcecard"}>
                   {EVENTS.map(event =>
                     <Column lg={4} md={4} sm={12} xs={12} className={"mb-3"}>
                       <EventCard
@@ -37,14 +37,14 @@ export const EventSlider = ({children}) => (
                     </Column>)}
 
                 </Row>
-                <Row>
+                <Row className={"akcerow"}>
                   <Column lg={12} md={12} sm={12} xs={12} className={"text-center"}>
                     <Layout className={"mt-3"}>
-                      <FontIcon icon={"chevron-left"} className={"slider-navigator mr-5 mt-2 white-text"}/>
+                      <FontIcon icon={"chevron-left"} className={"slider-navigator mr-5 mt-2 "}/>
                       <NavLink exact to="/kalendar">
-                        <Button title="Zobrazit všechny akce" variant="all mt-m-2"/>
+                        <Button title="Zobrazit všechny akce" variant="form mt-m-2"/>
                       </NavLink>
-                      <FontIcon icon={"chevron-right"} className={"slider-navigator ml-5 mt-2 white-text"}/>
+                      <FontIcon icon={"chevron-right"} className={"slider-navigator ml-5 mt-2"}/>
                     </Layout>
                   </Column>
                 </Row>

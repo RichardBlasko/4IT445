@@ -544,6 +544,15 @@ display: block;
   border-radius: 0.5em;
 }
 
+.akcecard {
+  margin-top: 30px;
+}
+
+.akcerow {
+  max-height: 40px;
+  margin-bottom: 50px;
+}
+
 /*Buttons*/
 
 .btn-read{

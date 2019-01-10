@@ -37,12 +37,12 @@ export const SocialNetworkSlider = ({children}) => (
                   }
 
                 </Row>
-                <Row>
+                <Row className={"akcerow"}>
                   <Column lg={12} md={12} sm={12} xs={12} className={"text-center"}>
                     <Layout className={"mt-3"}>
                       <FontIcon icon={"chevron-left"} className={"slider-navigator mr-5 mt-2 orange-text"}/>
                       <NavLink exact to="/socialnisite">
-                        <Button title="Celé #PrevenceMaSmysl" variant="all mt-m-2"/>
+                        <Button title="Celé #PrevenceMaSmysl" variant="filter mt-m-2"/>
                       </NavLink>
                       <FontIcon icon={"chevron-right"} className={"slider-navigator ml-5 mt-2 orange-text"}/>
                     </Layout>
